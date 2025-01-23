@@ -102,7 +102,6 @@ export async function shopifyFetch<T>({
         query: getProductByHandle,
         variables: { handle },
         tags: [TAGS.products],
-        cache: 'no-store'
       });
 
       if (!res.body.data.productByHandle) {
@@ -228,7 +227,6 @@ export async function shopifyFetch<T>({
   export async function getMenu(handle: string): Promise<Menu[]> {
     const res = await shopifyFetch<ShopifyMenuOperation>({
       query: getMenuQuery,
-      cache: 'no-store', //A supprimer
       tags: [TAGS.collections],
       variables: {
         handle

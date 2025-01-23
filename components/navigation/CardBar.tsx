@@ -11,7 +11,7 @@ const CardBar = () => {
         <Sheet open={isOpenCart} onOpenChange={setIsOpenCart}>
             <SheetContent side="right" className="h-full w-full">
                 <SheetHeader>
-                    <SheetTitle className="text-white text-xl font-bold">Mon Panier</SheetTitle>
+                    <SheetTitle className="text-foreground text-xl font-bold">Mon Panier</SheetTitle>
                 </SheetHeader>
                 <SheetDescription></SheetDescription>
                 <Cart />
