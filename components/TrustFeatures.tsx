@@ -14,11 +14,11 @@ const TrustFeatures: FC<TrustFeaturesProps> = ({
     content,
 }) => {
     return (
-        <div className={cn("text-center bg-background h-full border shadow-md rounded-2xl p-4 w-full space-y-1 flex flex-col justify-center items-center", "xl:p-8")}>
+        <div className={cn("text-center bg-background h-full border shadow-md rounded-2xl p-4 w-full space-y-1 flex flex-col justify-center items-center", "xl:p-14")}>
             <div className={cn("bg-primary rounded-full p-2 mb-2")}>
-                <Icon className="size-6 text-white" />
+                <Icon className={cn("size-6 text-white", "xl:size-8")} />
             </div>
-            <h6 className={cn("font-medium text-primary")}>
+            <h6 className={cn("font-medium text-primary", "xl:text-xl")}>
                 {title}
             </h6>
             <p className={cn("font-light text-foreground text-sm xs:px-10", "sm:px-0", "md:px-6", "lg:px-20", "xl:px-10")}>

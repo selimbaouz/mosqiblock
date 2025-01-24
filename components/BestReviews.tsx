@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
 import AvatarCircles from "./ui/avatar-circles"
-import GetRatings from "@/lib/getRating"
+import GetRatings from "@/lib/fn"
 import { FaCircleCheck } from "react-icons/fa6"
 import { bestReviewsData } from "@/data"
 import { Button } from "./ui/button"

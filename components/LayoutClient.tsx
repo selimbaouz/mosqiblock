@@ -2,7 +2,7 @@
 import { FC } from "react";
 import Favicon from "@/app/favicon.ico";
 import FaviconInactive from "@/app/favicon-inactive.ico";
-import { usePageVisibility } from "@/lib/hook";
+import { usePageVisibility } from "@/hook/usePageVisibility";
 
 interface LayoutClientProps {
     children: React.ReactNode;

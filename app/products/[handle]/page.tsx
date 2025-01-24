@@ -39,7 +39,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                 </section>
             </div>
             <section className={cn("bg-gradient-to-b from-primary to-secondary w-full relative")}>
-                <div className={cn("p-4 text-background flex flex-col gap-2 items-center justify-center font-medium max-w-screen-xl mx-auto", "grid grid-cols-2", "lg:grid-cols-4 lg:py-20")}>
+                <div className={cn("p-4 text-background flex flex-col gap-2 items-center justify-center font-medium max-w-screen-xl mx-auto py-10", "grid grid-cols-2", "lg:grid-cols-4 lg:py-20")}>
                     {trustsData.map((data, index) => (
                         <TrustFeatures
                         key={index}

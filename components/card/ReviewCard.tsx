@@ -1,4 +1,4 @@
-import GetRatings from "@/lib/getRating";
+import GetRatings from "@/lib/fn";
 import { cn } from "@/lib/utils";
 import { StaticImageData } from "next/image";
 import { AiOutlineCheckCircle } from "react-icons/ai";

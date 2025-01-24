@@ -1,6 +1,6 @@
 "use client";
 import { checkProduct, detailsProduct } from "@/data";
-import GetRatings from "@/lib/getRating";
+import GetRatings, { calculateDeliveryDates } from "@/lib/fn";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Product } from "@/types/types";
@@ -19,6 +19,8 @@ interface ProductImageProps {
 
 const ProductImage: FC<ProductImageProps> = ({product}) => {
     const [selectedVariant, setSelectedVariant] = useState(product.variants.edges[0].node.title);
+    const [startDelivery, endDelivery] = calculateDeliveryDates(5, 10);
+
     return (
         <div className={cn("space-y-2")}>
             <div className={cn("flex items-center gap-2")}> 
@@ -33,14 +35,14 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             </h3>
             <div className={cn("flex items-center pb-2 gap-2 lg:pb-4")}>
                 <FaCircleCheck className="text-sm text-primary" />
-                <p className="text-sm">Livraison entre le <strong>24 Janvier</strong> et le <strong>29 Janvier</strong></p>
+                <p className="text-sm">Livraison entre le <strong>{startDelivery}</strong> et le <strong>{endDelivery}</strong></p>
             </div>
             <p className={cn("text-sm", "sm:text-base", "xl:text-lg")}>Pour une grossesse sereine, WeSecure est devenue l’indispensable compagnon de route de toute future maman soucieuse de sa sécurité et de celle de son bébé</p>
             <ul className={cn("flex justify-between items-stretch py-4 gap-4", "xl:justify-around")}>
                 {checkProduct.map((data, index) => (
-                    <li key={index} className={cn("flex flex-col bg-secondary/30 w-full min-h-full p-4 rounded-xl gap-2 items-center text-center", "lg:px-4 lg:py-6")}>
-                        <div className={cn("p-2 bg-secondary text-background dark:text-white rounded-full", "lg:p-3")}>
-                            <data.icon className={cn("text-lg", "lg:text-xl")} />
+                    <li key={index} className={cn("flex flex-col w-full min-h-full p-4 rounded-lg gap-4 items-center text-center", "lg:px-4 lg:py-6")}>
+                        <div className={cn("p-2 bg-secondary text-background dark:text-white rounded-lg", "lg:p-3")}>
+                            <data.icon className={cn("text-2xl", "lg:text-2xl")} />
                         </div>
                         <p className={cn("text-xs text-primary dark:text-white font-bold", "xs:text-sm", "lg:text-base")}>{data.title}</p>
                     </li>
@@ -48,7 +50,12 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             </ul>
             <div className={cn("space-y-10 py-4")}>    
                 <div className="space-y-8">
-                    <h3 className={cn("text-sm uppercase font-medium", "lg:text-base")}>Plus de voiture ?</h3>
+                    <div className="flex items-center justify-center">
+                        <div className="border-t border-primary flex-grow"></div>
+                        <h3 className={cn("text-sm font-medium px-4", "lg:text-base")}>Plus de voiture ?</h3>
+                        <div className="border-t border-primary flex-grow"></div>
+                    </div>
+                    
                     <RadioGroup 
                         defaultValue={product.variants.edges[0].node.title} 
                         defaultChecked={selectedVariant === product.variants.edges[0].node.title} 

@@ -1,5 +1,5 @@
 "use client";
-import GetRatings from '@/lib/getRating';
+import GetRatings from '@/lib/fn';
 import { cn } from '@/lib/utils';
 import React, { FC } from 'react';
 import { AddToCart } from '../cart/add-to-cart';
