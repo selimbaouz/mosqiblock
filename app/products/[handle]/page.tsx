@@ -39,14 +39,13 @@ export default async function ProductPage({ params }: { params: { handle: string
                     </div>
                 </section>
             </div>
-            <section className={cn("bg-secondary w-full relative")}>
-                <div className={cn("p-4 text-white flex flex-col gap-2 items-center justify-center font-medium max-w-screen-xl mx-auto", "sm:grid sm:grid-cols-2", "lg:grid-cols-4 lg:py-20")}>
+            <section className={cn("bg-gradient-to-b from-primary to-secondary w-full relative")}>
+                <div className={cn("p-4 text-background flex flex-col gap-2 items-center justify-center font-medium max-w-screen-xl mx-auto", "grid grid-cols-2", "lg:grid-cols-4 lg:py-20")}>
                     {trustsData.map((data, index) => (
                         <TrustFeatures
                         key={index}
                         icon={data.icon}
                         title={data.title}
-                        content={data.content}
                         />
                     ))}
                 </div>

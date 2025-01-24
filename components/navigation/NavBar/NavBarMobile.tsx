@@ -18,9 +18,9 @@ const NavBarMobile = () => {
             <div 
                 onClick={() => setIsOpenSidebar(true)}
             >
-                <HiOutlineMenuAlt4 className={cn("text-lg uppercase text-foreground hover:text-foreground", "sm:text-3xl")} />
+                <HiOutlineMenuAlt4 className={cn("text-2xl uppercase text-foreground hover:text-foreground", "xs:text-3xl")} />
             </div>
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer text-2xl font-medium">
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer text-2xl xs:text-3xl font-medium">
                 {/* <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} /> */}
                 We<span className="font-medium text-primary">mom</span>
             </Link>
@@ -31,7 +31,7 @@ const NavBarMobile = () => {
                     onClick={() => setIsOpenCart(true)}
                 >
                     <RiShoppingBag3Fill
-                        className={cn("text-2xl text-foreground group-hover:text-secondary transition-all ease-in-out hover:scale-110", "sm:text-3xl", "lg:text-2xl", "xl:text-3xl")}  
+                        className={cn("text-3xl text-foreground group-hover:text-secondary transition-all ease-in-out hover:scale-110", "sm:text-3xl", "lg:text-2xl", "xl:text-3xl")}  
                     />
                     {cart.totalQuantity ? (
                         <div className="absolute right-0 top-0 -mr-1 -mt-1 size-5 flex justify-center items-center rounded-full bg-secondary text-[11px] font-medium text-white">

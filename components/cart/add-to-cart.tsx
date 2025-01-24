@@ -42,7 +42,7 @@ function SubmitButton({size = "initial"}: SubmitButtonProps) {
         aria-label="Add to cart"
         ref={buttonRef}
         className={cn(
-          "py-4 px-2 lg:px-6 rounded-lg bg-gradient-to-r from-primary to-secondary hover:bg-secondary text-white font-medium text-base border-t",
+          "py-4 px-2 lg:px-6 rounded-lg bg-gradient-to-b from-primary to-secondary hover:bg-secondary text-white font-medium text-base border-t",
           size === "fullWidth" ? "min-w-full" : "w-max",
           "hover:bg-gradient-to-tr"
       )}

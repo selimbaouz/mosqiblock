@@ -112,23 +112,19 @@ export const benefitsFeelingData = [
 export const trustsData = [
   {
     icon: RiSecurePaymentLine, 
-    title: "Paiement Sécurisé", 
-    content: "Paiement 100% sécurisé avec Stripe."
+    title: "Livraison Gratuite", 
   },
   {
     icon: FaCheck, 
     title: "Essai de 90 Jours", 
-    content: "Vous avez 90 jours pour tester votre achat."
   },
   {
     icon: TbPlaneTilt, 
-    title: "Expédié en 24h", 
-    content: "Commandez avant 14h, expédition sous 24h."
+    title: "Retours Gratuits", 
   },
   {
     icon: BiSupport, 
-    title: "Support client", 
-    content: "Notre support client vous accompagne à chaque étape."
+    title: "Support client 7j/7", 
   }
 ]
 

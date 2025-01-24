@@ -5,7 +5,7 @@ import { IconType } from "react-icons";
 interface TrustFeaturesProps {
     icon: IconType;
     title: string;
-    content: string;
+    content?: string;
 }
 
 const TrustFeatures: FC<TrustFeaturesProps> = ({

@@ -3,7 +3,7 @@ import { stacksData } from "@/data";
 
 const StickyBar = () => {
     return (
-        <div className="bg-gradient-to-r from-primary to-secondary uppercase w-full h-12 text-white flex flex-col items-center justify-center font-medium">
+        <div className="bg-gradient-to-b from-primary to-secondary w-full h-10 text-white flex flex-col items-center justify-center font-medium">
             <MarqueeStack data={stacksData} />
         </div>
     );

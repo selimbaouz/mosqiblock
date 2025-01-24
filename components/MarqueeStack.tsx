@@ -17,7 +17,7 @@ const MarqueeStack: FC<MarqueeStackProps> = ({data}) => {
               {
                 data.map((data, index) => (
                     <div key={index} className={cn("flex items-center gap-3")}>
-                        <data.icon className={cn("text-2xl text-white", "lg:text-xl", "2xl:text-2xl")} />
+                        <data.icon className={cn("text-xl text-white", "lg:text-xl", "2xl:text-2xl")} />
                         <p className="text-sm">
                             {data.title}
                         </p>
