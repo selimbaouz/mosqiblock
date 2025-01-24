@@ -14,7 +14,6 @@ export default async function ProductPage({ params }: { params: { handle: string
     const product = await getHandleOfProduct(params.handle);
     const menu = await getMenu("main-menu");
     /* const footerMenu = await getMenu("footer"); */
-    console.log(product);
     
     if(!product) {
         redirect('/')

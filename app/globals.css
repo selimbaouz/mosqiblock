@@ -91,7 +91,7 @@
   .dark {
 
 
-  --background: 0 0% 0%;
+  --background: 0 0% 7%;
 
 
   --foreground: 0 0% 100%;
@@ -112,16 +112,16 @@
   --popover-foreground: 209 59% 71%;
 
 
-  --primary: 190.7 100%, 42.9%;
+  --primary: 237 52% 54%;
 
 
-  --primary-foreground: 0 0% 9%;
+  --primary-foreground: 0 0% 100%;
 
 
   --secondary: 237 93% 77%;
 
 
-  --secondary-foreground: 209 59% 71%;
+  --secondary-foreground: 0 0% 100%;
 
 
   --muted: 0 0% 14.9%;

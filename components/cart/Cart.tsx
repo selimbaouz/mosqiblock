@@ -54,7 +54,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="bg-background text-white h-full py-10">
+    <div className="bg-background text-foreground h-full py-10">
         {!cart || cart.lines.length === 0 ? (
             <div className="pb-14 flex w-full h-full flex-col items-center justify-center overflow-hidden">
             <ShoppingCartIcon className="size-14" />
@@ -67,11 +67,11 @@ export default function Cart() {
                     .sort((a, b) =>
                         a.merchandise.product.title.localeCompare(b.merchandise.product.title)
                     ).map((item, i) => {
-                      const amount = Number(item.cost.totalAmount.amount) + 20;
+                      const amount = Number(item.cost.totalAmount.amount);
                       return (
                         <li key={i} className="flex w-full justify-between gap-1 items-center p-2">
                             <div className='relative'>
-                                <Image src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={20} height={20} className="h-14 w-14 max-w-14 rounded-xl object-fill" />
+                                <Image src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={500} height={500} className="h-14 w-14 max-w-14 rounded-xl object-fill" />
                                 <div className="absolute z-40 -top-2 -left-2">
                                     <DeleteItemButton item={item} optimisticUpdate={updateCartItem} />
                                 </div>
@@ -79,7 +79,7 @@ export default function Cart() {
                                 <div className='ml-4 w-full'>
                                     <p className="text-lg">{item.merchandise.product.title}</p>
                                     <Price
-                                        className="text-sm text-gray-500 font-montserrat"
+                                        className="text-sm text-foreground/50 font-montserrat"
                                         amount={String(amount)}
                                         currencyCode={item.cost.totalAmount.currencyCode}
                                     />
@@ -115,12 +115,12 @@ export default function Cart() {
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
                         <p>Expédition</p>
-                        <p className="text-right text-sm text-white/40">Livraison Offerte</p>
+                        <p className="text-right text-sm text-foreground">Livraison Offerte</p>
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
+                    {/* <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
                         <p>Offre spéciale fêtes</p>
-                        <p className="text-right text-sm text-white">- 20,00 €</p>
-                    </div>
+                        <p className="text-right text-sm text-foreground">- 20,00 €</p>
+                    </div> */}
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
                         <p>Total</p>
                         <span className='ml-1 inline'>
@@ -145,11 +145,11 @@ export default function Cart() {
 function CheckoutButton({isLoading}: {isLoading: boolean}) {
     return (
       <button
-        className="bg-foreground rounded-3xl text-white py-3 w-full mt-6"
+        className="bg-gradient-to-b from-primary to-secondary rounded-3xl text-white py-3 w-full mt-6"
         type='submit'
         disabled={isLoading}
       >
-        {isLoading ? <PulseLoader size={7} color="white" /> : 'Hop, au paiement !'}
+        {isLoading ? <PulseLoader size={7} color="white" /> : "Passez à l'étape suivante"}
       </button>
     );
   }

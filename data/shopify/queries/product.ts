@@ -36,6 +36,10 @@ export const getProductByHandle = /* GraphQL */ `
               amount
               currencyCode
             }
+            compareAtPrice {
+              amount
+              currencyCode
+            }
           }
         }
       }

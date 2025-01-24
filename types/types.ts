@@ -80,6 +80,7 @@ export type Money = {
         value: string;
       }[];
       price?: Money;
+      compareAtPrice: Money;
     }
   }
   
@@ -105,6 +106,16 @@ export type Product = {
     id: string;
     title: string;
     handle: string;
+    compareAtPriceRange: {
+      maxVariantCompareAtPrice: {
+        amount: string;
+        currencyCode: string;
+      };
+      minVariantCompareAtPrice: {
+        amount: string;
+        currencyCode: string;
+      };
+    };
     priceRange: {
         maxVariantPrice: {
             amount: string;

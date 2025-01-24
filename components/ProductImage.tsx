@@ -4,19 +4,21 @@ import GetRatings from "@/lib/getRating";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Product } from "@/types/types";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { AddToCart } from "./cart/add-to-cart";
 import Link from "next/link";
 import { FaCircleCheck } from "react-icons/fa6";
 import MoneyBack from "@/public/images/MoneyBack.png"
 import Image from "next/image";
 import { BestReviews } from "./BestReviews";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 
 interface ProductImageProps {
     product: Product;
 }
 
 const ProductImage: FC<ProductImageProps> = ({product}) => {
+    const [selectedVariant, setSelectedVariant] = useState(product.variants.edges[0].node.title);
     return (
         <div className={cn("space-y-2")}>
             <div className={cn("flex items-center gap-2")}> 
@@ -37,33 +39,46 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             <ul className={cn("flex justify-between items-stretch py-4 gap-4", "xl:justify-around")}>
                 {checkProduct.map((data, index) => (
                     <li key={index} className={cn("flex flex-col bg-secondary/30 w-full min-h-full p-4 rounded-xl gap-2 items-center text-center", "lg:px-4 lg:py-6")}>
-                        <div className={cn("p-2 bg-secondary text-background rounded-full", "lg:p-3")}>
+                        <div className={cn("p-2 bg-secondary text-background dark:text-white rounded-full", "lg:p-3")}>
                             <data.icon className={cn("text-lg", "lg:text-xl")} />
                         </div>
-                        <p className={cn("text-xs text-primary", "xs:text-sm", "lg:text-base")}>{data.title}</p>
+                        <p className={cn("text-xs text-primary dark:text-white font-bold", "xs:text-sm", "lg:text-base")}>{data.title}</p>
                     </li>
                 ))}
             </ul>
             <div className={cn("space-y-10 py-4")}>    
                 <div className="space-y-8">
                     <h3 className={cn("text-sm uppercase font-medium", "lg:text-base")}>Plus de voiture ?</h3>
-                    <div className={cn("flex flex-col items-center justify-between gap-3 text-center", "lg:gap-6")}>
-                        {product.variants.edges.map((data, index) => (
-                            <div key={index} className={cn("border-2 px-6 py-8 w-full flex items-center justify-between border-primary rounded-lg", "lg:p-6")}>
-                                {index !== 0 && (
-                                    <div className={cn("absolute -top-4 left-1/2 transform -translate-x-1/2 bg-secondary py-1 px-2 rounded-lg text-sm text-white font-medium", "lg:text-base")}>
-                                        {index === 1 && "-19%"}
-                                        {index === 2 && "-25%"}
+                    <RadioGroup 
+                        defaultValue={product.variants.edges[0].node.title} 
+                        defaultChecked={selectedVariant === product.variants.edges[0].node.title} 
+                        className={cn("flex flex-col items-center justify-between gap-3 text-center", "lg:gap-6")}
+                        >
+                        {product.variants.edges.map((data, index) => {
+                            const discount = Number(data.node.price?.amount) - Number(data.node.compareAtPrice.amount);
+                            const parseDiscount = parseFloat(String(discount) ?? "").toFixed(0);
+                            return (
+                                <div key={index} className={cn("border-2 px-6 py-8 w-full flex items-center gap-4 lg:gap-6 rounded-lg cursor-pointer", "lg:p-6", selectedVariant !== data.node.title ? "bg-background border-secondary" : "bg-secondary/30 border-primary")} onClick={() => setSelectedVariant(data.node.title)}>
+                                    <RadioGroupItem 
+                                        value={data.node.title} 
+                                        id={data.node.title} 
+                                        checked={selectedVariant === data.node.title} 
+                                        onChange={(e) => setSelectedVariant(e.currentTarget.value)}
+                                    />
+                                    <div className="flex items-center justify-between w-full">
+                                        <div className={cn("flex flex-col items-start text-left")}>
+                                            <h4 className={cn("text-base font-bold", "lg:text-lg")}>{data.node.title}</h4>
+                                            <p className={cn("text-sm")}>Vous économisez {parseDiscount}€</p>
+                                        </div>
+                                        <div className={cn("flex flex-col items-end")}>
+                                            <h4 className={cn("font-semibold text-sm xs:text-base", "lg:text-lg")}>{parseFloat(data.node.price?.amount ?? "").toFixed(2)}€</h4>
+                                            <p className={cn("text-xs xs:text-sm font-light line-through", "lg:text-base")}>{parseFloat(data.node.compareAtPrice.amount ?? "").toFixed(2)}€</p>
+                                        </div>
                                     </div>
-                                )}
-                                <div className={cn("flex flex-col items-start")}>
-                                    <h4 className={cn("uppercase text-base font-bold", "lg:text-xl")}>{data.node.title}</h4>
-                                    <p className={cn("text-sm")}>Vous économisez {index === 0 ? "24€" : index === 1 ? "48€" : index === 2 && "72€"}</p>
                                 </div>
-                                <p className={cn("font-semibold text-sm", "lg:text-lg")}>{parseFloat(data.node.price?.amount ?? "").toFixed(2)}€</p>
-                            </div>
-                        ))}
-                    </div>
+                            )
+                        })}
+                    </RadioGroup>
                 </div>
                 <div className="space-y-4">
                     <AddToCart product={product} size="fullWidth" />
