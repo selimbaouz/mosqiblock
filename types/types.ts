@@ -93,6 +93,10 @@ export type Money = {
     merchandise: {
       id: string;
       title: string;
+      selectedOptions: {
+        name: string;
+        value: string;
+      }[];
       product: CartProduct;
     };
   };

@@ -56,18 +56,18 @@ export default async function ProductPage({ params }: { params: { handle: string
                 alt={product?.images.edges[1].node.altText}
                 width={product?.images.edges[1].node.width}
                 height={product?.images.edges[1].node.height}
+                inverse
             />
-            <div className={cn("w-full bg-gray-100")}>
-                <ImageText 
-                    title="Titre 1" 
-                    content="Pour une grossesse sereine, WeSecure est devenue l’indispensable compagnon de route de toute future maman soucieuse de sa sécurité et de celle de son bébé"
-                    src={product?.images.edges[2].node.originalSrc}
-                    alt={product?.images.edges[2].node.altText}
-                    width={product?.images.edges[2].node.width}
-                    height={product?.images.edges[2].node.height}
-                    inverse
-                    className='bg-gray-100'
-                />
+            <ImageText 
+                title="Titre 1" 
+                content="Pour une grossesse sereine, WeSecure est devenue l’indispensable compagnon de route de toute future maman soucieuse de sa sécurité et de celle de son bébé"
+                src={product?.images.edges[2].node.originalSrc}
+                alt={product?.images.edges[2].node.altText}
+                width={product?.images.edges[2].node.width}
+                height={product?.images.edges[2].node.height}
+            />
+            <div className='bg-gray-100 h-96'>
+
             </div>
             <ImageText 
                 title="Titre 1" 

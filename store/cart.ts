@@ -59,7 +59,7 @@ function createOrUpdateCartItem(
   product: Product
 ): CartItem {
   const quantity = existingItem ? existingItem.quantity + 1 : 1;
-  const totalAmount = calculateItemCost(quantity, product.priceRange.minVariantPrice.amount);
+  const totalAmount = calculateItemCost(quantity, variant.node.price?.amount ?? "");
 
   return {
     id: existingItem?.id,
@@ -67,12 +67,13 @@ function createOrUpdateCartItem(
     cost: {
       totalAmount: {
         amount: totalAmount,
-        currencyCode: product.priceRange.minVariantPrice.currencyCode
+        currencyCode: variant.node.price?.currencyCode ?? ""
       }
     },
     merchandise: {
       id: variant.node.id,
       title: variant.node.title,
+      selectedOptions: variant.node.selectedOptions!,
       product: {
         id: product.id,
         handle: product.handle,

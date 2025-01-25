@@ -18,7 +18,10 @@ interface ProductImageProps {
 }
 
 const ProductImage: FC<ProductImageProps> = ({product}) => {
-    const [selectedVariant, setSelectedVariant] = useState(product.variants.edges[0].node.title);
+    const [selectedVariant, setSelectedVariant] = useState({
+        title: product.variants.edges[0].node.title,
+        price: product.variants.edges[0].node.price?.amount
+    });
     const [startDelivery, endDelivery] = calculateDeliveryDates(5, 10);
 
     return (
@@ -51,26 +54,32 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             <div className={cn("space-y-10 py-4")}>    
                 <div className="space-y-8">
                     <div className="flex items-center justify-center">
-                        <div className="border-t border-primary flex-grow"></div>
+                        <div className="border-t-2 border-primary flex-grow"></div>
                         <h3 className={cn("text-sm font-medium px-4", "lg:text-base")}>Plus de voiture ?</h3>
-                        <div className="border-t border-primary flex-grow"></div>
+                        <div className="border-t-2 border-primary flex-grow"></div>
                     </div>
                     
                     <RadioGroup 
                         defaultValue={product.variants.edges[0].node.title} 
-                        defaultChecked={selectedVariant === product.variants.edges[0].node.title} 
+                        defaultChecked={selectedVariant.title === product.variants.edges[0].node.title} 
                         className={cn("flex flex-col items-center justify-between gap-3 text-center", "lg:gap-6")}
                         >
                         {product.variants.edges.map((data, index) => {
                             const discount = Number(data.node.price?.amount) - Number(data.node.compareAtPrice.amount);
                             const parseDiscount = parseFloat(String(discount) ?? "").toFixed(0);
                             return (
-                                <div key={index} className={cn("border-2 px-6 py-8 w-full flex items-center gap-4 lg:gap-6 rounded-lg cursor-pointer", "lg:p-6", selectedVariant !== data.node.title ? "bg-background border-secondary" : "bg-secondary/30 border-primary")} onClick={() => setSelectedVariant(data.node.title)}>
+                                <div key={index} className={cn("border-2 px-6 py-8 w-full flex items-center gap-4 lg:gap-6 rounded-lg cursor-pointer", "lg:p-6", selectedVariant.title !== data.node.title ? "bg-background border-gray-200" : "bg-secondary/30 border-primary")} onClick={() => setSelectedVariant({
+                                    title: data.node.title,
+                                    price: data.node.price?.amount
+                                })}>
                                     <RadioGroupItem 
                                         value={data.node.title} 
                                         id={data.node.title} 
-                                        checked={selectedVariant === data.node.title} 
-                                        onChange={(e) => setSelectedVariant(e.currentTarget.value)}
+                                        checked={selectedVariant.title === data.node.title} 
+                                        onChange={(e) => setSelectedVariant({
+                                            title: e.currentTarget.value,
+                                            price: data.node.price?.amount
+                                        })}
                                     />
                                     <div className="flex items-center justify-between w-full">
                                         <div className={cn("flex flex-col items-start text-left")}>
@@ -88,7 +97,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                     </RadioGroup>
                 </div>
                 <div className="space-y-4">
-                    <AddToCart product={product} size="fullWidth" />
+                    <AddToCart state={selectedVariant} product={product} size="fullWidth" />
                 </div>
                 <div className="py-5 px-4 bg-secondary/30 rounded-lg flex gap-5 items-center">
                     <Image src={MoneyBack} alt="Logo of HelloPurly" width={500} height={500} className={cn("size-20")} />

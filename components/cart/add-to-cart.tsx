@@ -1,6 +1,6 @@
 'use client';
 
-import { Product } from '@/types/types';
+import { Product, VariantsProduct } from '@/types/types';
 import { useFormState } from 'react-dom';
 import { addItem } from './actions';
 import { useCartStore, useOpenCartStore, useVisibleFloatingCartStore } from '@/store/cart';
@@ -9,8 +9,9 @@ import { useEffect, useRef } from 'react';
 
 interface SubmitButtonProps {
   size?: "fullWidth" | "initial";
+  price?: string;
 }
-function SubmitButton({size = "initial"}: SubmitButtonProps) {
+function SubmitButton({size = "initial", price}: SubmitButtonProps) {
   const buttonRef = useRef(null);
   const { setIsVisible } = useVisibleFloatingCartStore();
 
@@ -47,29 +48,41 @@ function SubmitButton({size = "initial"}: SubmitButtonProps) {
           "hover:bg-gradient-to-tr"
       )}
       >
-        <p className={cn("uppercase")}>Ajouter au panier</p>
+        <p className={cn("uppercase")}>Ajouter au panier - {parseFloat(price ?? "").toFixed(2)}€</p>
       </button>
   );
 }
 
-export function AddToCart({ product, size = "initial" }: { product: Product, size?: "fullWidth" | "initial", color?: "gradient" | "foreground" }) {
+export function AddToCart({ product, size = "initial", state }: { product: Product, size?: "fullWidth" | "initial", color?: "gradient" | "foreground", state?: {
+  title: string,
+  price?: string;
+} }) {
+  const variants = product.variants.edges;
   const { addCartItem } = useCartStore();
   const { setIsOpenCart } = useOpenCartStore();
   const { setIsOpenFloatingBar } = useVisibleFloatingCartStore();
   const [message, formAction] = useFormState(addItem, null);
-  const variantId = product.variants.edges[0].node.id;
-  const actionWithVariant = formAction.bind(null, variantId);
 
+  const variant = variants.find((variant: VariantsProduct) =>
+    variant.node.selectedOptions?.every((option) => option.value.toLocaleLowerCase() === state?.title.toLocaleLowerCase())
+  );
+  /* const variantId = variants[0].node.id;
+  const actionWithVariant = formAction.bind(null, variantId); */
+  const defaultVariantId = variants.length === 1 ? variants[0]?.node.id : undefined;
+  const selectedVariantId = variant?.node.id || defaultVariantId;
+  const actionWithVariant = formAction.bind(null, selectedVariantId);
+  const finalVariant = variants.find((variant) => variant.node.id === selectedVariantId)!;
+  
   return (
     <form
       action={async () => {
-        addCartItem(product.variants.edges[0], product);
+        addCartItem(finalVariant, product);
         await actionWithVariant();
         setIsOpenFloatingBar(false);
       }}
       onClick={() => setIsOpenCart(true)}
     >
-      <SubmitButton size={size} />
+      <SubmitButton size={size} price={state?.price} />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
       </p>

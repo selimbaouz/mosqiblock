@@ -276,7 +276,15 @@ export const checkProduct = [
 
 export const detailsProduct = [
   {
+    title: "Pourquoi Wemom ?",
+    content: "Vous avez 90 jours pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
+  },
+  {
     title: "90 Jours pour tester",
+    content: "Vous avez 90 jours pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
+  },
+  {
+    title: "Foire Aux Questions",
     content: "Vous avez 90 jours pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
   },
   {
