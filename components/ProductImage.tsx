@@ -68,7 +68,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                             const discount = Number(data.node.price?.amount) - Number(data.node.compareAtPrice.amount);
                             const parseDiscount = parseFloat(String(discount) ?? "").toFixed(0);
                             return (
-                                <div key={index} className={cn("border-2 px-6 py-8 w-full flex items-center gap-4 lg:gap-6 rounded-lg cursor-pointer", "lg:p-6", selectedVariant.title !== data.node.title ? "bg-background border-gray-200" : "bg-secondary/30 border-primary")} onClick={() => setSelectedVariant({
+                                <div key={index} className={cn("border-2 px-6 py-8 w-full flex items-center gap-4 lg:gap-6 rounded-lg cursor-pointer", "lg:p-6", selectedVariant.title !== data.node.title ? "bg-background border-gray-200 dark:border-gray-200/10" : "bg-secondary/30 border-primary")} onClick={() => setSelectedVariant({
                                     title: data.node.title,
                                     price: data.node.price?.amount
                                 })}>

@@ -23,11 +23,12 @@ export function DeleteItemButton({
         optimisticUpdate(merchandiseId, 'delete');
         await actionWithVariant();
       }}
+      className='rounded-lg bg-gradient-to-b from-primary to-secondary'
     >
       <button
         type="submit"
         aria-label="Remove cart item"
-        className="flex h-[24px] w-[24px] items-center justify-center rounded-full bg-gradient-to-b from-primary to-secondary p-1"
+        className="flex h-[24px] w-[24px] items-center justify-center"
       >
         <CgClose className="mx-[1px] h-4 w-4 text-white" />
       </button>

@@ -18,12 +18,12 @@ export default async function ProductPage({ params }: { params: { handle: string
     if(!product) {
         redirect('/')
     }
-    
+
     return (
         <div className='relative'>
             <div className="sticky top-0 w-full z-50">
                 <StickyBar />
-                <NavBar menu={menu} />
+                <NavBar menu={menu} product={product} />
             </div>
             <div className='bg-secondary/0 lg:py-10'>
                 <section className={cn(

@@ -8,6 +8,9 @@ interface CartState {
   cart: Cart;
   addCartItem: (variant: VariantsProduct ,product: Product) => void;
   updateCartItem: (merchandiseId: string, updateType: UpdateType) => void;
+  clearCart: () => void;
+  timeLeft: number; 
+  setTimeLeft: (time: number) => void;
 }
 
 interface OpenCartState {
@@ -134,6 +137,16 @@ export const useCartStore = create<CartState>()(
   persist(
     (set) => ({
       cart: createEmptyCart(),
+      timeLeft: 10 * 60, 
+      setTimeLeft: (time) =>
+        set(() => ({
+          timeLeft: time,
+        })),
+        clearCart: () =>
+          set(() => ({
+            cart: createEmptyCart(), 
+            timeLeft: 0,
+          })),
       addCartItem: (variant, product) =>
         set((state) => {
           const currentCart = state.cart || createEmptyCart();
@@ -148,7 +161,10 @@ export const useCartStore = create<CartState>()(
               )
             : [...currentCart.lines, updatedItem];
 
-          return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
+          return { 
+            cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines },
+            timeLeft: state.timeLeft > 0 ? state.timeLeft : 10 * 60, 
+          };
         }),
 
       updateCartItem: (merchandiseId, updateType) =>
@@ -175,7 +191,7 @@ export const useCartStore = create<CartState>()(
           }
 
           return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
-        })
+        }),
     }),
     {
       name: 'cart-storage',

@@ -1,18 +1,20 @@
 import SideBar from "../SideBar";
 import NavBarMobile from "./NavBarMobile";
 import NavBarWeb from "./NavBarWeb";
-import CardBar from "../CardBar";
-import { Menu } from "@/types/types";
+import { Menu, Product } from "@/types/types";
 import { cn } from "@/lib/utils";
+import Cart from "@/components/cart/Cart";
 
 interface NavBarProps {
     menu: Menu[];
     isHome?: boolean;
+    product?: Product;
 }
 export default function NavBar(
     {
         menu,
-        isHome
+        isHome,
+        product
     }: NavBarProps) {
 
     return (
@@ -21,7 +23,7 @@ export default function NavBar(
             <NavBarWeb menu={menu} isHome={isHome} />
 
             {/* Panier */}
-            <CardBar />
+            <Cart product={product} />
             {/* Liens */}
             <SideBar menu={menu} />
         </nav>
