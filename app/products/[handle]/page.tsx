@@ -1,6 +1,4 @@
 import ProductImage from '@/components/ProductImage';
-import TrustFeatures from '@/components/TrustFeatures';
-import { benefitsFeelingData } from '@/data';
 import { cn } from '@/lib/utils';
 import ImagesGallery from '@/components/ImagesGallery';
 import { redirect } from 'next/navigation';
@@ -8,6 +6,7 @@ import { getHandleOfProduct, getMenu } from '@/data/shopify';
 import StickyBar from '@/components/navigation/StickyBar';
 import NavBar from '@/components/navigation/NavBar';
 import ImageText from '@/components/ImageText';
+import Mode from '@/components/mode';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     
@@ -38,19 +37,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                     </div>
                 </section>
             </div>
-            <section className={cn("px-4 bg-gradient-to-b from-primary to-secondary w-full relative py-10 space-y-6 text-center mx-auto", "lg:py-20 lg:space-y-10 lg:px-0")}>
-                <h3 className={cn("text-2xl font-bold text-white", "lg:text-3xl", "xl:text-4xl")}>Nos avantages</h3>
-                <p className={cn("text-sm lg:text-lg max-w-4xl mx-auto text-white")}>Chez Wemom, nous utilisons uniquement des matériaux de haute qualité, sélectionnés pour la sécurité, le confort et la protection des femmes enceintes pendant tout le trajet.</p>
-                <div className={cn("py-4 text-background flex flex-col gap-2 items-center justify-center font-medium max-w-screen-xl mx-auto", "grid grid-cols-2", "lg:grid-cols-4")}>
-                    {benefitsFeelingData.map((data, index) => (
-                        <TrustFeatures
-                        key={index}
-                        icon={data.icon}
-                        title={data.title}
-                        />
-                    ))}
-                </div>
-            </section>
+            <Mode />
             {/* <section className={cn("mx-auto max-w-screen-lg space-y-10 overflow-auto", "lg:py-20")}>
                 <h3 className={cn("text-xl lg:text-3xl font-bold text-center")}>Pour une grossesse sereine</h3>
                 <div className={cn("flex justify-center items-start flex-nowraph-full gap-4")}>
@@ -111,14 +98,6 @@ export default async function ProductPage({ params }: { params: { handle: string
             <div className='bg-gray-100 h-96'>
 
             </div>
-            <ImageText 
-                title="Titre 1" 
-                content="Pour une grossesse sereine, WeSecure est devenue l’indispensable compagnon de route de toute future maman soucieuse de sa sécurité et de celle de son bébé"
-                src={product?.images.edges[3].node.originalSrc}
-                alt={product?.images.edges[3].node.altText}
-                width={product?.images.edges[3].node.width}
-                height={product?.images.edges[3].node.height}
-            />
         </div>
     );
 };

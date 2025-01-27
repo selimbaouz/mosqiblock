@@ -1,19 +1,11 @@
-import { BiWorld } from "react-icons/bi";
-import { PiMoneyWavy } from "react-icons/pi";
-import { IoCloseOutline, IoWaterOutline } from "react-icons/io5";
-import { MdOutlineFlashOff, MdVerified } from "react-icons/md";
-import { IoManOutline, IoWomanOutline } from "react-icons/io5";
+import { MdVerified } from "react-icons/md";
 import { FaCheck, FaTruck } from "react-icons/fa6";
-import { BsWater } from "react-icons/bs";
-import { MdElectricBolt } from "react-icons/md";
-import { PiPlugsConnectedFill } from "react-icons/pi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
 import { GiFrance } from "react-icons/gi";
-import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
+import { IoIosPeople } from "react-icons/io";
 import { HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
-import { FiCheckCircle, FiTarget, FiTool } from "react-icons/fi";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
 import SophieD from "@/public/images/avis/sophieD.webp";
 import ClaudiaR from "@/public/images/avis/claudiaR.webp";
@@ -24,6 +16,12 @@ import MarieL from "@/public/images/avis/marieL.webp";
 import PhillipeG from "@/public/images/avis/phillippeG.webp";
 import { FaBurn, FaUndo } from "react-icons/fa";
 import { GoHeartFill } from "react-icons/go";
+import Benefits from "@/components/mode/Benefits";
+import Utilisation from "@/components/mode/Utilisation";
+import Step1 from "@/public/images/step1.avif";
+import Step2 from "@/public/images/step2.avif";
+import Step3 from "@/public/images/step3.avif";
+import Step4 from "@/public/images/step4.avif";
 
 export const bestReviewsData = [
   {
@@ -59,36 +57,6 @@ export const bestReviewsData = [
       rating: 5,
       content: "Un parfum envoûtant qui sublime ma présence avec élégance et luxe. Une véritable signature olfactive."
   },
-]
-
-export const statsData = [
-  {
-      title: "80%", content: "80% de papier en moins"
-  },
-  {
-      title: "150€", content: "+150€ d’économies par an"
-  },
-  {
-      title: "319", content: "+319 d’utilisateurs actifs"
-  },
-]
-
-export const benefitsData = [
-  {
-    icon: IoWaterOutline, 
-    title: "Hygiénique", 
-    content: "Plus doux qu'un papier, il vous offre une fraîcheur quotidienne, comme une brise matinale pour votre derrière."
-  },
-  {
-    icon: PiMoneyWavy, 
-    title: "Économique", 
-    content: "Économisez jusqu'à 150 € par an en utilisant 80 % de papier toilette en moins. Moins de dépenses, plus de confort, et un portefeuille qui sourit."
-  },
-  {
-    icon: BiWorld, 
-    title: "Écologique", 
-    content: "Sauvez la planète en économisant 1500L d'eau chaque année ! Moins de papier, moins de déforestation, et un monde plus doux."
-  }
 ]
 
 export const benefitsFeelingData = [
@@ -133,88 +101,84 @@ export const trustsData = [
   }
 ]
 
-export const selectionModesData = [
+export const selectModesData = [
   {
-      title: "Masculin", icon: IoManOutline
+      title: "Avantages"
   },
   {
-      title: "Féminin", icon: IoWomanOutline
+      title: "Utilisation"
   }
 ]
 
-export const selectionWhyData = [
-  {
-      title: "Jets d'eau précis", icon: FiTarget
-  },
-  {
-      title: "Zéro éléctricité", icon: MdOutlineFlashOff
-  },
-  {
-      title: "Installation facile", icon: FiTool
-  },
-  {
-      title: "100% compatible", icon: FiCheckCircle
-  }
-]
-
-export const essentialsData = [
-  {
-    icon: BsWater,
-    title: "Jets d’eau Précis",
-  },
-  {
-    icon: MdElectricBolt,
-    title: "Zéro éléctricité",
-  },
-  {
-    icon: FaCheck,
-    title: "Installation facile",
-  },
-  {
-    icon: PiPlugsConnectedFill,
-    title: "Comptabilité totale",
-  },
-]
-
-
-export const modeSelected = (selected: number) => {
+export const productModeSelected = (selected: number) => {
   switch (selected) {
   case 0:
     return {
-      content: "Offrez-vous un soin personnalisé, comme un rasoir de barbier qui a un faible pour la douceur."
+      content: <Benefits />
     };
   case 1:
     return {
-      content: "Une hygiène douce et adaptée pendant vos règles, pour une propreté apaisante qui vous fait sourire."
+      content: <Utilisation />
     };
   default:
     return {
-      content: "Offrez-vous un soin personnalisé, comme un rasoir de barbier qui a un faible pour la douceur."
+      content: <Benefits />
     };
   }
 };
 
-export const whySelected = (selected: number) => {
+export const selectInstructionData = [
+  {
+    title: "Etape 1",
+    imgSrc: Step1.src,
+    altSrc: "First image of instruction",
+    width: Step1.width,
+    height: Step1.height
+  },
+  {
+    title: "Etape 2",
+    imgSrc: Step2.src,
+    altSrc: "Second image of instruction",
+    width: Step2.width,
+    height: Step2.height
+  },
+  {
+    title: "Etape 3",
+    imgSrc: Step3.src,
+    altSrc: "Third image of instruction",
+    width: Step3.width,
+    height: Step3.height
+  },
+  {
+    title: "Etape 4",
+    imgSrc: Step4.src,
+    altSrc: "Four image of instruction",
+    width: Step4.width,
+    height: Step4.height
+  }
+]
+
+export const productInstructionSelected = (selected: number) => {
   switch (selected) {
   case 0:
     return {
-      content: "Pour une propreté si efficace, que même votre derrière en redemandera !"
+      content: "La ceinture de l'ajusteur doit être tirée à travers l'espace entre le siège et le dossier"
     };
   case 1:
     return {
-      content: "Fonctionne sans électricité, parce que les économies, c'est mieux quand ça coule à flots."
+      content: "Ensuite, la ceinture doit être tirée sous le siège, en veillant à ce que la ceinture ne soit pas tordue"
     };
   case 2:
     return {
-      content: "Installation rapide en 10 minutes, sans travaux, même votre voisin bricoleur sera jaloux."
+      content: "L'extrémité de la ceinture doit être bouclée à travers les trous supérieur et inférieur de la boucle, respectivement"
     };
   case 3:
     return {
-      content: "Compatible avec toutes les toilettes standards, pour que tout le monde en profite."
+      content: "La ceinture doit être serrée fermement en la tirant vers le bas"
     };
   default:
     return {
-      content: "Pour une propreté si efficace, que même votre derrière en redemandera !"
+      content: "La ceinture de l'ajusteur doit être tirée à travers l'espace entre le siège et le dossier"
     };
   }
 };
@@ -414,74 +378,3 @@ export const beneficesProductData = [
     title: "Retours Gratuits",
   },
 ];
-
-export const comparaisonVariantSelected = (variant: string) => {
-  switch (variant) {
-  case "whitout":
-    return {
-      title: "Avec le papier toilette", 
-      lists: [
-        {
-          content: "Frottez, il en reste toujours",
-          icon: IoCloseOutline,
-        },
-        {
-          content: "Des rouleaux à la pelle",
-          icon: IoCloseOutline,
-        },
-        {
-          content: "Du papier rêche comme du sable",
-          icon: IoCloseOutline,
-        },
-        {
-          content: "Des arbres en larmes",
-          icon: IoCloseOutline,
-        }
-      ]
-    }
-  case "with":
-    return {
-      title: "Avec HelloPurly",
-      lists: [
-        {
-          content: "Hygiène impeccable",
-          icon: IoMdCheckmark, 
-        },
-        {
-          content: "80 % de papier en moins",
-          icon: IoMdCheckmark, 
-        },
-        {
-          content: "Un jet doux, comme un câlin",
-          icon: IoMdCheckmark, 
-        },
-        {
-          content: "Moins de papier, plus de forêts",
-          icon: IoMdCheckmark, 
-        }
-      ]
-    }
-  default:
-    return {
-      title: "Avec le papier toilette", 
-      lists: [
-        {
-          content: "Frottez, il en reste toujours",
-          icon: IoCloseOutline,
-        },
-        {
-          content: "Des rouleaux à la pelle",
-          icon: IoCloseOutline,
-        },
-        {
-          content: "Du papier rêche comme du sable",
-          icon: IoCloseOutline,
-        },
-        {
-          content: "Des arbres en deuil",
-          icon: IoCloseOutline,
-        }
-      ]
-    }
-  }
-};

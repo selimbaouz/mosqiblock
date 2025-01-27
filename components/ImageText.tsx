@@ -24,12 +24,12 @@ const ImageText: FC<ImageTextProps> = ({
     inverse
 }) => {
     return (
-        <section className={cn("w-full bg-background max-w-screen-xl mx-auto flex flex-col gap-4", "lg:p-4 lg:py-20 lg:grid lg:grid-cols-2 lg:grid-auto-flow-dense lg:gap-4 lg:items-center lg:justify-between", className)}>
+        <section className={cn("p-4 bg-background max-w-screen-xl mx-auto flex flex-col gap-4", "lg:py-20 lg:grid lg:grid-cols-2 lg:grid-auto-flow-dense lg:gap-4 lg:items-center lg:justify-between", className)}>
             <div className={cn(inverse ? "lg:order-2" : "lg:order-1")}>
                 <ImageLoader
                     src={src ?? ""}
                     alt={alt}
-                    className={cn('bg-white h-[20rem] mx-auto w-full', "xs:h-[26rem]", "md:h-[40rem]", "lg:rounded-2xl", 'xl:rounded-3xl')}
+                    className={cn('bg-white h-[20rem] mx-auto w-full rounded-2xl', "xs:h-[26rem]", "md:h-[40rem]")}
                     width={width}
                     height={height}
                 />
