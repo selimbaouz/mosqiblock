@@ -33,7 +33,6 @@ export default async function LegalPage({ params }: { params: { page: string } }
             <section className="relative pt-10">
               <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
               <Footer
-                menu={menu}
                 footerMenu={footerMenu}
               />
             </section>

@@ -14,7 +14,7 @@ const Mode = () => {
                     <h3 
                         key={index} 
                         onClick={() => setSelected(index)}
-                        className={cn("cursor-pointer text-2xl font-bold", "lg:text-3xl", "xl:text-4xl", selected === index ? "text-white" : "text-white/50")}
+                        className={cn("transition-opacity cursor-pointer text-2xl font-bold", "lg:text-3xl", "xl:text-4xl", selected === index ? "text-white" : "text-white/50")}
                     >{data.title}</h3>
                 ))}
             </div>

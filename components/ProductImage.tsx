@@ -7,7 +7,7 @@ import { Product } from "@/types/types";
 import { FC, useState } from "react";
 import { AddToCart } from "./cart/add-to-cart";
 import Link from "next/link";
-import { FaCircleCheck } from "react-icons/fa6";
+import { FaTruck } from "react-icons/fa6";
 import MoneyBack from "@/public/images/MoneyBack.png"
 import Image from "next/image";
 import { BestReviews } from "./BestReviews";
@@ -37,7 +37,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                 {product.title}
             </h3>
             <div className={cn("flex items-center pb-2 gap-2 lg:pb-4")}>
-                <FaCircleCheck className="text-sm text-primary" />
+                <FaTruck className="text-base text-secondary" />
                 <p className="text-sm">Livraison entre le <strong>{startDelivery}</strong> et le <strong>{endDelivery}</strong></p>
             </div>
             <p className={cn("text-sm", "sm:text-base", "xl:text-lg")}>Pour une grossesse sereine, WeSecure est devenue l’indispensable compagnon de route de toute future maman soucieuse de sa sécurité et de celle de son bébé</p>
@@ -85,6 +85,9 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                                         <div className={cn("flex flex-col items-start text-left")}>
                                             <h4 className={cn("text-base font-bold", "lg:text-lg")}>{data.node.title}</h4>
                                             <p className={cn("text-sm")}>Vous économisez {parseDiscount}€</p>
+                                            {index !== 0 && (
+                                                <div className="bg-primary py-1 px-2 mt-2 text-white text-xs rounded-md">Livraison gratuite</div>
+                                            )}
                                         </div>
                                         <div className={cn("flex flex-col items-end")}>
                                             <h4 className={cn("font-semibold text-sm xs:text-base", "lg:text-lg")}>{parseFloat(data.node.price?.amount ?? "").toFixed(2)}€</h4>
@@ -109,10 +112,10 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                 <Accordion type="single" collapsible className="w-full">
                     {detailsProduct.map((data, index) => (
                         <AccordionItem key={index} value={`item-${index}`} className={cn("border-foreground py-1 whitespace-pre-line")}>
-                            <AccordionTrigger className={cn("text-sm", "lg:text-base")}>
+                            <AccordionTrigger className={cn("text-sm", "xs:text-base")}>
                                 {data.title}
                             </AccordionTrigger>
-                            <AccordionContent className={cn("text-base py-6")}>
+                            <AccordionContent className={cn("text-sm py-6", "lg:text-base")}>
                                 {data.content}
                             </AccordionContent>
                         </AccordionItem>

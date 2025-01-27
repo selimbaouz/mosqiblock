@@ -7,12 +7,14 @@ import StickyBar from '@/components/navigation/StickyBar';
 import NavBar from '@/components/navigation/NavBar';
 import ImageText from '@/components/ImageText';
 import Mode from '@/components/mode';
+import FAQ from '@/components/FAQ';
+import Footer from '@/components/Footer';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     
     const product = await getHandleOfProduct(params.handle);
     const menu = await getMenu("main-menu");
-    /* const footerMenu = await getMenu("footer"); */
+    const footerMenu = await getMenu("footer");
     
     if(!product) {
         redirect('/')
@@ -98,6 +100,8 @@ export default async function ProductPage({ params }: { params: { handle: string
             <div className='bg-gray-100 h-96'>
 
             </div>
+            <FAQ />
+            <Footer footerMenu={footerMenu} />
         </div>
     );
 };
