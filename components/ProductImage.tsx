@@ -33,7 +33,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                     319+ Clients Satisfaits
                 </Link>
             </div>
-            <h3 className={cn("text-left text-2xl font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl")}>
+            <h3 className={cn("text-left text-2xl font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
                 {product.title}
             </h3>
             <div className={cn("flex items-center pb-2 gap-2 lg:pb-4")}>

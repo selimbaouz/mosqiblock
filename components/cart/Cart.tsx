@@ -15,9 +15,8 @@ import { Cross2Icon } from '@radix-ui/react-icons';
 import { MdLock } from 'react-icons/md';
 import CartTimer from './cart-timer';
 import FreeShippingBar from './FreeShippingBar';
-import { Product } from '@/types/types';
 
-export default function Cart({product}: {product?: Product}) {
+export default function Cart() {
   const { timeLeft, cart, updateCartItem } = useCartStore();
   const {isOpenCart, setIsOpenCart} = useOpenCartStore();
   const quantityRef = useRef(cart?.totalQuantity);
@@ -79,7 +78,7 @@ export default function Cart({product}: {product?: Product}) {
           </div>
         )}
         <div className='py-6 text-sm flex flex-col justify-center text-center px-4 border-b'>
-          <FreeShippingBar product={product}/>
+          <FreeShippingBar timeForFreeDelivery={50}/>
         </div>
         <div className={cn("bg-background text-foreground h-auto flex-grow overflow-hidden")}>
           {!cart || cart.lines.length === 0 ? (

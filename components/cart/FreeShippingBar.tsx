@@ -1,23 +1,18 @@
 "use client";
 
-import { Product } from "@/types/types";
 import { useCartStore } from "../../store/cart"; // Assurez-vous que l'import est correct
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 
 interface FreeShippingBarProps {
-    product?: Product; 
+    timeForFreeDelivery: number; 
   }
 
-const FreeShippingBar: FC<FreeShippingBarProps> = ({ product }) => {
+const FreeShippingBar: FC<FreeShippingBarProps> = ({ timeForFreeDelivery }) => {
   const {cart} = useCartStore();
 
-  if (!product) return null;
-
-  const secondVariant = product.variants.edges[1];
-
   // Définir les constantes
-  const BUNDLE_THRESHOLD = parseFloat(secondVariant?.node.price?.amount ?? "0"); // Montant requis pour la livraison gratuite (bundle)
+  const BUNDLE_THRESHOLD = timeForFreeDelivery; // Montant requis pour la livraison gratuite (bundle)
   const totalAmount = parseFloat(cart.cost.totalAmount.amount); // Montant total du panier
 
   // Calculer combien il manque pour atteindre la livraison gratuite

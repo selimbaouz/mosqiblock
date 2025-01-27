@@ -94,18 +94,23 @@ export const benefitsData = [
 export const benefitsFeelingData = [
   {
     icon: HiOutlineShieldCheck, 
-    title: "Confiance", 
-    content: "Dites adieu aux doutes après chaque passage aux toilettes ! Avec notre bidet, vous êtes frais comme un gardon et prêt à affronter la journée, sans un regard en arrière."
+    title: "Confort", 
+    content: "Une fois fixé, il reste fermement en place et s'adapte à tous les sièges auto, quelle que soit leur forme."
   },
   {
     icon: HiOutlineSparkles, 
-    title: "Confort", 
-    content: "Oubliez le papier irritant ! Avec un jet doux et ajustable, profitez du confort ultime, pour un traitement royal de votre peau à chaque passage."
+    title: "Efficacité", 
+    content: "Diminue le risque de complications graves lors d'accidents de 82,7% comparé aux ceintures standard."
   },
   {
     icon: HiOutlineHeart, 
-    title: "Plaisir", 
-    content: "Qui aurait imaginé que le trône pouvait être un endroit agréable ? Notre bidet transforme chaque visite aux toilettes en un moment de détente, tout en vous laissant impeccable."
+    title: "Protection", 
+    content: "Design innovant répartissant la pression sur les cuisses, pour une protection et un confort optimal."
+  },
+  {
+    icon: HiOutlineHeart, 
+    title: "Protection", 
+    content: "Design innovant répartissant la pression sur les cuisses, pour une protection et un confort optimal."
   }
 ]
 
