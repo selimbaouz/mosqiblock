@@ -30,8 +30,8 @@ const CartTimer = () => {
   };
 
   return (
-    <p className="text-sm text-white">
-      🔥 Votre panier est réservé pour {formatTime(timeLeft)} minutes !
+    <p className="text-sm text-primary font-bold">
+      🔥 Your basket is reserved for {formatTime(timeLeft)} minutes!
     </p>
   );
 };

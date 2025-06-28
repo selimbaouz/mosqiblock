@@ -62,10 +62,10 @@ export default function Cart() {
 
   return (
     <Sheet open={isOpenCart} onOpenChange={setIsOpenCart}>
-      <SheetContent side="right" className="h-full w-full">
-        <SheetHeader className="border-b">
+      <SheetContent side="right" className="h-full w-full z-[200] bg-white">
+        <SheetHeader className="border-b border-secondary">
           <div className='flex justify-between items-center p-4'>
-            <SheetTitle className="text-foreground text-lg font-medium uppercase">Votre Panier</SheetTitle>
+            <SheetTitle className="text-foreground text-lg font-medium uppercase">Your Shopping Cart</SheetTitle>
             <SheetClose>
               <Cross2Icon className="size-5" />
               <span className="sr-only">Close</span>
@@ -73,18 +73,18 @@ export default function Cart() {
           </div>
         </SheetHeader>
         {timeLeft > 0 && (
-          <div className={cn("w-full py-3 bg-gradient-to-b from-primary to-secondary flex justify-center")}>
+          <div className={cn("w-full py-3 bg-secondary flex justify-center")}>
             <CartTimer />
           </div>
         )}
-        <div className='py-6 text-sm flex flex-col justify-center text-center px-4 border-b'>
-          <FreeShippingBar timeForFreeDelivery={50}/>
+        <div className='py-6 text-sm flex flex-col justify-center text-center px-4 border-b border-secondary'>
+          <FreeShippingBar />
         </div>
         <div className={cn("bg-background text-foreground h-auto flex-grow overflow-hidden")}>
           {!cart || cart.lines.length === 0 ? (
               <div className="flex w-full flex-col items-center justify-center pt-14">
                 <ShoppingCartIcon className="size-14" />
-                <p className="mt-6 text-center text-lg font-medium">Votre panier est vide.</p>
+                <p className="mt-6 text-center text-lg font-medium">Your cart is empty.</p>
               </div>
           ) : (
               <div className='h-[92%] flex flex-col justify-between'>
@@ -95,7 +95,7 @@ export default function Cart() {
                   ).map((item, i) => {
                     const amount = Number(item.cost.totalAmount.amount);
                     return (
-                      <li key={i} className="w-full border-b">
+                      <li key={i} className="w-full border-b border-secondary">
                         <div className='flex w-full justify-between gap-1 items-stretch py-6 px-4'>
                           <Image src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={500} height={500} className="size-20 max-w-20 lg:h-32 lg:w-32 lg:max-w-32 rounded-lg object-fill" />
                           <div className='ml-4 w-full space-y-4'>
@@ -103,7 +103,7 @@ export default function Cart() {
                               <p className="text-sm font-bold">{item.merchandise.product.title}</p>
                               <p className='text-sm'>{item.merchandise.title}</p>
                             </div>
-                            <div className="flex items-center border w-max">
+                            <div className="flex items-center border border-secondary w-max">
                               <EditItemQuantityButton
                                   item={item}
                                   type="minus"
@@ -134,10 +134,10 @@ export default function Cart() {
           )}
           </div>
           <div className='absolute bottom-0 pb-6 w-full'>
-            <div className={cn("w-full py-3 bg-secondary/30 flex justify-center")}>
-              <p className='text-primary uppercase font-semibold text-xs dark:text-white'>Garantie satisfaction de 90 jours</p>
+            <div className={cn("w-full py-3 bg-secondary flex justify-center")}>
+              <p className='text-primary uppercase font-semibold text-xs'>60-day satisfaction guarantee</p>
             </div>
-            <div className="z-50 border-t p-4 pt-6 flex items-center justify-between border-neutral-200 dark:border-neutral-700">
+            <div className="z-50 border-t p-4 pt-6 flex items-center justify-between border-secondary">
                 <p className={cn("uppercase font-semibold")}>Total</p>
                 <span className='ml-1 inline'>
                     <Price
@@ -160,12 +160,12 @@ export default function Cart() {
 function CheckoutButton({isLoading}: {isLoading: boolean}) {
     return (
       <button
-        className="bg-gradient-to-b from-primary to-secondary rounded-lg text-white uppercase py-[18px] w-full flex items-center justify-around text-sm font-semibold"
+        className="bg-primary rounded-lg text-white uppercase py-[18px] w-full flex items-center justify-around text-sm font-semibold"
         type='submit'
         disabled={isLoading}
       >
-        <MdLock className={cn("text-white flex justify-start text-lg")} />
-        {isLoading ? <PulseLoader size={7} color="white" /> : "Passez à l'étape suivante"}
+        <MdLock className={cn("text-white flex justify-start text-lg uppercase")} />
+        {isLoading ? <PulseLoader size={7} color="white" /> : "Protect my family now"}
         <div />
       </button>
     );

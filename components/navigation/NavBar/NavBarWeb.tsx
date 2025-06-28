@@ -11,7 +11,7 @@ interface NavBarWebProps {
     menu: Menu[];
 }
 const NavBarWeb: FC<NavBarWebProps> = ({ menu}) => {
-    const classLink = "font-medium text-base text-foreground lg:text-sm xl:text-base hover:text-primary hover:font-bold";
+    const classLink = "z-50 font-medium text-base text-foreground lg:text-sm xl:text-base hover:text-primary hover:font-bold";
     const { cart } = useCartStore();
     const { setIsOpenCart } = useOpenCartStore();
     const pathname = usePathname();

@@ -39,7 +39,7 @@ const Footer = ({
                         <div className={cn("space-y-4")}>
                             <h6 className={cn("lg:text-xl font-medium")}>Contact</h6>
                             <div className="leading-relaxed space-y-2 text-sm">
-                                <Link href="mailto:mosqiblock@gmail.com" className={cn(classLink)}>tailwindliquid@gmail.com</Link>
+                                <Link href="mailto:mosqiblock@gmail.com" className={cn(classLink)}>mosqiblock@gmail.com</Link>
                                 <p>Available 24/7</p>
                             </div>
                         </div>

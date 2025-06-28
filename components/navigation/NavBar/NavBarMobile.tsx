@@ -13,7 +13,7 @@ const NavBarMobile = () => {
     const { setIsOpenSidebar } = useOpenSidebarStore();
     
     return (
-        <div className={cn("px-3 py-2 flex justify-between items-center max-w-screen-2xl mx-auto", "md:p-4", "lg:hidden")}>
+        <div className={cn("z-50 px-3 py-2 flex justify-between items-center max-w-screen-2xl mx-auto", "md:p-4", "lg:hidden")}>
             <div 
                 onClick={() => setIsOpenSidebar(true)}
             >
@@ -29,10 +29,10 @@ const NavBarMobile = () => {
                     onClick={() => setIsOpenCart(true)}
                 >
                     <RiShoppingBag3Fill
-                        className={cn("text-3xl text-foreground group-hover:text-secondary transition-all ease-in-out hover:scale-110", "sm:text-3xl", "lg:text-2xl", "xl:text-3xl")}  
+                        className={cn("text-3xl text-foreground group-hover:text-primary transition-all ease-in-out hover:scale-110", "sm:text-3xl", "lg:text-2xl", "xl:text-3xl")}  
                     />
                     {cart.totalQuantity ? (
-                        <div className="absolute right-0 top-0 -mr-1 -mt-1 size-5 flex justify-center items-center rounded-full bg-secondary text-[11px] font-medium text-white">
+                        <div className="absolute right-0 top-0 -mr-1 -mt-1 size-5 flex justify-center items-center rounded-full bg-primary text-[11px] font-medium text-white">
                             {cart.totalQuantity}
                         </div>
                     ) : null}

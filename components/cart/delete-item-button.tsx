@@ -23,7 +23,7 @@ export function DeleteItemButton({
         optimisticUpdate(merchandiseId, 'delete');
         await actionWithVariant();
       }}
-      className='rounded-lg bg-gradient-to-b from-primary to-secondary'
+      className='rounded-lg bg-primary'
     >
       <button
         type="submit"

@@ -14,7 +14,7 @@ export default function NavBar(
     }: NavBarProps) {
 
     return (
-        <nav className={cn("z-[100] bg-background")}>
+        <nav className={cn("z-[170] bg-background")}>
             <NavBarMobile />
             <NavBarWeb menu={menu} />
 

@@ -327,6 +327,21 @@ export const stacksData = [
   },
 ];
 
+export const annoucementData = [
+  {
+    icon: "🦟",
+    title: "Chemical-free",
+  },
+  {
+    icon: "🔋",
+    title: "USB Rechargeable",
+  },
+  {
+    icon: "💤",
+    title: "Ultra-Quiet",
+  },
+];
+
 export const BenefitsData = [
   {
     icon: GiSpeakerOff,
