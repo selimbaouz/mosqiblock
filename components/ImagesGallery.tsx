@@ -43,15 +43,15 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
   const scrollTo = (idx: number) => emblaApi && emblaApi.scrollTo(idx);
 
   return (
-    <div className={cn("relative w-full flex flex-col gap-3", "lg:sticky lg:top-44")}>
+    <div className={cn("relative w-full flex flex-col gap-3")}>
       {/* Carousel */}
       <div className="relative">
-        <div ref={emblaRef} className="overflow-hidden rounded-3xl">
+        <div ref={emblaRef} className="overflow-hidden rounded-3xl w-full">
           <div className="flex">
             {images.map((img, idx) => (
               <div
                 className="flex-shrink-0 w-full"
-                style={{ minWidth: "100%" }}
+                style={{ minWidth: "100%", minHeight: "100%" }}
                 key={idx}
               >
                 <ImageLoader
@@ -59,7 +59,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
                   alt={img.node.altText || "Image produit"}
                   width={img.node.width}
                   height={img.node.height}
-                  className={cn('bg-white h-[20rem] mx-auto w-full rounded-3xl object-contain', "xs:h-[24rem]", "md:h-[40rem]", "lg:h-auto")}
+                  className={cn('bg-white h-[20rem] mx-auto w-full rounded-3xl object-fill', "xs:h-[24rem]", "md:h-[40rem]", "lg:h-auto")}
                   draggable={false}
                   priority={idx === 0}
                 />

@@ -30,7 +30,7 @@ const MosquitoesKiller = () => {
                   <h3 className="text-xl xl:text-3xl font-bold text-primary">
                       The Chilling Truth
                   </h3>
-                  <p className={cn("text-[13px] leading-6", "xl:text-base")}>
+                  <p className={cn("text-sm leading-6", "xl:text-base")}>
                       Every year, <strong>mosquitoes silently kill more people</strong> than any other animal on Earth. They are not just an annoyance—they are a <strong>deadly, global threat</strong>. While you read this, <strong>someone, somewhere, is being infected</strong> with a mosquito-borne disease that could change their life forever. This is not just a problem for tropical countries: <strong>the risk is everywhere</strong>. <strong>No one is truly safe</strong>.
                   </p>
                   <div className={cn("space-y-4 py-6", "xl:grid xl:grid-cols-2 xl:gap-2 xl:items-start xl:space-y-0 lx:py-0")}>
@@ -75,7 +75,7 @@ const MosquitoesKiller = () => {
                   <h3 className="text-xl xl:text-3xl font-bold text-primary">
                       Don’t Wait for Tragedy to Strike.
                   </h3>
-                  <p className={cn("text-[13px] leading-6 pb-4", "xl:text-base")}>
+                  <p className={cn("text-sm leading-6 pb-4", "xl:text-base")}>
                       Mosquitoes are a daily, <strong>silent pandemic</strong>—one that doesn’t make headlines, but <strong>claims lives every single day</strong>. <strong>No home, no child, no family is immune.</strong> Protect your loved ones with <strong>MosqiBlock</strong>—your shield against the world’s deadliest animal. Because <strong>prevention is the only real cure</strong>.
                   </p>
                   <button

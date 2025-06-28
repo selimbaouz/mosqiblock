@@ -32,7 +32,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <StickyBar stacksData={stacksData} className='bg-primary text-white' iconClassName='text-white' />
                 <NavBar menu={menu} />
             </div>
-            <div className='bg-[#EEE8FF] pt-2 lg:pt-0 lg:py-10'>
+            <div className='bg-[#EEE8FF] pt-4 lg:pt-0 lg:pb-20'>
                 <div className={cn('space-y-3 p-4', "lg:hidden")}>
                     <h3 className={cn("text-left text-[30px] leading-9 font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
                         MosqiBlock - Keep Your Family Safe
@@ -55,11 +55,13 @@ export default async function ProductPage({ params }: { params: { handle: string
             
                 <section className={cn(
                     "w-full text-left space-y-6 max-w-screen-xl mx-auto px-4", 
-                    "p-6 lg:grid lg:grid-cols-2 lg:space-y-0 lg:justify-start lg:gap-10"
+                    "lg:pt-14 lg:grid lg:grid-cols-2 lg:space-y-0 lg:justify-start lg:gap-10"
                 )}>
-                    <ImagesGallery
-                        images={product?.images.edges ?? []}
-                    />
+                    <div className='lg:sticky lg:top-44 self-start'>
+                        <ImagesGallery
+                            images={product?.images.edges ?? []}
+                        />
+                    </div>
                     <div>
                         <ProductImage product={product!} />
                     </div>

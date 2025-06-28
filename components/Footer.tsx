@@ -21,13 +21,13 @@ const Footer = ({
                     {/* <Image src={Logo} alt="Logo of HelloPurly" width={250} height={36} /> */}
                     <div className={cn("flex flex-col space-y-10", "lg:flex-row lg:items-start lg:justify-between lg:space-y-0")}>
                         <div className={cn("space-y-4")}>
-                            <h6 className={cn("lg:text-xl font-medium")}>À propos</h6>
+                            <h6 className={cn("lg:text-xl font-medium")}>About</h6>
                             <p className={cn(classLink, "max-w-xs leading-relaxed", "lg:max-w-sm")}>
-                                J{"'"}ai lancé <strong>TailwindLiquid</strong> pour offrir aux e-commerçants Shopify des outils puissants et accessibles pour transformer leurs boutiques en véritables moteurs de conversions.
+                                I created <strong>MosqiBlock</strong> to give families and outdoor lovers a safe, powerful, and easy way to enjoy life without mosquitoes—no chemicals, no hassle, just results.
                             </p>
                         </div>
                         <div className={cn("space-y-4")}>
-                            <h6 className={cn("lg:text-xl font-medium")}>Pages Légales</h6>
+                            <h6 className={cn("lg:text-xl font-medium")}>Legal pages</h6>
                             <ul className="leading-relaxed text-sm">
                                 {footerMenu.map((data, i) => (
                                     <li key={i}>
@@ -37,10 +37,10 @@ const Footer = ({
                             </ul>
                         </div>
                         <div className={cn("space-y-4")}>
-                            <h6 className={cn("lg:text-xl font-medium")}>Contactez-nous</h6>
+                            <h6 className={cn("lg:text-xl font-medium")}>Contact</h6>
                             <div className="leading-relaxed space-y-2 text-sm">
-                                <Link href="mailto:tailwindliquid@gmail.com" className={cn(classLink)}>tailwindliquid@gmail.com</Link>
-                                <p>Du lundi au vendredi: 09h00 - 18h00</p>
+                                <Link href="mailto:mosqiblock@gmail.com" className={cn(classLink)}>tailwindliquid@gmail.com</Link>
+                                <p>Available 24/7</p>
                             </div>
                         </div>
                     </div>

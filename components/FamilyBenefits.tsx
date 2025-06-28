@@ -12,7 +12,7 @@ const FamilyBenefits = () => {
               <h3 className="text-[23px] leading-9 xl:text-4xl font-bold text-primary">
                 Enjoy Every Moment, <br className='lg:hidden' />Mosquito-Free
               </h3>
-              <p className={cn("text-[13px] leading-6 pb-4", "xl:text-base")}>
+              <p className={cn("text-sm leading-6 pb-4", "xl:text-base")}>
                 Say goodbye to <strong>bites</strong>, <strong>buzzing</strong>, and <strong>restless nights</strong>. MosqiBlock lets you and your family enjoy <strong>summer evenings</strong>, <strong>peaceful sleep</strong>, and <strong>outdoor fun</strong>, without worrying about <strong>mosquitoes</strong> or <strong>harmful chemicals</strong>. Just turn it on and create a <strong>safe</strong>, <strong>comfortable space</strong> for everyone you love.
               </p>
               <div className={cn("space-y-6 lg:grid lg:grid-cols-3 lg:justify-center lg:items-start lg:gap-4 lg:space-y-0")}>
