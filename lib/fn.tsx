@@ -1,24 +1,25 @@
-import { GoStarFill, GoStar } from "react-icons/go";
+import { TiStarFullOutline, TiStarHalfOutline, TiStarOutline } from "react-icons/ti";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default function GetRatings({ value, className }: { value: number; className: string }) {
-  const totalRatings = [0, 0, 0, 0, 0];
-  for (let i = 0; i < Math.round(value); i++) {
-    totalRatings[i] = 1;
-  }
+  // Calcul du nombre d'étoiles pleines, demi et vides
+  const fullStars = Math.floor(value);
+  const hasHalfStar = value - fullStars >= 0.5;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
   return (
-    <div className="flex items-center space-x-0.5">
-      {totalRatings.map((rating, index) => {
-        if (rating === 1) {
-          return <GoStarFill key={index} className={className} />;
-        }
-        return <GoStar key={index} className={className} />;
-      })}
+    <div className="flex items-center">
+      {[...Array(fullStars)].map((_, i) => (
+        <TiStarFullOutline key={`full-${i}`} className={className} />
+      ))}
+      {hasHalfStar && <TiStarHalfOutline key="half" className={className} />}
+      {[...Array(emptyStars)].map((_, i) => (
+        <TiStarOutline key={`empty-${i}`} className={className} />
+      ))}
     </div>
   );
 }
-
 
 /**
  * Calcule une plage de dates de livraison.

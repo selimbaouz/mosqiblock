@@ -1,121 +1,186 @@
 "use client";
-import { checkProduct, detailsProduct } from "@/data";
-import GetRatings, { calculateDeliveryDates } from "@/lib/fn";
+import { detailsProduct } from "@/data";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { Product } from "@/types/types";
-import { FC, useState } from "react";
+import { Product, VariantsProduct } from "@/types/types";
+import { FC, useEffect, useState } from "react";
 import { AddToCart } from "./cart/add-to-cart";
-import Link from "next/link";
-import { FaTruck } from "react-icons/fa6";
-import MoneyBack from "@/public/images/MoneyBack.png"
 import Image from "next/image";
 import { BestReviews } from "./BestReviews";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import PackProgress from "./PackProgress";
+import { FaTruck } from "react-icons/fa6";
+import { TbTruckReturn } from "react-icons/tb";
+import Link from "next/link";
+import GetRatings from "@/lib/fn";
 
 interface ProductImageProps {
     product: Product;
 }
 
 const ProductImage: FC<ProductImageProps> = ({product}) => {
-    const [selectedVariant, setSelectedVariant] = useState({
-        title: product.variants.edges[0].node.title,
-        price: product.variants.edges[0].node.price?.amount
-    });
-    const [startDelivery, endDelivery] = calculateDeliveryDates(5, 10);
+    const [selectedPack, setSelectedPack] = useState(0);
+    const [selectedColor, setSelectedColor] = useState(0);
+    const [selectedColorName, setSelectedColorName] = useState("White");
+    const [selectedPackName, setSelectedPackName] = useState("Buy 1");
+    const [selectedVariant, setSelectedVariant] = useState<VariantsProduct | null>(null);
 
+    /* const [startDelivery, endDelivery] = calculateDeliveryDates(5, 10); */
+
+    useEffect(() => {
+        if (product.variants.edges.length > 0 && !selectedVariant) {
+            setSelectedVariant(product.variants.edges[0]);
+        }
+    }, [product.variants.edges, selectedVariant]);
+
+    useEffect(() => {
+        const variantTitle = `${selectedPackName} / ${selectedColorName}`;
+        const matchingVariant = product.variants.edges.find(v => 
+            v.node.title === variantTitle
+        );
+
+        if (matchingVariant) {
+            setSelectedVariant(matchingVariant);
+        } 
+    }, [selectedPack, selectedColorName, product.variants.edges, selectedPackName]);
+
+    const PACKS = [
+        {
+            image: "/images/Pack1.png",
+            title: "Buy 1",
+            subTitle: ""
+        },
+        {
+            image: "/images/Pack2.png",
+            title: "Buy 2 Get 1 Free",
+            subTitle: "Your save €27,99 😱",
+        },
+        {
+            image: "/images/Pack3.png",
+            title: "Buy 3 Get 2 Free",
+            subTitle: "One for every room 😍",
+        },
+    ];
+    
     return (
         <div className={cn("space-y-2")}>
-            <div className={cn("flex items-center gap-2")}> 
-                <p className={cn("font-medium text-sm text-foreground")}>4.8</p>
-                <GetRatings value={5} className={cn("text-base sm:text-md text-primary", "md:text-lg", "xl:text-sm")} />
-                <Link href="#avis" className={cn("font-medium text-sm text-foreground")}>
-                    319+ Clients Satisfaits
-                </Link>
-            </div>
-            <h3 className={cn("text-left text-2xl font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
-                {product.title}
-            </h3>
-            <div className={cn("flex items-center pb-2 gap-2 lg:pb-4")}>
+           {/*  <div className={cn("flex items-center pb-2 gap-2 lg:pb-4")}>
                 <FaTruck className="text-base text-secondary" />
                 <p className="text-sm">Livraison entre le <strong>{startDelivery}</strong> et le <strong>{endDelivery}</strong></p>
-            </div>
-            <p className={cn("text-sm", "sm:text-base", "xl:text-lg")}>Pour une grossesse sereine, WeSecure est devenue l’indispensable compagnon de route de toute future maman soucieuse de sa sécurité et de celle de son bébé</p>
-            <ul className={cn("flex justify-between items-stretch py-4 gap-4", "xl:justify-around")}>
-                {checkProduct.map((data, index) => (
-                    <li key={index} className={cn("flex flex-col w-full min-h-full p-4 rounded-lg gap-4 items-center text-center", "lg:px-4 lg:py-6")}>
-                        <div className={cn("p-2 bg-secondary text-background dark:text-white rounded-lg", "lg:p-3")}>
-                            <data.icon className={cn("text-2xl", "lg:text-2xl")} />
-                        </div>
-                        <p className={cn("text-xs text-primary dark:text-white font-bold", "xs:text-sm", "lg:text-base")}>{data.title}</p>
-                    </li>
-                ))}
-            </ul>
-            <div className={cn("space-y-10 py-4")}>    
-                <div className="space-y-8">
-                    <div className="flex items-center justify-center">
-                        <div className="border-t-2 border-primary flex-grow"></div>
-                        <h3 className={cn("text-sm font-medium px-4", "lg:text-base")}>Plus de voiture ?</h3>
-                        <div className="border-t-2 border-primary flex-grow"></div>
+            </div> */}
+            <div className={cn('hidden', 'lg:block space-y-3 pb-4')}>
+                <h3 className={cn("text-left text-[30px] leading-9 font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
+                    MosqiBlock - Keep Your Family Safe
+                </h3>
+                <p className={cn("text-xs sm:text-sm text-foreground")}>Instant Peace | Pure comfort | Total Freedom</p>
+                <div className={cn("space-y-2")}>
+                    {/* <div className={cn("bg-secondary w-full p-4 flex items-center gap-6 rounded-lg font-bold text-xs")}>
+                            <p className='text-nowrap'>Only <span className='text-primary'>60</span> items</p>
+                            <div className="w-full h-2 rounded-full bg-primary border border-secondary overflow-hidden">
+                                <div className={cn("h-full rounded-full transition-all duration-700")} />
+                            </div>
+                            <p className='text-nowrap'>Left in Stock</p>
+                    </div> */}
+                    <div className={cn("bg-primary uppercase text-white w-full p-4 flex items-center gap-2 rounded-lg font-bold text-xs")}>
+                            <span role="img" aria-label="truck">🚚</span>
+                            Order now, delivery July 1-3
                     </div>
-                    
-                    <RadioGroup 
-                        defaultValue={product.variants.edges[0].node.title} 
-                        defaultChecked={selectedVariant.title === product.variants.edges[0].node.title} 
-                        className={cn("flex flex-col items-center justify-between gap-3 text-center", "lg:gap-6")}
-                        >
-                        {product.variants.edges.map((data, index) => {
-                            const discount = Number(data.node.price?.amount) - Number(data.node.compareAtPrice.amount);
-                            const parseDiscount = parseFloat(String(discount) ?? "").toFixed(0);
-                            return (
-                                <div key={index} className={cn("border-2 px-6 py-8 w-full flex items-center gap-4 lg:gap-6 rounded-lg cursor-pointer", "lg:p-6", selectedVariant.title !== data.node.title ? "bg-background border-gray-200 dark:border-gray-200/10" : "bg-secondary/30 border-primary")} onClick={() => setSelectedVariant({
-                                    title: data.node.title,
-                                    price: data.node.price?.amount
-                                })}>
-                                    <RadioGroupItem 
-                                        value={data.node.title} 
-                                        id={data.node.title} 
-                                        checked={selectedVariant.title === data.node.title} 
-                                        onChange={(e) => setSelectedVariant({
-                                            title: e.currentTarget.value,
-                                            price: data.node.price?.amount
-                                        })}
-                                    />
-                                    <div className="flex items-center justify-between w-full">
-                                        <div className={cn("flex flex-col items-start text-left")}>
-                                            <h4 className={cn("text-base font-bold", "lg:text-lg")}>{data.node.title}</h4>
-                                            <p className={cn("text-sm")}>Vous économisez {parseDiscount}€</p>
-                                            {index !== 0 && (
-                                                <div className="bg-primary py-1 px-2 mt-2 text-white text-xs rounded-md">Livraison gratuite</div>
-                                            )}
-                                        </div>
-                                        <div className={cn("flex flex-col items-end")}>
-                                            <h4 className={cn("font-semibold text-sm xs:text-base", "lg:text-lg")}>{parseFloat(data.node.price?.amount ?? "").toFixed(2)}€</h4>
-                                            <p className={cn("text-xs xs:text-sm font-light line-through", "lg:text-base")}>{parseFloat(data.node.compareAtPrice.amount ?? "").toFixed(2)}€</p>
-                                        </div>
-                                    </div>
+                </div>
+            </div>
+             <div className={cn("flex items-center gap-2")}> 
+                    <GetRatings value={4.7} className={cn("text-base sm:text-md text-[#F3974B]", "md:text-lg", "xl:text-sm")} />
+                    <p className={cn("text-xs text-foreground")}>4.7 | </p>
+                    <Link href="#avis" className={cn("text-xs sm:text-sm text-foreground")}>
+                        1000+ Satisfied customers
+                    </Link>
+                </div>
+            <p className={cn("py-2 text-sm leading-6", "xl:text-lg")}><strong>Enjoy peaceful nights</strong>, free from buzzing and bites. <strong>Protect your loved ones</strong> with safe, silent technology. Easy to use anywhere,  <strong>comfort and freedom, every day.</strong></p>
+            <div className={cn("space-y-6 py-4")}>    
+                <div className="space-y-4">
+                <h3 className={cn("text-sm font-bold uppercase", "lg:text-base")}>Colors</h3>
+                    <div className="flex gap-2 mb-4">
+                        {["White", "Green"].map((color, i) => (
+                            <div 
+                            key={i} 
+                            onClick={() => {
+                                setSelectedColorName(color);
+                                setSelectedColor(i)
+                            }} 
+                            className={cn(
+                                "flex items-center py-3 justify-center text-center rounded-2xl w-full border-2 cursor-pointer",
+                                selectedColor !== i ? "bg-transparent border-secondary" : "border-2 border-r-2 border-l-2 bg-white border-[#956BFF]"
+                            )}
+                            >
+                            <div className="space-y-1">
+                                <h6 className={cn("text-xs font-bold", "lg:text-sm")}>
+                                    {color}
+                                </h6>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
+                    <h3 className={cn("text-sm font-bold uppercase", "lg:text-base")}>Pack</h3>
+                    <div className={cn("space-y-6")}>
+                       <PackProgress selectedPack={selectedPack} />
+                        <div id="bundles" className={cn("grid w-full gap-2 grid-cols-3 items-stretch relative")}>
+                            {PACKS.map((data, index) => (
+                            <div 
+                                key={index} 
+                                onClick={() => {
+                                setSelectedPack(index);
+                                setSelectedPackName(data.title);
+                                }} 
+                                className={cn(
+                                "flex items-center py-4 justify-center text-center rounded-2xl w-full border-2 cursor-pointer relative", // Ajoute relative ici
+                                selectedPack !== index ? "bg-transparent border-secondary" : "border-2 border-r-2 border-l-2 bg-white border-[#956BFF]"
+                                )}
+                            >
+                                {/* Badge "Most popular !" uniquement sur le 2ème pack */}
+                                {index === 1 && (
+                                <div className={cn("absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[8px] px-2 py-1 rounded-lg w-auto text-nowrap uppercase z-10", "lg:text-[10px]")}>
+                                    Most popular !
                                 </div>
-                            )
-                        })}
-                    </RadioGroup>
+                                )}
+                                <div className="space-y-1">
+                                <Image src={data.image} alt="image of pack" className="w-auto h-20 mx-auto" width={100} height={100} />
+                                <h6 className={cn("text-xs font-bold", "lg:text-sm")}>
+                                    {data.title}
+                                </h6>
+                                <p className={cn("text-[10px] font-medium", "lg:text-xs")}>
+                                    {data.subTitle}
+                                </p>
+                                </div>
+                            </div>
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
                 <div className="space-y-4">
                     <AddToCart state={selectedVariant} product={product} size="fullWidth" />
-                </div>
-                <div className="py-5 px-4 bg-secondary/30 rounded-lg flex gap-5 items-center">
-                    <Image src={MoneyBack} alt="Logo of HelloPurly" width={500} height={500} className={cn("size-20")} />
-                    <div className="space-y-2">
-                        <h6 className={cn("text-sm uppercase font-medium", "lg:text-base")}>Remboursement Garantie pendant 90 jours</h6>
-                        <p className={cn("text-xs text-light", "lg:text-sm")}>Nous avons confiance en nos produits. Pas convaincu ? Renvoyez-le et nous vous rembourserons votre achat.</p>
+                    <div className={cn("flex items-center gap-2 justify-center", "lg:gap-4")}>
+                        <Image src="/images/secure.png" className="w-auto h-4" alt="Icon secure" width={20} height={20} />
+                        <p className={cn("text-[10px] font-bold", "lg:text-xs", "xl:text-sm")}>Secure payment</p>
+                        <Image src="/images/payments.png" alt="Payments" width={200} height={44} />
                     </div>
                 </div>
-                <Accordion type="single" collapsible className="w-full">
+                <div className={cn("w-full bg-white rounded-2xl py-2 px-6 space-y-2")}>
+                        <div className={cn("flex items-center justify-center gap-2 border-secondary")}>
+                            <FaTruck className="" />
+                            <p className={cn("text-xs font-bold", "xl:text-sm")}>Free delivery</p>
+                        </div>
+                        <div className="w-full h-[0.1px] bg-secondary"/>
+                        <div className={cn("flex items-center justify-center gap-2")}>
+                            <TbTruckReturn className="" />
+                            <p className={cn("text-xs font-bold", "xl:text-sm")}>60 Day Risk Free Trial</p>
+                        </div>
+                </div>
+                <Accordion type="single" collapsible className="w-full bg-white rounded-2xl border border-secondary">
                     {detailsProduct.map((data, index) => (
-                        <AccordionItem key={index} value={`item-${index}`} className={cn("border-foreground py-1 whitespace-pre-line")}>
-                            <AccordionTrigger className={cn("text-sm", "xs:text-base")}>
+                        <AccordionItem key={index} value={`item-${index}`} className={cn("border-secondary px-4 whitespace-pre-line")}>
+                            <AccordionTrigger className={cn("text-xs font-semibold")}>
                                 {data.title}
                             </AccordionTrigger>
-                            <AccordionContent className={cn("text-sm py-6", "lg:text-base")}>
+                            <AccordionContent className={cn("text-xs font-medium py-6", "lg:text-base")}>
                                 {data.content}
                             </AccordionContent>
                         </AccordionItem>

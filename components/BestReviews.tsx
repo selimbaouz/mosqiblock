@@ -53,7 +53,7 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
         <CarouselContent>
           {bestReviewsData.map((data, index) => (
             <CarouselItem key={index}>
-              <div className={cn("bg-background border rounded-2xl p-4 flex flex-col gap-4", "xl:px-6 xl:py-8")}>
+              <div className={cn("bg-white border border-secondary rounded-2xl p-4 flex flex-col gap-4", "xl:px-6 xl:py-8")}>
                 <div className={cn("flex items-center gap-3")}>
                     <AvatarCircles 
                         avatarUrls={data.picture} 
@@ -66,13 +66,13 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
                                 <div className="p-1">
                                     <FaCircleCheck className={cn("text-primary text-sm", "xl:text-base", "3xl:text-xl")} />
                                 </div>
-                                <p className={cn("text-xs", "xl:text-sm", "3xl:text-lg")}>Avis vérifié</p>
+                                <p className={cn("text-xs", "xl:text-sm", "3xl:text-lg")}>Verified</p>
                             </div>
                         </div>
                         <GetRatings value={data.rating} className={cn("text-xs text-primary", "sm:text-sm", "md:text-lg", "xl:text-base", "3xl:text-xl")} />
                     </div>
                 </div>
-                <p className={cn("text-sm text-left", "xl:text-base", "3xl:text-xl")}>“{data.content}”</p>
+                <p className={cn("text-xs text-left", "xl:text-base", "3xl:text-xl")}>“{data.content}”</p>
               </div>
             </CarouselItem>
           ))}
@@ -84,7 +84,7 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
             variant="outline"
             size="icon"
             className={cn(
-              "size-6 rounded-full text-primary", "xl:size-8", "3xl:size-10"
+              "size-6 rounded-full text-primary border-primary", "xl:size-8", "3xl:size-10"
             )}
             disabled={current === 1}
             onClick={scrollPrev}
@@ -96,7 +96,7 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
             variant="outline"
             size="icon"
             className={cn(
-              "size-6 rounded-full text-primary", "xl:size-8", "3xl:size-10"
+              "size-6 rounded-full text-primary border border-primary", "xl:size-8", "3xl:size-10"
             )}
             disabled={current === bestReviewsData.length}
             onClick={scrollNext}
@@ -109,7 +109,7 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
           {bestReviewsData.map((_, index) => (
               <div 
                   key={index} 
-                  className={cn("rounded-full w-8 py-1", "xl:w-10", "3xl:w-14", current - 1 === index ? "bg-primary" : "bg-gray-200")}
+                  className={cn("rounded-full w-4", "xl:w-10", "3xl:w-14", current - 1 === index ? "border border-primary" : "bg-white border border-secondary")}
                   >
               </div>
           ))}

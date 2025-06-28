@@ -43,20 +43,17 @@ function SubmitButton({size = "initial", price}: SubmitButtonProps) {
         aria-label="Add to cart"
         ref={buttonRef}
         className={cn(
-          "py-4 px-2 lg:px-6 rounded-lg bg-gradient-to-b from-primary to-secondary hover:bg-secondary text-white font-medium text-base border-t",
+          "py-4 px-2 lg:px-6 rounded-xl bg-primary hover:bg-secondary text-white font-medium text-base border-t",
           size === "fullWidth" ? "min-w-full" : "w-max",
           "hover:bg-gradient-to-tr"
       )}
       >
-        <p className={cn("uppercase")}>Ajouter au panier - {parseFloat(price ?? "").toFixed(2)}€</p>
+        <p className={cn("uppercase")}>Add To Cart - {price ? parseFloat(price ?? "").toFixed(2) : "27,99"}€</p>
       </button>
   );
 }
 
-export function AddToCart({ product, size = "initial", state }: { product: Product, size?: "fullWidth" | "initial", color?: "gradient" | "foreground", state?: {
-  title: string,
-  price?: string;
-} }) {
+export function AddToCart({ product, size = "initial", state }: { product: Product, size?: "fullWidth" | "initial", color?: "gradient" | "foreground", state?: VariantsProduct | null}) {
   const variants = product.variants.edges;
   const { addCartItem } = useCartStore();
   const { setIsOpenCart } = useOpenCartStore();
@@ -64,8 +61,16 @@ export function AddToCart({ product, size = "initial", state }: { product: Produ
   const [message, formAction] = useFormState(addItem, null);
 
   const variant = variants.find((variant: VariantsProduct) =>
-    variant.node.selectedOptions?.every((option) => option.value.toLocaleLowerCase() === state?.title.toLocaleLowerCase())
-  );
+  variant.node.selectedOptions?.every(
+    (option) =>
+      state?.node.selectedOptions?.some(
+        (selOpt) =>
+          selOpt.name.toLowerCase() === option.name.toLowerCase() &&
+          selOpt.value.toLowerCase() === option.value.toLowerCase()
+      )
+  )
+);
+
   /* const variantId = variants[0].node.id;
   const actionWithVariant = formAction.bind(null, variantId); */
   const defaultVariantId = variants.length === 1 ? variants[0]?.node.id : undefined;
@@ -82,7 +87,7 @@ export function AddToCart({ product, size = "initial", state }: { product: Produ
       }}
       onClick={() => setIsOpenCart(true)}
     >
-      <SubmitButton size={size} price={state?.price} />
+      <SubmitButton size={size} price={state?.node.price?.amount} />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
       </p>

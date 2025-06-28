@@ -6,7 +6,6 @@ import Link from "next/link";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 import { useOpenSidebarStore } from "@/store/sidebar";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import ToggleMode from "@/components/ToggleMode";
 
 const NavBarMobile = () => {
     const { cart } = useCartStore();
@@ -20,12 +19,11 @@ const NavBarMobile = () => {
             >
                 <HiOutlineMenuAlt4 className={cn("text-2xl uppercase text-foreground hover:text-foreground", "xs:text-3xl")} />
             </div>
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer text-2xl xs:text-3xl font-medium">
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer xs:text-xl font-bold">
                 {/* <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} /> */}
-                We<span className="font-medium text-primary">mom</span>
+                MosqiBlock
             </Link>
             <div className={cn("flex gap-0.5 items-center")}>
-                <ToggleMode />
                 <div 
                     className="relative p-2 cursor-pointer group" 
                     onClick={() => setIsOpenCart(true)}

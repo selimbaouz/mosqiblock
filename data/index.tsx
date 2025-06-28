@@ -1,20 +1,19 @@
-import { MdVerified } from "react-icons/md";
+import { MdBedtime, MdFamilyRestroom, MdFlashOn, MdOutlineBackpack, MdOutlineOutdoorGrill, MdVerified } from "react-icons/md";
 import { FaCheck, FaTruck } from "react-icons/fa6";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
-import { GiFrance } from "react-icons/gi";
+import { GiChemicalDrop, GiFrance, GiSpeakerOff, GiTreeBranch } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
-import { HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
-import { HiOutlineHandThumbUp } from "react-icons/hi2";
-import SophieD from "@/public/images/avis/sophieD.webp";
-import ClaudiaR from "@/public/images/avis/claudiaR.webp";
-import JMT from "@/public/images/avis/jmt.webp";
-import LauraM from "@/public/images/avis/lauraM.webp";
-import MarcL from "@/public/images/avis/marcL.webp";
-import MarieL from "@/public/images/avis/marieL.webp";
-import PhillipeG from "@/public/images/avis/phillippeG.webp";
-import { FaBurn, FaUndo } from "react-icons/fa";
+import { HiOutlineHeart, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
+import Leaf from "@/public/images/leaf.png";
+import Thunder from "@/public/images/thunder.png";
+import Baby from "@/public/images/baby.png";
+import Shield from "@/public/images/shield.png";
+import Avis1 from "@/public/images/avis/avis1.webp";
+import Avis2 from "@/public/images/avis/avis2.webp";
+import Avis3 from "@/public/images/avis/avis3.webp";
+import { FaUndo } from "react-icons/fa";
 import { GoHeartFill } from "react-icons/go";
 import Benefits from "@/components/mode/Benefits";
 import Utilisation from "@/components/mode/Utilisation";
@@ -57,6 +56,33 @@ export const bestReviewsData = [
       rating: 5,
       content: "Un parfum envoûtant qui sublime ma présence avec élégance et luxe. Une véritable signature olfactive."
   },
+]
+
+export const benefitsProductData = [
+  {
+    title: "Your must-have for magical nights outdoors", 
+    content: "Transform every camping trip into a bite-free adventure."
+  },
+  {
+    title: "Advanced UV-light—mosquitoes can’t resist", 
+    content: "Enjoy evenings without buzzing or bites, naturally."
+  },
+  {
+    title: "USB rechargeable—freedom from batteries", 
+    content: "Stay protected anywhere, anytime—just plug in and go."
+  },
+  {
+    title: "Absolutely safe—no toxins, no worries", 
+    content: "Protect your family with pure peace of mind."
+  },
+  {
+    title: "Ultra-compact, always by your side", 
+    content: "Slip it in your bag and take protection everywhere."
+  },
+  {
+    title: "Hang it, stand it, love it", 
+    content: "Versatile hook for effortless use—at home or on the go."
+  }, 
 ]
 
 export const benefitsFeelingData = [
@@ -103,10 +129,10 @@ export const trustsData = [
 
 export const selectModesData = [
   {
-      title: "Avantages"
+      title: "Benefits."
   },
   {
-      title: "Utilisation"
+      title: "How it works."
   }
 ]
 
@@ -185,143 +211,99 @@ export const productInstructionSelected = (selected: number) => {
 
 export const reviewsData = [
   {
-    image: SophieD,
-    name: "Sophie D.",
+    image: Avis1,
+    author: "Andrea R.",
     score: 5,
-    content: "J’ai été agréablement surprise par la simplicité de l’installation. C’est un produit fantastique !",
+    title: "This product is perfect now that spring has started and the rains are starting to spread, and pesky mosquitoes are starting to appear. I use it at home to protect my son, who is allergic to almost everything. It's very functional and wireless and rechargeable.",
   },
   {
-    image: ClaudiaR,
-    name: "Claudia R.",
+    image: Avis2,
+    author: "Mark T.",
     score: 5,
-    content: "Ce bidet convient parfaitement à toute la famille. Les différents modes sont adaptés à chaque besoin, et son installation a été rapide.",
+    title: "It's very good quality surprisingly. It's easy to use and very nicely designed. I can put it anywhere I want and it kills all the mosquitos. It doesn't make any noise at all. Very portable.",
   },
   {
-    image: PhillipeG,
-    name: "Philippe G.",
+    image: Avis3,
+    author: "Shopie L.",
     score: 5,
-    content: "Ce bidet offre un excellent rapport qualité-prix. Il est efficace, facile à utiliser, et l’installation ne nécessite aucune compétence particulière. Je suis très satisfait de mon achat.",
-  },
-  {
-    image: MarieL,
-    name: "Marie L.",
-    score: 5,
-    content: "Je suis ravie de mon achat ! L’installation était un jeu d’enfant et les différents modes de lavage sont super pratiques. Je recommande vivement !",
-  },
-  {
-    image: JMT,
-    name: "Jean-Marc T.",
-    score: 5,
-    content: "Ce bidet est parfait pour réduire notre consommation de papier toilette. C’est à la fois économique et écologique.",
-  },
-  {
-    image: LauraM,
-    name: "Laura M.",
-    score: 5,
-    content: "Ce bidet a complètement changé notre manière de voir l’hygiène. Les deux modes de lavage sont très appréciables et rendent chaque utilisation confortable. Je le recommande à tout le monde !",
-  },
-  {
-    image: MarcL,
-    name: "Marc L.",
-    score: 5,
-    content: "Je suis impressionné par la qualité de ce bidet. Facile à installer et à utiliser, il est à la fois moderne et pratique.",
+    title: "This little tiny bug zapper works great to avoid the fruit flies, every house must have one.",
   },
 ];
 
 export const checkProduct = [
   {
-    title: "Benefit 1",
-    icon: FaBurn,
+    title: "Chemical-Free",
+    img: Leaf,
   },
   {
-      title: "Benefit 2",
-      icon: HiOutlineHandThumbUp,
+    title: "Instant & Silent",
+    img: Thunder,
   },
   {
-      title: "Benefit 3",
-      icon: HiOutlinePaperAirplane,
+    title: "Kid & Pet Safe",
+    img: Baby,
+  },
+  {
+    title: "Easy Clean",
+    img: Shield,
   },
 ]
 
 export const detailsProduct = [
   {
-    title: "Pourquoi Wemom ?",
-    content: "Vous avez 90 jours pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
+    title: "Shipping information",
+    content: `• Free shipping on all orders
+• Orders processed within 24–48 hours
+• Delivery in 2–5 business days (France/EU), 5–10 days (international)
+• Tracking number sent by email as soon as your order ships
+• Secure packaging for safe arrival`
   },
   {
-    title: "90 Jours pour tester",
-    content: "Vous avez 90 jours pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
-  },
-  {
-    title: "Foire Aux Questions",
-    content: "Vous avez 90 jours pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
-  },
-  {
-    title: "Informations de Livraison",
-    content: "Oui, vous avez bien lu ! Livraison gratuite et expédiée en 24h, pour que votre produit arrive presque avant même que vous n'ayez eu le temps de vous réjouir de votre achat !"
+    title: "Returns and refunds",
+    content: `• 60-day satisfaction guarantee—try MosqiBlock risk-free
+• Not satisfied? Contact us within 60 days for a full refund, no questions asked
+• Product must be returned in original condition and packaging
+• Fast and easy return process—our support team is here to help`
   },
 ]
 
+
 export const faqData = [
   {
-      title: "Comment fonctionne le bidet ?",
-      content: "Notre bidet utilise des jets d'eau ajustables pour un nettoyage efficace. Vous allez vous sentir aussi frais qu'après une douche, mais sans le déplacement."
+    title: "Does MosqiBlock really stop mosquito bites?",
+    content: "Yes, MosqiBlock uses specially calibrated UV light to attract and trap mosquitoes effectively without chemicals or odors. Most users notice a significant reduction in bites within the first nights, whether indoors or outdoors."
   },
   {
-      title: "Installation est-elle facile ?",
-      content: "Oh que oui ! L'installation du bidet se fait en moins de 10 minutes, un vrai jeu d’enfant, même pour les plus bricoleurs du dimanche ! "
+    title: "Is it safe for kids, pets, and houseplants?",
+    content: "Absolutely. MosqiBlock is chemical-free and non-toxic. The UV light is harmless to children, pets, and plants, making it ideal for family spaces and shared living areas."
   },
   {
-      title: "Est-ce que ça fonctionne sans électricité ?",
-      content: "Absolument ! Pas besoin de vous transformer en électricien. Votre porte-monnaie et notre planète vous diront merci ! "
+    title: "How much space does one device cover?",
+    content: "One MosqiBlock covers approximately 20 to 30 square meters, suitable for bedrooms, living rooms, or patios. For larger areas, multiple devices can be used for optimal protection."
   },
   {
-    title: "Compatible avec toutes les toilettes ?",
-    content: "Bien sûr ! Notre bidet s’adapte à toutes les toilettes standards, comme un caméléon sur un pot de fleurs !"
+    title: "Can I use it both indoors and outdoors?",
+    content: "Yes, MosqiBlock is designed for both indoor and outdoor use, perfect for bedrooms, patios, camping, and more."
   },
   {
-      title: "Vais-je faire des économies ?",
-      content: "Économisez jusqu'à 80% de papier toilette. Ça veut dire plus d’argent pour le café, les gâteaux, ou même cette plante que vous oubliez toujours d’arroser !"
+    title: "How long does the battery last?",
+    content: "The rechargeable USB battery lasts up to 10 to 12 hours, enough for a full night or outdoor evening. It recharges easily like a smartphone."
   },
   {
-      title: "Quels sont les délais de livraison ?",
-      content: "Nos délais de livraison sont de 7 à 13 jours ouvrés. Mais si vous êtes chanceux, vous pourriez recevoir votre bidet en moins d'une semaine ! Pas de frais cachés, juste de la bonne humeur !"
+    title: "Is there any maintenance required?",
+    content: "Maintenance is simple: empty the collection tray every few days and clean the device with a brush if needed. No refills or consumables are required."
   },
   {
-      title: "Où livrons-nous ?",
-      content: "Partout dans le monde ! Que vous soyez à Paris ou au pôle Nord, nous vous livrons gratuitement ! (Mais n'attendez pas trop de pingouins pour vos commandes.)"
+    title: "What’s included in the box?",
+    content: "The pack includes the MosqiBlock lamp, USB charging cable, and a quick start guide, all securely packaged for safe delivery."
   },
   {
-      title: "D'où expédions-nous les colis ?",
-      content: "Nous expédions directement depuis notre base en France. On vous a dit que c'était une entreprise 100% française !"
+    title: "What is your return policy?",
+    content: "We offer a 30 to 60-day satisfaction guarantee. If you’re not happy, contact our support for a full refund. The product must be returned in original condition and packaging."
   },
   {
-      title: "Qui livre mes articles ?",
-      content: "Vos articles sont livrés par votre service postal local. C'est un peu comme un rendez-vous surprise avec le facteur !"
-  },
-  {
-      title: "Que faire si je ne suis pas là ?",
-      content: "Pas de panique ! Si votre colis est trop gros pour la boîte aux lettres, il sera déposé à votre bureau de poste. Comme ça, pas besoin de jouer à cache-cache avec le facteur !"
-  },
-  {
-      title: "Comment corriger une adresse erronée ?",
-      content: "Si votre commande n'est pas encore partie, contactez-nous tout de suite ! Sinon, une fois expédiée, c'est comme essayer de changer le cours d'une rivière… pas facile !"
-  },
-  {
-      title: "Articles manquants dans ma commande ?",
-      content: "Chaque fournisseur s'occupe d'un produit. Donc si vous commandez 5 articles, vous aurez peut-être 5 colis différents. Une petite surprise par la poste, mais chacun est spécial à sa manière !"
-  },
-  {
-      title: "Comment utiliser un code promo ?",
-      content: "Pour utiliser un code promo, entrez-le lors du paiement. C'est comme une magie, et hop ! Réduction instantanée. Pensez à votre code comme à un super-héros du shopping !"
-  },
-  {
-      title: "Votre site est-il sécurisé ?",
-      content: "Oui, 100% sécurisé (voire même 300% !). Chaque page est protégée comme un château fort. Vous pouvez acheter sans stress, comme si vous étiez en vacances !"
-  },
-  {
-      title: "Quels modes de paiement sont acceptés ?",
-      content: "Vous pouvez régler par Carte bancaire. Pas de chèques ni de virements, parce que nous n'avons pas encore découvert la machine à remonter le temps !"
+    title: "How do I contact support if I have more questions?",
+    content: "Our friendly support team is available via email or contact form on our website to assist you with any questions or concerns."
   }
 ];
 
@@ -342,6 +324,41 @@ export const stacksData = [
   {
     icon: GiFrance,
     title: "Support Français",
+  },
+];
+
+export const BenefitsData = [
+  {
+    icon: GiSpeakerOff,
+    title: "Silent Operation",
+  },
+  {
+    icon: MdOutlineBackpack,
+    title: "Easy to Carry",
+  },
+  {
+    icon: GiTreeBranch,
+    title: "Eco Friendly",
+  },
+  {
+    icon: GiChemicalDrop,
+    title: "Chemical-Free Safety",
+  },
+  {
+    icon: MdFamilyRestroom,
+    title: "Family Protection",
+  },
+  {
+    icon: MdBedtime,
+    title: "Bite-Free Nights",
+  },
+  {
+    icon: MdFlashOn,
+    title: "Instant Relief",
+  },
+  {
+    icon: MdOutlineOutdoorGrill,
+    title: "Outdoor & Indoor",
   },
 ];
 

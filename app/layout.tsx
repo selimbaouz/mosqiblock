@@ -33,7 +33,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} font-montserrat relative`}
+        className={`${montserrat.variable} font-montserrat relative bg-background text-foreground`}
       >
         <Providers>
           <LayoutClient>

@@ -1,10 +1,21 @@
+import { IconType } from "react-icons";
 import MarqueeStack from "../MarqueeStack";
-import { stacksData } from "@/data";
+import { FC } from "react";
+import { cn } from "@/lib/utils";
 
-const StickyBar = () => {
+interface StickyBarProps {
+    stacksData: {
+        icon: IconType;
+        title: string;
+    }[];
+    className?: string;
+    iconClassName?: string;
+}
+
+const StickyBar: FC<StickyBarProps> = (data) => {
     return (
-        <div className="bg-gradient-to-b from-primary to-secondary w-full h-10 text-white flex flex-col items-center justify-center font-medium">
-            <MarqueeStack data={stacksData} />
+        <div className={cn("w-full h-10 flex flex-col items-center justify-center font-medium", data.className)}>
+            <MarqueeStack stack={data.stacksData} iconClassName={data.iconClassName ?? ""} />
         </div>
     );
 };

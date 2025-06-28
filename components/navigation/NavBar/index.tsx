@@ -7,18 +7,16 @@ import Cart from "@/components/cart/Cart";
 
 interface NavBarProps {
     menu: Menu[];
-    isHome?: boolean;
 }
 export default function NavBar(
     {
         menu,
-        isHome,
     }: NavBarProps) {
 
     return (
-        <nav className={cn(!isHome && "bg-background z-[100] border-b")}>
+        <nav className={cn("z-[100] bg-background")}>
             <NavBarMobile />
-            <NavBarWeb menu={menu} isHome={isHome} />
+            <NavBarWeb menu={menu} />
 
             {/* Panier */}
             <Cart />

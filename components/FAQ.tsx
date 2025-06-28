@@ -1,30 +1,33 @@
+"use client"
 import { cn } from "@/lib/utils";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { faqData } from "@/data";
+import CardFAQ from "./card/CardFAQ";
+import { useState } from "react";
 
 const FAQ = () => {
+  const [isOpen, setIsOpen] = useState(faqData.map(() => false));
     return (
         <div className={cn(
             "p-4 text-left max-w-screen-md mx-auto py-10", 
             "lg:p-6 lg:py-20", 
             "xl:px-10"
         )}>
-            <div className="space-y-1 mx-auto text-center pb-10">
-                <h3 className={cn("text-2xl font-bold", "lg:text-3xl", "xl:text-4xl")}>Vos questions</h3>
-                <h4 className={cn("text-lg", "lg:text-xl")}>Nos réponses</h4>
+            <div className="space-y-1 mx-auto text-center">
+                <h3 className={cn("text-2xl font-bold", "lg:text-3xl", "xl:text-4xl")}>Your questions</h3>
+                <h4 className={cn("text-lg", "lg:text-xl")}>Our answers</h4>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+           <div className={cn('flex flex-col gap-2 py-10')}>
                 {faqData.map((data, index) => (
-                    <AccordionItem key={index} value={`item-${index}`} className={cn("border-foreground/30 py-1")}>
-                        <AccordionTrigger className={cn("text-base", "xl:text-lg")}>
-                            {data.title}
-                        </AccordionTrigger>
-                        <AccordionContent className={cn("text-base py-6 whitespace-pre-line")}>
-                            {data.content}
-                        </AccordionContent>
-                    </AccordionItem>
+                  <CardFAQ
+                    key={index}
+                    index={index}
+                    title={data.title}
+                    content={data.content}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                />
                 ))}
-            </Accordion>
+            </div>
         </div>
     );
 };

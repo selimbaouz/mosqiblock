@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
     darkMode: ["class"],
@@ -13,9 +14,9 @@ const config: Config = {
   			montserrat: ["var(--font-ms)"]
   		},
   		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-			subtitle: 'hsl(var(--subtitle))',
+  			background: '#F7F3FF',
+  			foreground: '#333',
+			subtitle: '#333',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -25,11 +26,11 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
+  				DEFAULT: '#6F3AF2',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
+  				DEFAULT: '#DDCFFF',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
@@ -133,6 +134,17 @@ const config: Config = {
   	}
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), 
+	plugin(({addUtilities})=> {
+		addUtilities({
+			'.scrollbar-hidden': {
+			  '-ms-overflow-style': 'none', /* IE and Edge */
+			  'scrollbar-width': 'none',   /* Firefox */
+			},
+			'.scrollbar-hidden::-webkit-scrollbar': {
+			  display: 'none', /* Chrome, Safari, and Opera */
+			},
+		})
+	})],
 };
 export default config;

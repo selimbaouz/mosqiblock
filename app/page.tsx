@@ -3,6 +3,7 @@ import StickyBar from "@/components/navigation/StickyBar";
 import NavBar from "@/components/navigation/NavBar";
 import { getMenu } from "@/data/shopify";
 import { cn } from "@/lib/utils";
+import { stacksData } from "@/data";
 
 export default async function Home() {
   const menu = await getMenu("main-menu");
@@ -11,7 +12,7 @@ export default async function Home() {
   return (
     <div>
       <div className={cn("sticky top-0 w-full z-50", "lg:hidden")}>
-        <StickyBar />
+        <StickyBar stacksData={stacksData} className='bg-primary text-white' iconClassName='text-white'  />
         <NavBar menu={menu} />
       </div>
       <Header menu={menu} />

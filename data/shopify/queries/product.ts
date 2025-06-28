@@ -3,7 +3,7 @@ export const getProductByHandle = /* GraphQL */ `
     productByHandle(handle: $handle) {
       id
       title
-      images(first: 5) {
+      images(first: 10) {
         edges {
           node {
             altText
@@ -23,7 +23,7 @@ export const getProductByHandle = /* GraphQL */ `
           currencyCode
         }
       }
-      variants(first: 3) {
+      variants(first: 10) {
         edges {
           node {
             id

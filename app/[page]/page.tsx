@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import NavBar from '@/components/navigation/NavBar';
 import StickyBar from '@/components/navigation/StickyBar';
 import Prose from '@/components/prose';
+import { BenefitsData } from '@/data';
 import { getMenu, getPage } from '@/data/shopify';
 import { cn } from '@/lib/utils';
 import { redirect } from 'next/navigation';
@@ -18,7 +19,7 @@ export default async function LegalPage({ params }: { params: { page: string } }
     return (
         <div className='relative'>
             <div className="sticky top-0 w-full z-50">
-                <StickyBar />
+                <StickyBar stacksData={BenefitsData} className='bg-secondary text-foreground h-12' iconClassName='text-foreground' />
                 <NavBar menu={menu} />
             </div>
             <section className={cn(
