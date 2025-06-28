@@ -140,7 +140,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                                     Most popular !
                                 </div>
                                 )}
-                                <div className="space-y-1">
+                                <div className="space-y-1 px-2">
                                 <Image src={data.image} alt="image of pack" className="w-auto h-20 mx-auto" width={100} height={100} />
                                 <h6 className={cn("text-xs font-bold", "lg:text-sm")}>
                                     {data.title}

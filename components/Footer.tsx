@@ -11,7 +11,7 @@ interface FooterProps {
 const Footer = ({
     footerMenu
 }: FooterProps) => {
-    const classLink = "font-light text-base hover:underline";
+    const classLink = "font-light text-base";
     const pathname = usePathname();
 
     return (

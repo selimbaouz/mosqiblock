@@ -10,9 +10,9 @@ interface LayoutClientProps {
 
 const LayoutClient: FC<LayoutClientProps> = ({children}) => {
     usePageVisibility({
-        title: "Pourquoi tu es parti ? reviens ici !",
-        onVisible: "WEMOM - La ceinture qui sécurise votre bébé",
-        onHidden: () => "L'utilisateur a décidé que son bébé n'était pas une priorité !",
+        title: "Did you forget something? Come back to MosqiBlock!",
+        onVisible: "MosqiBlock – Your shield against mosquitoes",
+        onHidden: () => "Don't let mosquitoes win! Protect your family now.",
         favicon: Favicon.src,
         faviconInactive: FaviconInactive.src
     });
