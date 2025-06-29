@@ -88,9 +88,9 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             </div>
              <div className={cn("flex items-center gap-2")}> 
                     <GetRatings value={4.7} className={cn("text-base sm:text-md text-[#F3974B]", "md:text-lg", "xl:text-sm")} />
-                    <p className={cn("text-xs text-foreground")}>4.7 | </p>
+                    <p className={cn("text-xs text-foreground")}>4.6 | </p>
                     <Link href="#avis" className={cn("text-xs sm:text-sm text-foreground")}>
-                        1000+ Satisfied customers
+                        8000+ Satisfied customers
                     </Link> 
                 </div>
             <p className={cn("py-2 text-sm leading-6", "xl:text-lg")}><strong>Enjoy peaceful nights</strong>, free from buzzing and bites. <strong>Protect your loved ones</strong> with safe, silent technology. Easy to use anywhere,  <strong>comfort and freedom, every day.</strong></p>

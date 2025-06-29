@@ -29,8 +29,8 @@ const Header = () => {
                 "absolute inset-0 flex flex-col justify-center items-center z-20 text-center space-y-6"
             )}>
                 <div className={cn("space-y-2 mx-auto w-full flex flex-col justify-center items-center px-4")}>
-                    <GetRatings value={4.7} className={cn("text-base sm:text-md text-white", "md:text-lg", "xl:text-lg")} />
-                    <p className={cn("text-sm text-white font-light", "lg:text-base")}>4.7 | 1000+ Satisfied customers</p>
+                    <GetRatings value={4.6} className={cn("text-base sm:text-md text-white", "md:text-lg", "xl:text-lg")} />
+                    <p className={cn("text-sm text-white font-light", "lg:text-base")}>4.6 | 8000+ Satisfied customers</p>
                 </div>
                 <h1 className={cn(
                     'font-bold text-gray-100 drop-shadow-lg',

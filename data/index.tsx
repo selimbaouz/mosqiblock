@@ -10,9 +10,9 @@ import Leaf from "@/public/images/leaf.png";
 import Thunder from "@/public/images/thunder.png";
 import Baby from "@/public/images/baby.png";
 import Shield from "@/public/images/shield.png";
-import Avis1 from "@/public/images/avis/avis1.webp";
-import Avis2 from "@/public/images/avis/avis2.webp";
-import Avis3 from "@/public/images/avis/avis3.webp";
+import Avis1 from "@/public/images/avis/avis1.avif";
+import Avis2 from "@/public/images/avis/avis2.avif";
+import Avis3 from "@/public/images/avis/avis3.avif";
 import { FaUndo } from "react-icons/fa";
 import { GoHeartFill } from "react-icons/go";
 import Benefits from "@/components/mode/Benefits";
@@ -21,40 +21,43 @@ import Step1 from "@/public/images/step1.avif";
 import Step2 from "@/public/images/step2.avif";
 import Step3 from "@/public/images/step3.avif";
 import Step4 from "@/public/images/step4.avif";
+import Sarah from "@/public/images/avis/Sarah.avif";
+import Joshua from "@/public/images/avis/Joshua.avif";
+import Connie from "@/public/images/avis/Connie.webp";
 
 export const bestReviewsData = [
   {
-      name: "Anaïs", 
+      name: "Sarah J.", 
       picture: [
         {
-          imageUrl: "https://avatars.githubusercontent.com/u/16860528",
-          profileUrl: "https://github.com/dillionverma"
+          imageUrl: Sarah.src,
+          profileUrl: "#"
         }
       ],
       rating: 5,
-      content: "Un parfum envoûtant qui sublime ma présence avec élégance et luxe. Une véritable signature olfactive."
+      content: "No more mosquitoes! This tool really helped me out during my camping trip last summer. It killed all the bugs and I got to enjoy the outside without getting any bites."
   },
   {
-    name: "Jessica", 
+    name: "Joshua M.", 
       picture: [
         {
-          imageUrl: "https://avatars.githubusercontent.com/u/16860528",
-          profileUrl: "https://github.com/dillionverma"
+          imageUrl: Joshua.src,
+          profileUrl: "#"
         }
       ],
       rating: 5,
-      content: "Un parfum envoûtant qui sublime ma présence avec élégance et luxe. Une véritable signature olfactive."
+      content: "Received this MosqiShock tool super fast and it perfectly satisfied my needs and worked just as promised. I would recommend this lamp to everyone this summer, it’s very effective against mosquitoes."
   },
   {
-    name: "Marie", 
+    name: "Connie E.", 
       picture: [
         {
-          imageUrl: "https://avatars.githubusercontent.com/u/16860528",
-          profileUrl: "https://github.com/dillionverma"
+          imageUrl: Connie.src,
+          profileUrl: "#"
         }
       ],
       rating: 5,
-      content: "Un parfum envoûtant qui sublime ma présence avec élégance et luxe. Une véritable signature olfactive."
+      content: "This zapper crushes the competition, no doubt about it. My family won’t live without it now."
   },
 ]
 
@@ -212,21 +215,24 @@ export const productInstructionSelected = (selected: number) => {
 export const reviewsData = [
   {
     image: Avis1,
-    author: "Andrea R.",
+    author: "Sarah J.",
     score: 5,
-    title: "This product is perfect now that spring has started and the rains are starting to spread, and pesky mosquitoes are starting to appear. I use it at home to protect my son, who is allergic to almost everything. It's very functional and wireless and rechargeable.",
+    title: "Outstanding Product",
+    content: "No more mosquitoes! This tool really helped me out during my camping trip last summer. It killed all the bugs and i got to enjoy the outside without getting any bites."
   },
   {
     image: Avis2,
-    author: "Mark T.",
-    score: 5,
-    title: "It's very good quality surprisingly. It's easy to use and very nicely designed. I can put it anywhere I want and it kills all the mosquitos. It doesn't make any noise at all. Very portable.",
+    author: "Michael R.",
+    score: 4.7,
+    title: "Best Purchase",
+    content: "I was pleasantly surprised after using this mosquito lamp. I never expected it to be this effective and powerful. And the battery lasted for ages, so i could turn it on and simply forget all about this lamp and mosquitoes. I highly recommend this tool, it’s much better than other alternatives."
   },
   {
     image: Avis3,
-    author: "Shopie L.",
+    author: "Joshua M. ",
     score: 5,
-    title: "This little tiny bug zapper works great to avoid the fruit flies, every house must have one.",
+    title: "Worth the money",
+    content: "Received this MosqiShock tool super fast and it perfectly satisfied my needs and worked just as promised. I would recommend this lamp to everyone this summer, it’s very effective against mosquitoes."
   },
 ];
 

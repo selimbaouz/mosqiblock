@@ -57,7 +57,8 @@ export function Reviews() {
               <div className={cn("flex justify-center")}>
                 <GetRatings value={review.score} className={cn("text-lg sm:text-md text-[#F3974B]", "md:text-lg", "xl:text-lg")} />
               </div>
-              <p className={cn("text-sm font-normal leading-8", "xl:text-base")}>{`"${review.title}"`}</p>
+              <p className={cn("font-normal leading-8", "xl:text-lg")}>{`"${review.title}"`}</p>
+              <p className={cn("text-sm font-normal leading-8", "xl:text-base")}>{`"${review.content}"`}</p>
               <p className={cn("text-xs font-semibold mt-2", "xl:text-sm")}>- {review.author}</p>
             </div>
           ))}
@@ -86,7 +87,8 @@ export function Reviews() {
                 <div className={cn("flex justify-center pt-4")}>
                   <GetRatings value={review.score} className={cn("text-lg sm:text-md text-[#F3974B]", "md:text-lg", "xl:text-sm")} />
                 </div>
-                <p className="text-[13px] font-normal leading-6">{`"${review.title}"`}</p>
+                <p className="leading-6 font-bold">{`"${review.title}"`}</p>
+                <p className={cn("text-sm font-normal leading-8", "xl:text-base")}>{`"${review.content}"`}</p>
                 <p className="text-xs font-semibold mt-2">- {review.author}</p>
               </CarouselItem>
             ))}

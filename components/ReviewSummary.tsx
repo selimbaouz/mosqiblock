@@ -3,19 +3,23 @@
 import GetRatings from "@/lib/fn";
 import { cn } from "@/lib/utils";
 import { FaCircleCheck } from "react-icons/fa6";
-import Avis1 from "@/public/images/avis/avis5.avif";
-import Avis2 from "@/public/images/avis/avis6.avif";
-import Avis3 from "@/public/images/avis/avis7.avif";
-import Avis4 from "@/public/images/avis/avis8.avif";
-import Avis5 from "@/public/images/avis/avis9.avif";
+import Avis1 from "@/public/images/avis/avis1.avif";
+import Avis2 from "@/public/images/avis/avis2.avif";
+import Avis3 from "@/public/images/avis/avis3.avif";
+import Avis9 from "@/public/images/avis/avis9.avif";
+import Avis11 from "@/public/images/avis/avis11.avif";
+import Avis12 from "@/public/images/avis/avis12.webp";
+import Avis5 from "@/public/images/avis/avis5.avif";
+import Avis10 from "@/public/images/avis/avis10.avif";
+import Avis7 from "@/public/images/avis/avis7.avif";
 import Image from "next/image";
 
 // Ratings breakdown
 const ratings = [
-  { stars: 5, count: 613 },
-  { stars: 4, count: 29 },
+  { stars: 5, count: 5372 },
+  { stars: 4, count: 2876 },
   { stars: 3, count: 6 },
-  { stars: 2, count: 2 },
+  { stars: 2, count: 3 },
   { stars: 1, count: 1 },
 ];
 const totalReviews = ratings.reduce((acc, r) => acc + r.count, 0);
@@ -35,6 +39,14 @@ const reviews = [
   },
   {
     productImg: Avis2,
+    name: "Michael R.",
+    note: 4.7,
+    title: "Best Purchase",
+    content:
+      "I was pleasantly surprised after using this mosquito lamp. I never expected it to be this effective and powerful. And the battery lasted for ages, so i could turn it on and simply forget all about this lamp and mosquitoes. I highly recommend this tool, it’s much better than other alternatives.",
+  },
+  {
+    productImg: Avis3,
     name: "Joshua M.",
     note: 5,
     title: "Worth the money",
@@ -42,60 +54,53 @@ const reviews = [
       "Received this MosqiShock tool super fast and it perfectly satisfied my needs and worked just as promised. I would recommend this lamp to everyone this summer, it’s very effective against mosquitoes.",
   },
   {
-    productImg: Avis3,
+    productImg: Avis10,
     name: "Emily P.",
     note: 5,
     title: "10/10 Protection",
     content:
       "Before using this MosqiShock lamp, i’ve tried many different mosquito repellents. From candles, to sprays, none was strong enough to combat the annoying bugs. However, this one, was a real shocker! It was super effective, had no unpleasant odors, and lasted for ages. And it’s so much more environmentally friendly – just recharge the battery and let it do it’s magic again.",
-  },
-  {
-    productImg: Avis4,
-    name: "Michael R.",
-    note: 5,
-    title: "Best Purchase",
-    content:
-      "I was pleasantly surprised after using this mosquito lamp. I never expected it to be this effective and powerful. And the battery lasted for ages, so i could turn it on and simply forget all about this lamp and mosquitoes. I highly recommend this tool, it’s much better than other alternatives.",
   },
   {
     productImg: Avis5,
-    name: "Linda K.",
-    note: 5,
-    title: "Perfect for camping",
+    name: "Olivia J.",
+    note: 4.5,
+    title: "It’s Irreplaceable",
     content:
-      "We took this on our camping trip and it worked wonders. No more swatting at mosquitoes all night!",
+      "No matter where I go, whether it’s a weekend camping trip or a night fishing by the lake, I always pack this mosquito lamp with me. It’s super tiny, fitting easily into my backpack, yet surprisingly powerful and reliable at getting rid of pests. I’ve noticed a huge difference in the number of bites I get, and it’s been a total relief not having to swat mosquitoes all the time. Plus, it’s so easy to use—just turn it on and it does its magic. Absolutely love it and wouldn’t head outdoors without it!",
+  },
+
+  {
+    productImg: Avis7,
+    name: "Ethan L.",
+    note: 4.3,
+    title: "Powerful bug control",
+    content:
+      "Mosquitoes are a real problem here… I truly believe that they have mutated to be resilient to regular sprays or candles… Then i tried this lamp, and like magic the bugs were gone. I was mindblown… How quickly they all disappeared, and all i had to do was clean up their tiny bodies away and recharge the battery of this lamp to allow it to continue eradicating those bloodsuckers.",
   },
   {
-    productImg: Avis1,
-    name: "Sarah J.",
+    productImg: Avis9,
+    name: "Ava M.",
     note: 5,
-    title: "Outstanding Product",
+    title: "Super easy to use",
     content:
-      "No more mosquitoes! This tool really helped me out during my camping trip last summer. It killed all the bugs and I got to enjoy the outside without getting any bites.",
+      "I’ve been using this mosquito-killing lamp for a while now and loved it so much that I decided to get one for my parents. They were always complaining about mosquitoes constantly interrupting their sleep, especially during the humid summer nights. When I gave them this lamp, my dad was immediately impressed—he couldn’t believe how easy it was to set up and how silently it worked.. It’s been such a relief for them both.",
   },
   {
-    productImg: Avis2,
-    name: "Joshua M.",
-    note: 5,
-    title: "Worth the money",
+    productImg: Avis11,
+    name: "Sophia G.",
+    note: 4.7,
+    title: "Best Mosquito Controller",
     content:
-      "Received this MosqiShock tool super fast and it perfectly satisfied my needs and worked just as promised. I would recommend this lamp to everyone this summer, it’s very effective against mosquitoes.",
+      "I love that this lamp doesn’t use any toxins or chemicals, making it a perfect choice for my family and me. It’s so much better for the environment, and I feel good knowing I’m not releasing harmful substances into the air we breathe. Plus, it’s reusable, not like those one-time candles.",
   },
   {
-    productImg: Avis3,
-    name: "Emily P.",
+    productImg: Avis12,
+    name: "Connie E.",
     note: 5,
-    title: "10/10 Protection",
+    title: "Best zapper hands down",
     content:
-      "Before using this MosqiShock lamp, i’ve tried many different mosquito repellents. From candles, to sprays, none was strong enough to combat the annoying bugs. However, this one, was a real shocker! It was super effective, had no unpleasant odors, and lasted for ages. And it’s so much more environmentally friendly – just recharge the battery and let it do it’s magic again.",
-  },
-  {
-    productImg: Avis4,
-    name: "Michael R.",
-    note: 5,
-    title: "Best Purchase",
-    content:
-      "I was pleasantly surprised after using this mosquito lamp. I never expected it to be this effective and powerful. And the battery lasted for ages, so i could turn it on and simply forget all about this lamp and mosquitoes. I highly recommend this tool, it’s much better than other alternatives.",
+      "This zapper crushes the competition, no doubt about it. My family won’t live without it now.",
   },
 ];
 

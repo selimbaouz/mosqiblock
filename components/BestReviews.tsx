@@ -53,7 +53,7 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
         <CarouselContent>
           {bestReviewsData.map((data, index) => (
             <CarouselItem key={index}>
-              <div className={cn("bg-white border border-secondary rounded-2xl p-4 flex flex-col gap-4", "xl:px-6 xl:py-8")}>
+              <div className={cn("bg-white border border-secondary h-full rounded-2xl p-4 flex flex-col gap-4", "xl:px-6 xl:py-8")}>
                 <div className={cn("flex items-center gap-3")}>
                     <AvatarCircles 
                         avatarUrls={data.picture} 
