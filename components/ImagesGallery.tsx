@@ -47,7 +47,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
       {/* Carousel */}
       <div className="relative">
         <div ref={emblaRef} className="overflow-hidden rounded-3xl w-full">
-          <div className="flex">
+          <div className="flex gap-2">
             {images.map((img, idx) => (
               <div
                 className="flex-shrink-0 w-full"

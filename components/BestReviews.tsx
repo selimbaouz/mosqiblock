@@ -9,7 +9,6 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
-import AvatarCircles from "./ui/avatar-circles"
 import GetRatings from "@/lib/fn"
 import { FaCircleCheck } from "react-icons/fa6"
 import { bestReviewsData } from "@/data"
@@ -55,10 +54,6 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
             <CarouselItem key={index}>
               <div className={cn("bg-white border border-secondary h-full rounded-2xl p-4 flex flex-col gap-4", "xl:px-6 xl:py-8")}>
                 <div className={cn("flex items-center gap-3")}>
-                    <AvatarCircles 
-                        avatarUrls={data.picture} 
-                        classNameImage="size-12"
-                    />
                     <div>
                         <div className={cn("flex items-center gap-2")}>
                             <h6 className={cn("font-bold text-lg", "xl:text-2xl", "3xl:text-3xl")}>{data.name}</h6>
