@@ -53,7 +53,7 @@ const Header = () => {
                         Try MosqiBlock
                     </Link>
                 </Button>
-                <div className={cn("grid grid-cols-2 items-center gap-3 justify-center", "lg:flex lg:items-center lg:gap-6 lg:pt-20")}>
+                <div className={cn("grid grid-cols-2 items-center gap-3 justify-center pt-4", "lg:flex lg:items-center lg:gap-6 lg:pt-20")}>
                     {[
                         {
                             img: Icon1,
@@ -73,8 +73,8 @@ const Header = () => {
                         },
                     ].map((data, index) => (
                         <div key={index} className={cn("flex items-center gap-2")}>
-                            <div className={cn("bg-tertiary flex justify-center items-center p-0.5 rounded-full")}>
-                                <Image src={data.img.src} alt="icon" width={data.img.width} height={data.img.height} className='lg:w-10' />
+                            <div className={cn("bg-tertiary flex justify-center items-center p-0.5 rounded-full w-6 lg:w-10")}>
+                                <Image src={data.img.src} alt="icon" width={data.img.width} height={data.img.height}     />
                             </div>
                             <p className={cn("text-white text-xs font-light", "lg:text-base")}>{data.title}</p>
                         </div>
