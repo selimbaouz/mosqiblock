@@ -33,6 +33,9 @@ const config: Config = {
   				DEFAULT: '#DDCFFF',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
+			tertiary: {
+				DEFAULT: "#956BFF"
+			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'

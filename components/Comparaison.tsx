@@ -28,7 +28,7 @@ const Comparaison = () => (
             <div className="grid grid-cols-3 rounded-3xl overflow-hidden border border-secondary">
                 {/* Header Row */}
                 <div className="bg-transparent"></div>
-                <div className="bg-primary rounded-tl-3xl rounded-tr-3xl flex justify-center items-center py-4">
+                <div className="bg-tertiary rounded-tl-3xl rounded-tr-3xl flex justify-center items-center py-4">
                     <Image src="/images/Pack1.png" alt="MosqiBlock" width={60} height={60} />
                 </div>
                 <div className="bg-transparent flex justify-center items-center py-4">
@@ -38,11 +38,11 @@ const Comparaison = () => (
                 {comparisonData.map((data, i) => (
                     <React.Fragment key={i}>
                         {/* Label */}
-                        <div className={cn("border-t border-primary flex items-center sm:pl-4 text-left", ROW_HEIGHT)}>
+                        <div className={cn("border-t border-tertiary flex items-center sm:pl-4 text-left", ROW_HEIGHT)}>
                             <span className={cn("text-sm font-medium text-[#333]", "xl:text-base")}>{data.title}</span>
                         </div>
                         {/* MosqiBlock */}
-                        <div className={cn("bg-primary border-t border-white flex items-center justify-center", comparisonData.length - 1 === i && "rounded-bl-3xl rounded-br-3xl", ROW_HEIGHT)}>
+                        <div className={cn("bg-tertiary border-t border-white flex items-center justify-center", comparisonData.length - 1 === i && "rounded-bl-3xl rounded-br-3xl", ROW_HEIGHT)}>
                             {typeof data.mosqiblock === 'string' ? (
                                 <span className={cn("text-[10px] px-2 xl:px-4 text-white", "xl:text-xs")}>{data.mosqiblock}</span>
                             ) : (
@@ -50,11 +50,11 @@ const Comparaison = () => (
                             )}
                         </div>
                         {/* Others */}
-                        <div className={cn("border-t border-primary flex items-center justify-center", ROW_HEIGHT)}>
+                        <div className={cn("border-t border-tertiary flex items-center justify-center", ROW_HEIGHT)}>
                             {typeof data.others === 'string' ? (
                                 <span className={cn("text-[10px] px-2 xl:px-4", "xl:text-xs")}>{data.others}</span>
                             ) : (
-                                React.createElement(data.others, { size: 22, className: 'text-primary' })
+                                React.createElement(data.others, { size: 22, className: 'text-tertiary' })
                             )}
                         </div>
                     </React.Fragment>

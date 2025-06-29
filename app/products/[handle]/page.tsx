@@ -60,7 +60,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                             <span role="img" aria-label="truck">🚚</span>
                             Order now, delivery {formattedDeliveryStart}-{formattedDeliveryEnd}
                         </div>
-                         <div className="flex items-center bg-secondary rounded p-2 border border-primary text-foreground text-left text-xs font-sans">
+                        {/*  <div className="flex items-center bg-secondary rounded p-2 border border-primary text-foreground text-left text-xs font-sans">
                             <div className="flex ml-2 mr-3">
                                 <img 
                                     src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png" 
@@ -81,11 +81,11 @@ export default async function ProductPage({ params }: { params: { handle: string
                             <span className="whitespace-nowrap uppercase font-bold">
                                 Trusted by over 651 families
                             </span>
-                        </div>
-                       {/*  <div className="bg-secondary w-full p-3 flex items-center gap-2 rounded-lg font-bold text-xs uppercase text-foreground border border-primary">
+                        </div> */}
+                        <div className="bg-secondary w-full p-3 flex items-center gap-2 rounded-lg font-bold text-xs uppercase text-foreground border border-primary">
                             <span role="img" aria-label="alarm">⏰</span>
                             Hurry! Stock is limited.
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             

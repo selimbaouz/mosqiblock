@@ -17,7 +17,7 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu}) => {
     const pathname = usePathname();
 
     return (
-        <div className={cn("hidden", "relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-4", "xl:px-0")}>
+        <div className={cn("hidden", "z-50 relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-4", "xl:px-0")}>
             <Link href="/" className={cn("cursor-pointer z-50 font-bold", "lg:text-xl", "xl:text-2xl")}>
                 {/* <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} /> */}
                 MosqiBlock

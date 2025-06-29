@@ -10,7 +10,7 @@ const BestPlaces = () => {
     return (
         <section className={cn("px-4 bg-secondary w-full relative py-10 text-center mx-auto", "lg:px-6", "xl:px-0")}>
             <div className='max-w-screen-xl mx-auto space-y-6 lg:space-y-4 xl:space-y-8'>
-                <h3 className="text-[23px] leading-9 xl:text-4xl font-bold">
+                <h3 className="text-[23px] leading-9 xl:text-4xl font-bold text-tertiary">
                     Best Places to Use
                 </h3>
                 <div className={cn("grid grid-cols-3 gap-2 justify-center items-center", "lg:flex lg:justify-around lg:w-full")}>
@@ -42,7 +42,7 @@ const BestPlaces = () => {
                     ].map((data, i) => (
                         <div key={i} className='py-2 space-y-2'>
                             <div className={cn("p-2 rounded-xl w-max mx-auto")}>
-                                <data.icon className={cn('text-4xl mx-auto rounded-2xl text-primary')} />
+                                <data.icon className={cn('text-4xl mx-auto rounded-2xl text-tertiary')} />
                             </div>
                             <p className={cn("text-[10px] font-bold uppercase", "lg:text-xs", "xl:text-sm")}>{data.content}</p>
                         </div>

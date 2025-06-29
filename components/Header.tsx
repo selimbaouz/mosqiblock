@@ -1,78 +1,84 @@
 "use client";
 import { cn } from '@/lib/utils';
-import React, { FC } from 'react';
+import React from 'react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import HeaderImg from '@/public/images/header.png';
 import ImageLoader from './ImageLoader';
-import NavBar from './navigation/NavBar';
-import { Menu } from '@/types/types';
-import StickyBar from './navigation/StickyBar';
-import { AvatarCirclesPeople } from './AvatarCircles';
-import { BestReviews } from './BestReviews';
-import { stacksData } from "@/data";
+import GetRatings from '@/lib/fn';
+import Image from 'next/image';
+import Icon1 from "@/public/images/peace.png";
+import Icon2 from "@/public/images/safe.png";
+import Icon3 from "@/public/images/comfort.png";
+import Icon4 from "@/public/images/soutient.png";
 
-interface HeaderProps {
-    menu: Menu[];
-}
-const Header:FC<HeaderProps> = ({menu}) => {
+const Header = () => {
     return (
-        <header className={cn('h-[100dvh]')}>
-            <div className={cn("hidden lg:block")}>
-                <StickyBar stacksData={stacksData} className='bg-primary text-white' iconClassName='text-white' />
-            </div>
-            <div className={cn('p-4 text-center py-14 space-y-8 mx-auto max-w-screen-2xl h-[95dvh] z-10', "lg:flex lg:justify-between lg:p-2 lg:py-0 lg:space-y-0 lg:text-left", "xl:max-w-screen-3xl")}>
-                <div className={cn("lg:flex lg:flex-col lg:justify-between lg:px-4 xl:px-10 lg:w-[90%]", "xl:w-[70%]")}>
-                    <div className={cn("hidden", "lg:block")}>
-                        <NavBar menu={menu} />
-                    </div>
-                    <div className={cn("space-y-8 px-2", "sm:px-10", "lg:px-0 lg:w-[90%]")}>
-                        <h1 className={cn('uppercase font-medium text-2xl leading-tight', "md:text-4xl md:leading-[1.2]", "lg:text-5xl", "xl:text-6xl xl:leading-tight", "3xl:text-8xl 3xl:leading-snug")}>
-                            La ceinture qui{" "}
-                            <span className='text-primary font-bold'>
-                                Protège Maman & Bébé
-                            </span> {" "}
-                            efficacement
-                        </h1>
-                        <p className={cn("text-sm font-regular", "lg:text-base lg:max-w-2xl", "xl:text-xl", "3xl:text-2xl 3xl:max-w-3xl")}>
-                        Développée après des tests rigoureux en laboratoire, cette ceinture offre une protection maximale durant la grossesse.
-                        </p>
-                        <Button className={cn(
-                            "uppercase bg-foreground px-[60px] py-[24px] rounded-full text-background text-xs font-medium w-max", "sm:text-sm", "3xl:text-lg",
-                            "hover:bg-primary",
-                        )}
-                            asChild
-                        >
-                            <Link href={"/products/mosqiblock"}>
-                            Découvrir
-                            </Link>
-                        </Button>
-                    </div>
-                    <div className={cn("hidden", "lg:pb-4 lg:flex lg:justify-between lg:items-end")}>
-                        <div className={cn("flex items-center font-medium gap-2 pb-10 text-sm", "xl:text-base", "3xl:text-xl")}>
-                            <AvatarCirclesPeople classNameImage='size-8 3xl:size-20' />
-                            <p>Recommander par<br />
-                            <span className='font-bold text-primary'> +46</span> mamans</p>
-                        </div> 
-                        <BestReviews />
-                    </div>
+        <header className={cn('relative w-full mx-auto')}>
+            <ImageLoader
+                src={HeaderImg ?? ""}
+                alt='Main Images'
+                className={cn('h-full w-full object-cover', "lg:h-[90vh]")}
+                width={397}
+                height={595}
+            />
+            {/* Overlay noir semi-transparent */}
+            <div className="absolute inset-0 bg-black/70 z-10" />
+            {/* Contenu centré */}
+            <div className={cn(
+                "absolute inset-0 flex flex-col justify-center items-center z-20 text-center space-y-6"
+            )}>
+                <div className={cn("space-y-2 mx-auto w-full flex flex-col justify-center items-center px-4")}>
+                    <GetRatings value={4.7} className={cn("text-base sm:text-md text-white", "md:text-lg", "xl:text-lg")} />
+                    <p className={cn("text-sm text-white font-light", "lg:text-base")}>4.7 | 1000+ Satisfied customers</p>
                 </div>
-                <div className={cn("pt-10", "lg:py-4")}>
-                    <ImageLoader
-                            src={HeaderImg ?? ""} // Utilisez l'index pour obtenir l'image
-                            alt='Main Images of Bidet-Wc'
-                            className={cn('h-full rounded-[20px] mx-auto w-full', "md:hidden", "lg:block lg:h-full lg:w-full lg:mx-0")}
-                            width={397}
-                            height={595}
-                        />
-                </div>
-                <div className='space-y-6 pb-10 lg:hidden'>
-                    <div className={cn("flex text-nowrap items-center font-medium gap-2 text-xs justify-center", "sm:text-sm", "lg:text-wrap lg:gap-4 lg:text-lg lg:hidden")}>
-                        <AvatarCirclesPeople classNameImage='size-8' />
-                        <p>Recommander par<br className={cn("hidden", "lg:block")} />
-                        <span className='font-bold text-primary'>+46</span> mamans</p>
-                    </div> 
-                    <BestReviews />
+                <h1 className={cn(
+                    'font-bold text-gray-100 drop-shadow-lg',
+                    "text-2xl leading-tight md:text-4xl md:leading-[1.2] lg:text-5xl xl:text-6xl xl:leading-tight 3xl:text-8xl 3xl:leading-snug"
+                )}>
+                    Say Goodbye to Mosquitoes, <br className={cn("hidden", "lg:block")}/>Enjoy Your Evenings in Peace
+                </h1>
+                <p className={cn(
+                    "px-10 text-sm text-white font-light",
+                    "lg:text-base lg:max-w-2xl xl:text-lg lg:pb-4"
+                )}>
+                    The safe, effective, chemical-free solution to protect your children and loved ones from mosquitoes.
+                </p>
+                <Button className={cn(
+                    "bg-primary px-[60px] py-[24px] rounded-full text-background text-xs font-medium w-max sm:text-sm 3xl:text-lg hover:bg-primary/80"
+                )}
+                    asChild
+                >
+                    <Link href={"/products/mosqiblock"}>
+                        Try MosqiBlock
+                    </Link>
+                </Button>
+                <div className={cn("grid grid-cols-2 items-center gap-3 justify-center", "lg:flex lg:items-center lg:gap-6 lg:pt-20")}>
+                    {[
+                        {
+                            img: Icon1,
+                            title: "Instant Peace",
+                        },
+                         {
+                            img: Icon2,
+                            title: "Family Safe",
+                        },
+                         {
+                            img: Icon3,
+                            title: "Pure Comfort",
+                        },
+                         {
+                            img: Icon4,
+                            title: "Total Freedom",
+                        },
+                    ].map((data, index) => (
+                        <div key={index} className={cn("flex items-center gap-2")}>
+                            <div className={cn("bg-tertiary flex justify-center items-center p-0.5 rounded-full")}>
+                                <Image src={data.img.src} alt="icon" width={data.img.width} height={data.img.height} className='lg:w-10' />
+                            </div>
+                            <p className={cn("text-white text-xs font-light", "lg:text-base")}>{data.title}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </header>

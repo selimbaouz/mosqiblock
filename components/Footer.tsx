@@ -23,7 +23,7 @@ const Footer = ({
                         <div className={cn("space-y-4")}>
                             <h6 className={cn("lg:text-xl font-medium")}>About</h6>
                             <p className={cn(classLink, "max-w-xs leading-relaxed", "lg:max-w-sm")}>
-                                I created <strong>MosqiBlock</strong> to give families and outdoor lovers a safe, powerful, and easy way to enjoy life without mosquitoes—no chemicals, no hassle, just results.
+                                We created <strong>MosqiBlock</strong> to offer families and outdoor enthusiasts a safe, powerful and easy way to enjoy life mosquito-free - no chemicals, no hassle, just results.
                             </p>
                         </div>
                         <div className={cn("space-y-4")}>

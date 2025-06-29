@@ -91,7 +91,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                     <p className={cn("text-xs text-foreground")}>4.7 | </p>
                     <Link href="#avis" className={cn("text-xs sm:text-sm text-foreground")}>
                         1000+ Satisfied customers
-                    </Link>
+                    </Link> 
                 </div>
             <p className={cn("py-2 text-sm leading-6", "xl:text-lg")}><strong>Enjoy peaceful nights</strong>, free from buzzing and bites. <strong>Protect your loved ones</strong> with safe, silent technology. Easy to use anywhere,  <strong>comfort and freedom, every day.</strong></p>
             <div className={cn("space-y-6 py-4")}>    
