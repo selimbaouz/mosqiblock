@@ -2,17 +2,28 @@
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
-import { reviewsData } from '@/data';
 import Image from 'next/image';
 import GetRatings from '@/lib/fn';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ImQuotesRight } from "react-icons/im";
+import { useTranslations } from "next-intl";
+import Avis1 from "@/public/images/avis/avis1.avif";
+import Avis2 from "@/public/images/avis/avis2.avif";
+import Avis3 from "@/public/images/avis/avis3.avif";
 
 export function Reviews() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const t = useTranslations("fe.reviews");
+  const reviewsImages = [Avis1, Avis2, Avis3];
+  const reviews = t.raw("items") as {
+    author: string;
+    score: number;
+    title: string;
+    content: string;
+  }[];
 
   React.useEffect(() => {
     if (!api) {
@@ -37,16 +48,16 @@ export function Reviews() {
     <section className={cn("px-6 bg-tertiary w-full relative py-10 text-center text-white", "lg:py-20 lg lg:px-6", "xl:px-0")}>
       <div className='max-w-screen-xl mx-auto space-y-6 lg:space-y-4 xl:space-y-8'>
         <h3 className="text-[23px] leading-9 xl:text-4xl font-bold xl:pb-4">
-          Trusted by Families <br className="lg:hidden"/>Loved by All
+          {t("sectionTitle")} <br className="lg:hidden"/>{t("sectionSecondTitle")}
         </h3>
 
         {/* Desktop: grid 3 colonnes */}
         <div className={cn("hidden lg:grid grid-cols-3 items-start gap-4")}>
-          {reviewsData.map((review, index) => (
+          {reviews.map((review, index) => (
             <div key={index} className="space-y-2 xl:space-y-4">
               <div className="relative w-full aspect-[1420/1065] rounded-2xl overflow-hidden">
                 <Image
-                  src={review.image.src}
+                  src={reviewsImages[index].src}
                   alt="image of review"
                   fill
                   className="object-cover"
@@ -67,12 +78,12 @@ export function Reviews() {
         {/* Mobile: carousel */}
         <Carousel setApi={setApi} className={cn("lg:hidden w-full cursor-pointer mx-auto pt-4")}>
           <CarouselContent className="-mx-2 flex pl-2 h-auto"> {/* -mx-2 et pl-2 pour voir la suivante */}
-            {reviewsData.map((review, index) => (
+            {reviews.map((review, index) => (
               <CarouselItem key={index} className="space-y-4 pr-1 flex-[0_0_90%]">
                 <div className={cn("relative")}>
                   <div className="relative w-full aspect-[1420/1895] h-[350px] rounded-2xl overflow-hidden">
                     <Image
-                      src={review.image.src}
+                      src={reviewsImages[index].src}
                       alt="image of review"
                       fill
                       className="object-cover"
@@ -107,7 +118,7 @@ export function Reviews() {
             >
               <ChevronLeft className={cn("size-4")} />
           </button>
-            {reviewsData.map((_, index) => (
+            {reviews.map((_, index) => (
               <div
                 key={index}
                 className={cn(

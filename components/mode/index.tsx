@@ -1,11 +1,29 @@
 "use client";
 
-import { productModeSelected, selectModesData } from "@/data";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
+import Benefits from "./Benefits";
+import Utilisation from "./Utilisation";
 
 const Mode = () => {
+    const t = useTranslations("fe.mode");
     const [selected, setSelected] = useState(0);
+
+     // Onglets dynamiques depuis la traduction
+     const selectModesData = t.raw("selectModesData") as { title: string }[];
+
+    // Sélection du contenu selon l’onglet
+    const productModeSelected = (selected: number) => {
+        switch (selected) {
+            case 0:
+                return { content: <Benefits /> };
+            case 1:
+                return { content: <Utilisation /> };
+            default:
+                return { content: <Benefits /> };
+        }
+    };
 
     return (
         <section className={cn("px-4 w-full relative bg-white py-10 space-y-6 text-center mx-auto", "lg:py-20 lg:space-y-10 lg:px-6", "xl:px-0")}>

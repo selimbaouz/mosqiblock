@@ -1,13 +1,12 @@
+"use client";
+import React, { FC } from 'react';
 import ProductImage from '@/components/ProductImage';
 import { cn } from '@/lib/utils';
 import ImagesGallery from '@/components/ImagesGallery';
-import { redirect } from 'next/navigation';
-import { getHandleOfProduct, getMenu } from '@/data/shopify';
 import StickyBar from '@/components/navigation/StickyBar';
 import NavBar from '@/components/navigation/NavBar';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer'
-import { BenefitsData, annoucementData } from "@/data";
 import Mode from '@/components/mode';
 import BestPlaces from '@/components/BestPlaces';
 import { Reviews } from '@/components/Reviews';
@@ -16,9 +15,17 @@ import MosquitoesKiller from '@/components/MosquitoesKiller';
 import Comparaison from '@/components/Comparaison';
 import ReviewSummary from '@/components/ReviewSummary';
 import AnnouncementBar from '@/components/navigation/AnnouncementBar';
+import { Menu, Product } from '@/types/types';
 import { format, addDays } from 'date-fns';
+import { useTranslations } from "next-intl";
 
-export default async function ProductPage({ params }: { params: { handle: string } }) {
+interface MosqiBlockProps {
+    menu: Menu[];
+    footerMenu: Menu[];
+    product: Product;
+}
+const MosqiBlock: FC<MosqiBlockProps> = ({menu, footerMenu, product}) => {
+    const t = useTranslations("fe.productMosqiBlock");
     // 📆 Calcul des dates de livraison
     const today = new Date();
     const deliveryStart = addDays(today, 7);
@@ -27,27 +34,19 @@ export default async function ProductPage({ params }: { params: { handle: string
     // 🗓️ Formatage des dates (mois abrégé + jour)
     const formattedDeliveryStart = format(deliveryStart, 'MMM d');
     const formattedDeliveryEnd = format(deliveryEnd, 'd');
-    
-    const product = await getHandleOfProduct(params.handle);
-    const menu = await getMenu("main-menu");
-    const footerMenu = await getMenu("footer");
-    
-    if(!product) {
-        redirect('/')
-    }
 
     return (
         <div className='relative'>
             <div className="sticky top-0 w-full z-[150]">
-                <AnnouncementBar data={annoucementData} className='bg-primary text-white' iconClassName='text-white' />
+                <AnnouncementBar className='bg-primary text-white' iconClassName='text-white' />
                 <NavBar menu={menu} />
             </div>
             <div className='bg-[#EEE8FF] pt-4 lg:pt-0 lg:pb-20'>
                 <div className={cn('space-y-3 p-4', "lg:hidden")}>
                     <h3 className={cn("text-left text-[30px] leading-9 font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
-                        MosqiBlock - Keep Your Family Safe
+                        {t("mainTitle")}
                     </h3>
-                    <p className={cn("text-xs sm:text-sm text-foreground")}>Instant Peace | Pure comfort | Total Freedom</p>
+                    <p className={cn("text-xs sm:text-sm text-foreground")}>{t("subtitle")}</p>
                     <div className={cn("space-y-2")}>
                         {/* <div className={cn("bg-secondary w-full p-4 flex items-center gap-6 rounded-lg font-bold text-xs")}>
                                 <p className='text-nowrap'>Only <span className='text-primary'>60</span> items</p>
@@ -58,7 +57,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                         </div> */}
                        <div className={cn("bg-primary uppercase text-white w-full p-4 flex items-center gap-2 rounded-lg font-bold text-xs")}>
                             <span role="img" aria-label="truck">🚚</span>
-                            Order now, delivery {formattedDeliveryStart}-{formattedDeliveryEnd}
+                             {t("delivery", { start: formattedDeliveryStart, end: formattedDeliveryEnd })}
                         </div>
                         {/*  <div className="flex items-center bg-secondary rounded p-2 border border-primary text-foreground text-left text-xs font-sans">
                             <div className="flex ml-2 mr-3">
@@ -79,12 +78,12 @@ export default async function ProductPage({ params }: { params: { handle: string
                                 />
                             </div>
                             <span className="whitespace-nowrap uppercase font-bold">
-                                Trusted by over 651 families
+                                 {t("trustedBy")}
                             </span>
                         </div> */}
                         <div className="bg-secondary w-full p-3 flex items-center gap-2 rounded-lg font-bold text-xs uppercase text-foreground border border-primary">
                             <span role="img" aria-label="alarm">⏰</span>
-                            Hurry! Stock is limited.
+                            {t("stockAlert")}
                         </div>
                     </div>
                 </div>
@@ -99,11 +98,11 @@ export default async function ProductPage({ params }: { params: { handle: string
                         />
                     </div>
                     <div>
-                        <ProductImage product={product!} />
+                        <ProductImage product={product!} formattedDeliveryStart={formattedDeliveryStart} formattedDeliveryEnd={formattedDeliveryEnd} />
                     </div>
                 </section>
             </div>
-            <StickyBar stacksData={BenefitsData} className='bg-secondary text-foreground h-12' iconClassName='text-foreground' />
+            <StickyBar className='bg-secondary text-foreground h-12' iconClassName='text-foreground' />
             <Mode />
             <BestPlaces />
             <Reviews />
@@ -116,3 +115,5 @@ export default async function ProductPage({ params }: { params: { handle: string
         </div>
     );
 };
+
+export default MosqiBlock;

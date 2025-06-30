@@ -2,8 +2,10 @@
 
 import { useEffect } from "react";
 import { useCartStore } from "../../store/cart"; // Assurez-vous que c'est bien l'import correct pour vider le panier.
+import { useTranslations } from "next-intl";
 
 const CartTimer = () => {
+  const t = useTranslations("fe.cart.cartTimer");
   const {clearCart, timeLeft, setTimeLeft, cart} = useCartStore();
   useEffect(() => {
     if(cart.lines.length === 0) {
@@ -31,7 +33,7 @@ const CartTimer = () => {
 
   return (
     <p className="text-sm text-primary font-bold">
-      🔥 Your basket is reserved for {formatTime(timeLeft)} minutes!
+      {t("reserved", { time: formatTime(timeLeft) })}
     </p>
   );
 };

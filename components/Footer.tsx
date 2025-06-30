@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 /* import Logo from "@/public/images/logo.webp" */
 import { Menu } from "@/types/types";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,6 +14,7 @@ const Footer = ({
 }: FooterProps) => {
     const classLink = "font-light text-base";
     const pathname = usePathname();
+    const t = useTranslations("fe.footer");
 
     return (
        <div className={classLink}>
@@ -21,13 +23,13 @@ const Footer = ({
                     {/* <Image src={Logo} alt="Logo of HelloPurly" width={250} height={36} /> */}
                     <div className={cn("flex flex-col space-y-10", "lg:flex-row lg:items-start lg:justify-between lg:space-y-0")}>
                         <div className={cn("space-y-4")}>
-                            <h6 className={cn("lg:text-xl font-medium")}>About</h6>
+                            <h6 className={cn("lg:text-xl font-medium")}>{t("aboutTitle")}</h6>
                             <p className={cn(classLink, "max-w-xs leading-relaxed", "lg:max-w-sm")}>
-                                We created <strong>MosqiBlock</strong> to offer families and outdoor enthusiasts a safe, powerful and easy way to enjoy life mosquito-free - no chemicals, no hassle, just results.
+                                {t("aboutText")}
                             </p>
                         </div>
                         <div className={cn("space-y-4")}>
-                            <h6 className={cn("lg:text-xl font-medium")}>Legal pages</h6>
+                            <h6 className={cn("lg:text-xl font-medium")}>{t("legalTitle")}</h6>
                             <ul className="leading-relaxed text-sm">
                                 {footerMenu.map((data, i) => (
                                     <li key={i}>
@@ -37,10 +39,10 @@ const Footer = ({
                             </ul>
                         </div>
                         <div className={cn("space-y-4")}>
-                            <h6 className={cn("lg:text-xl font-medium")}>Contact</h6>
+                            <h6 className={cn("lg:text-xl font-medium")}>{t("contactTitle")}</h6>
                             <div className="leading-relaxed space-y-2 text-sm">
                                 <Link href="mailto:mosqiblock@gmail.com" className={cn(classLink)}>mosqiblock@gmail.com</Link>
-                                <p>Available 24/7</p>
+                                <p>{t("contactAvailability")}</p>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,356 @@
+{
+    "fe": {
+        "announcement": {
+            "chemicalFree": "Chemical-free",
+            "usbRechargeable": "USB Rechargeable",
+            "ultraQuiet": "Ultra-Quiet"
+        },
+        "cart": {
+            "cartTitle": "Your Shopping Cart",
+            "close": "Close",
+            "cartEmpty": "Your cart is empty.",
+            "satisfactionGuarantee": "60-day satisfaction guarantee",
+            "total": "Total",
+            "protectButton": "Protect my family now",
+            "redirectError": "Redirection URL is undefined.",
+            "redirectErrorCatch": "Error redirecting to checkout:",
+            "cartTimer": {
+                "reserved": "🔥 Your basket is reserved for {time} minutes!"
+            },
+            "freeGiftBar": {
+                "congratsTwo": "🎉 <strong>Congratulations!</strong> You get <strong>2 MosqiBlocks FREE!</strong>",
+                "congratsOne": "🎉 <strong>Congratulations!</strong> You get <strong>1 MosqiBlock FREE!</strong>",
+                "spendMoreTwo": "Spend <strong>{amount}€</strong> more to get <strong>2 MosqiBlocks FREE!</strong>",
+                "spendMoreOne": "Spend <strong>{amount}€</strong> more to get <strong>1 MosqiBlock FREE</strong>",
+                "or": "or",
+                "graduationOne": "{amount}€ (1 Free)",
+                "graduationTwo": "{amount}€ (2 Free)"
+            }
+        },
+        "header": {
+            "rating": "4.6 | 8000+ Satisfied customers",
+            "title": "Say Goodbye to Mosquitoes,",
+            "secondTitle": "Enjoy Your Evenings in Peace",
+            "subtitle": "The safe, effective, chemical-free solution to protect your children and loved ones from mosquitoes.",
+            "button": "Try MosqiBlock",
+            "benefits": [
+            "Instant Peace",
+            "Family Safe",
+            "Pure Comfort",
+            "Total Freedom"
+            ]
+        },
+        "benefits": [
+            "Silent Operation",
+            "Easy to Carry",
+            "Eco Friendly",
+            "Chemical-Free Safety",
+            "Family Protection",
+            "Bite-Free Nights",
+            "Instant Relief",
+            "Outdoor & Indoor"
+        ],
+        "productCTA": {
+            "title": "Tired of giving up your nights for mosquitoes?",
+            "content": "Imagine yourself sleeping soundly, with no buzzing, no itching, no stress.\n\nSimply place our anti-mosquito lamp next to you, relax... and feel the tranquillity envelop you.\n\nThanks to its advanced LED technology, it attracts and eliminates mosquitoes without chemicals, odors or noise.\nProtect the ones you love, and give yourself peace and security every night.",
+            "titleButton": "Show Now"
+        },
+         "tryProduct": {
+            "alt": "img of product",
+            "subtitle": "60-Day Trial",
+            "title": "Discover MosqiBlock",
+            "content": "Protect your home from mosquitoes in just minutes and enjoy peaceful, bite-free nights like never before!\n\nTry MosqiBlock for 60 days. If you’re not satisfied, you’ll get a 100% refund, no questions asked.",
+            "button": "I want to try"
+        },
+        "bestPlaces": {
+            "title": "Best Places to Use",
+            "places": [
+            "At Home",
+            "Camping/Forest",
+            "Patio/Balcony",
+            "Picnic/Park",
+            "Office",
+            "Travel"
+            ]
+        },
+        "reviews": {
+            "sectionTitle": "Trusted by Families",
+            "sectionSecondTitle": "Loved by All",
+
+            "items": [
+            {
+                "author": "Sarah J.",
+                "score": 5,
+                "title": "Outstanding Product",
+                "content": "No more mosquitoes! This tool really helped me out during my camping trip last summer. It killed all the bugs and I got to enjoy the outside without getting any bites."
+            },
+            {
+                "author": "Michael R.",
+                "score": 4.7,
+                "title": "Best Purchase",
+                "content": "I was pleasantly surprised after using this mosquito lamp. I never expected it to be this effective and powerful. And the battery lasted for ages, so I could turn it on and simply forget all about this lamp and mosquitoes. I highly recommend this tool, it’s much better than other alternatives."
+            },
+            {
+                "author": "Joshua M.",
+                "score": 5,
+                "title": "Worth the money",
+                "content": "Received this MosqiBlock tool super fast and it perfectly satisfied my needs and worked just as promised. I would recommend this lamp to everyone this summer, it’s very effective against mosquitoes."
+            }
+            ]
+        },
+        "productFeatures": [
+            {
+            "title": "Pure Peace of Mind",
+            "content": "No harsh chemicals, just safe, natural protection for you and your loved ones."
+            },
+            {
+            "title": "Instant Protection",
+            "content": "Advanced UV technology attracts and eliminates mosquitoes in seconds, for immediate relief."
+            },
+            {
+            "title": "Family Friendly",
+            "content": "Safe for children and pets, no toxins, no heat, just peaceful, bite-free nights for the whole family."
+            },
+            {
+            "title": "Eco-Smart Design",
+            "content": "Reusable and sustainable—enjoy endless protection while reducing waste and caring for the planet."
+            }
+        ],
+        "comparison": {
+            "sectionTitle": "MosqiBlock VS Others",
+            "mainTitle": "Why Choose MosqiBlock?",
+            "rows": [
+            { "title": "Quality" },
+            { "title": "Safety" },
+            { "title": "Noise" },
+            { "title": "Convenience" },
+            { "title": "Effectiveness" },
+            {
+                "title": "Technology",
+                "mosqiblock": "Advanced UV & trap system, no gimmicks",
+                "others": "Outdated methods, little effect"
+            }
+            ]
+        },
+         "faq": {
+            "sectionTitle": "Your questions",
+            "sectionSubtitle": "Our answers",
+            "items": [
+            {
+                "title": "Does MosqiBlock really stop mosquito bites?",
+                "content": "Yes, MosqiBlock uses specially calibrated UV light to attract and trap mosquitoes effectively without chemicals or odors. Most users notice a significant reduction in bites within the first nights, whether indoors or outdoors."
+            },
+            {
+                "title": "Is it safe for kids, pets, and houseplants?",
+                "content": "Absolutely. MosqiBlock is chemical-free and non-toxic. The UV light is harmless to children, pets, and plants, making it ideal for family spaces and shared living areas."
+            },
+            {
+                "title": "How much space does one device cover?",
+                "content": "One MosqiBlock covers approximately 20 to 30 square meters, suitable for bedrooms, living rooms, or patios. For larger areas, multiple devices can be used for optimal protection."
+            },
+            {
+                "title": "Can I use it both indoors and outdoors?",
+                "content": "Yes, MosqiBlock is designed for both indoor and outdoor use, perfect for bedrooms, patios, camping, and more."
+            },
+            {
+                "title": "How long does the battery last?",
+                "content": "The rechargeable USB battery lasts up to 10 to 12 hours, enough for a full night or outdoor evening. It recharges easily like a smartphone."
+            },
+            {
+                "title": "Is there any maintenance required?",
+                "content": "Maintenance is simple: empty the collection tray every few days and clean the device with a brush if needed. No refills or consumables are required."
+            },
+            {
+                "title": "What’s included in the box?",
+                "content": "The pack includes the MosqiBlock lamp, USB charging cable, and a quick start guide, all securely packaged for safe delivery."
+            },
+            {
+                "title": "What is your return policy?",
+                "content": "We offer a 30 to 60-day satisfaction guarantee. If you’re not happy, contact our support for a full refund. The product must be returned in original condition and packaging."
+            },
+            {
+                "title": "How do I contact support if I have more questions?",
+                "content": "Our friendly support team is available via email or contact form on our website to assist you with any questions or concerns."
+            }
+            ]
+        },
+         "footer": {
+            "aboutTitle": "About",
+            "aboutText": "We created MosqiBlock to offer families and outdoor enthusiasts a safe, powerful and easy way to enjoy life mosquito-free - no chemicals, no hassle, just results.",
+            "legalTitle": "Legal pages",
+            "contactTitle": "Contact",
+            "contactAvailability": "Available 24/7"
+        },
+        "productMosqiBlock": {
+            "mainTitle": "MosqiBlock - Keep Your Family Safe",
+            "subtitle": "Instant Peace | Pure comfort | Total Freedom",
+            "delivery": "Order now, delivery {start}-{end}",
+            "stockAlert": "Hurry! Stock is limited.",
+            "rating": "4.6 | ",
+            "satisfied": "8000+ Satisfied customers",
+            "heroText": "<strong>Enjoy peaceful nights</strong>, free from buzzing and bites. <strong>Protect your loved ones</strong> with safe, silent technology. Easy to use anywhere, <strong>comfort and freedom, every day.</strong>",
+            "colors": "Colors",
+            "packs": "Packs",
+            "packsList": [
+            { "title": "Buy 1", "subTitle": "" },
+            { "title": "Buy 2 Get 1 Free", "subTitle": "You save €27.99 😱" },
+            { "title": "Buy 3 Get 2 Free", "subTitle": "One for every room 😍" }
+            ],
+            "colorsList": ["White", "Green"],
+            "mostPopular": "Most popular!",
+            "securePayment": "Secure payment",
+            "freeDelivery": "Free delivery",
+            "riskFree": "60 Day Risk Free Trial",
+            "trustedBy": "Trusted by over 651 families",
+            "detailsProduct": [
+                {
+                "title": "Shipping information",
+                "content": "• Free shipping on all orders\n• Orders processed within 24–48 hours\n• Delivery in 2–5 business days (France/EU), 5–10 days (international)\n• Tracking number sent by email as soon as your order ships\n• Secure packaging for safe arrival"
+                },
+                {
+                "title": "Returns and refunds",
+                "content": "• 60-day satisfaction guarantee—try MosqiBlock risk-free\n• Not satisfied? Contact us within 60 days for a full refund, no questions asked\n• Product must be returned in original condition and packaging\n• Fast and easy return process—our support team is here to help"
+                }
+            ]
+        },
+        "bestReviewsData": [
+            {
+            "name": "Sarah J.",
+            "content": "No more mosquitoes! This tool really helped me out during my camping trip last summer. It killed all the bugs and I got to enjoy the outside without getting any bites."
+            },
+            {
+            "name": "Joshua M.",
+            "content": "Received this MosqiBlock tool super fast and it perfectly satisfied my needs and worked just as promised. I would recommend this lamp to everyone this summer, it’s very effective against mosquitoes."
+            },
+            {
+            "name": "Connie E.",
+            "content": "This zapper crushes the competition, no doubt about it. My family won’t live without it now."
+            }
+        ],
+        "verified": "Verified",
+        "checkProduct": [
+            { "title": "Chemical-Free" },
+            { "title": "Instant & Silent" },
+            { "title": "Kid & Pet Safe" },
+            { "title": "Easy Clean" }
+        ],
+         "mode": {
+            "selectModesData": [
+            { "title": "Benefits." },
+            { "title": "How it works." }
+            ],
+            "benefitsProductData": [
+            { "title": "Your must-have for magical nights outdoors", "content": "Transform every camping trip into a bite-free adventure." },
+            { "title": "Advanced UV-light—mosquitoes can’t resist", "content": "Enjoy evenings without buzzing or bites, naturally." },
+            { "title": "USB rechargeable—freedom from batteries", "content": "Stay protected anywhere, anytime—just plug in and go." },
+            { "title": "Absolutely safe—no toxins, no worries", "content": "Protect your family with pure peace of mind." },
+            { "title": "Ultra-compact, always by your side", "content": "Slip it in your bag and take protection everywhere." },
+            { "title": "Hang it, stand it, love it", "content": "Versatile hook for effortless use—at home or on the go." }
+            ],
+            "utilisation": "Everything you need for instant protection is included: MosqiBlock, a USB charging cable, and a quick start guide. The device uses advanced UV light to attract and trap mosquitoes quietly and safely—no chemicals, no odors. Just plug in, turn on, and enjoy peace of mind, day and night."
+        },
+        "mosquitoesKiller": {
+            "title": "Why You Must Act Now",
+            "secondTitle": "Against Mosquitoes",
+            "section1": {
+            "subtitle": "The Chilling Truth",
+            "content": "Every year, <strong>mosquitoes silently kill more people</strong> than any other animal on Earth. They are not just an annoyance—they are a <strong>deadly, global threat</strong>. While you read this, <strong>someone, somewhere, is being infected</strong> with a mosquito-borne disease that could change their life forever. This is not just a problem for tropical countries: <strong>the risk is everywhere</strong>. <strong>No one is truly safe</strong>.",
+            "cards": [
+                {
+                "title": "1 Million Deaths Yearly",
+                "content": "Mosquitoes kill over a million people each year—more than any other animal. Deadly diseases spread fast."
+                },
+                {
+                "title": "600,000 Malaria Deaths",
+                "content": "Malaria took 600,000 lives last year, mostly children and pregnant women. Every minute, a child dies."
+                },
+                {
+                "title": "Dengue Outbreak: 13M Cases",
+                "content": "Dengue is exploding worldwide, with 13 million cases in 2024. New regions face outbreaks every year."
+                },
+                {
+                "title": "New Viruses, New Risks",
+                "content": "Mosquitoes adapt fast—climate change and travel bring new viruses and risks everywhere."
+                }
+            ]
+            },
+            "section2": {
+            "subtitle": "Don’t Wait for Tragedy to Strike.",
+            "content": "Mosquitoes are a daily, <strong>silent pandemic</strong>—one that doesn’t make headlines, but <strong>claims lives every single day</strong>. <strong>No home, no child, no family is immune.</strong> Protect your loved ones with <strong>MosqiBlock</strong>—your shield against the world’s deadliest animal. Because <strong>prevention is the only real cure</strong>.",
+            "cta": "Protect My Family Now"
+            }
+        },
+        "reviewSummary": {
+            "customerReviews": "Customer Reviews",
+            "basedOnReviews": "Based on {count} reviews",
+            "verifiedPurchase": "Verified Purchase",
+            "ratingBreakdown": "Rating breakdown",
+            "reviews": [
+                {
+                    "name": "Sarah J.",
+                    "title": "Outstanding Product",
+                    "content": "No more mosquitoes! This tool really helped me out during my camping trip last summer. It killed all the bugs and I got to enjoy the outside without getting any bites."
+                },
+                {
+                    "name": "Michael R.",
+                    "title": "Best Purchase",
+                    "content": "I was pleasantly surprised after using this mosquito lamp. I never expected it to be this effective and powerful. And the battery lasted for ages, so I could turn it on and simply forget all about this lamp and mosquitoes. I highly recommend this tool, it’s much better than other alternatives."
+                },
+                {
+                    "name": "Joshua M.",
+                    "title": "Worth the money",
+                    "content": "Received this MosqiBlock tool super fast and it perfectly satisfied my needs and worked just as promised. I would recommend this lamp to everyone this summer, it’s very effective against mosquitoes."
+                },
+                {
+                    "name": "Emily P.",
+                    "title": "10/10 Protection",
+                    "content": "Before using this MosqiBlock lamp, I’ve tried many different mosquito repellents. From candles, to sprays, none was strong enough to combat the annoying bugs. However, this one, was a real shocker! It was super effective, had no unpleasant odors, and lasted for ages. And it’s so much more environmentally friendly – just recharge the battery and let it do its magic again."
+                },
+                {
+                    "name": "Olivia J.",
+                    "title": "It’s Irreplaceable",
+                    "content": "No matter where I go, whether it’s a weekend camping trip or a night fishing by the lake, I always pack this mosquito lamp with me. It’s super tiny, fitting easily into my backpack, yet surprisingly powerful and reliable at getting rid of pests. I’ve noticed a huge difference in the number of bites I get, and it’s been a total relief not having to swat mosquitoes all the time. Plus, it’s so easy to use—just turn it on and it does its magic. Absolutely love it and wouldn’t head outdoors without it!"
+                },
+                {
+                    "name": "Ethan L.",
+                    "title": "Powerful bug control",
+                    "content": "Mosquitoes are a real problem here… I truly believe that they have mutated to be resilient to regular sprays or candles… Then I tried this lamp, and like magic the bugs were gone. I was mindblown… How quickly they all disappeared, and all I had to do was clean up their tiny bodies away and recharge the battery of this lamp to allow it to continue eradicating those bloodsuckers."
+                },
+                {
+                    "name": "Ava M.",
+                    "title": "Super easy to use",
+                    "content": "I’ve been using this mosquito-killing lamp for a while now and loved it so much that I decided to get one for my parents. They were always complaining about mosquitoes constantly interrupting their sleep, especially during the humid summer nights. When I gave them this lamp, my dad was immediately impressed—he couldn’t believe how easy it was to set up and how silently it worked. It’s been such a relief for them both."
+                },
+                {
+                    "name": "Sophia G.",
+                    "title": "Best Mosquito Controller",
+                    "content": "I love that this lamp doesn’t use any toxins or chemicals, making it a perfect choice for my family and me. It’s so much better for the environment, and I feel good knowing I’m not releasing harmful substances into the air we breathe. Plus, it’s reusable, not like those one-time candles."
+                },
+                {
+                    "name": "Connie E.",
+                    "title": "Best zapper hands down",
+                    "content": "This zapper crushes the competition, no doubt about it. My family won’t live without it now."
+                }
+            ]
+        },
+        "familyBenefits": {
+            "title": "Enjoy Every Moment, ",
+            "secondTitle": "Mosquito-Free",
+            "description": "Say goodbye to <strong>bites</strong>, <strong>buzzing</strong>, and <strong>restless nights</strong>. MosqiBlock lets you and your family enjoy <strong>summer evenings</strong>, <strong>peaceful sleep</strong>, and <strong>outdoor fun</strong>, without worrying about <strong>mosquitoes</strong> or <strong>harmful chemicals</strong>. Just turn it on and create a <strong>safe</strong>, <strong>comfortable space</strong> for everyone you love.",
+            "cards": [
+            {
+                "title": "Sleep Without Worries",
+                "content": "Give your children peaceful, uninterrupted nights—no itching, no tears, just sweet dreams for everyone."
+            },
+            {
+                "title": "Safe for Kids & Pets",
+                "content": "No chemicals, no toxins, no risk. MosqiBlock keeps your loved ones safe, naturally, every single night."
+            },
+            {
+                "title": "Silent Comfort",
+                "content": "No buzzing, no zapping—just calming silence for everyone at home, so you can truly relax together."
+            }
+            ]
+        }
+    }
+}

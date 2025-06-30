@@ -1,18 +1,22 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useState, useEffect, FC } from "react";
+import { useTranslations } from "next-intl";
+import { useState, useEffect, FC, useMemo } from "react";
 
 interface AnnouncementBarProps {
-    data: {
-        title: string;
-        icon: string;
-    }[];
     className?: string;
     iconClassName?: string;
 }
 
-const AnnouncementBar: FC<AnnouncementBarProps> = ({data, className, iconClassName}) => {
+const AnnouncementBar: FC<AnnouncementBarProps> = ({className, iconClassName}) => {
     const [index, setIndex] = useState(0);
+    const t = useTranslations("fe.announcement");
+    
+    const data = useMemo(() => [
+        { icon: "🦟", title: t("chemicalFree") },
+        { icon: "🔋", title: t("usbRechargeable") },
+        { icon: "💤", title: t("ultraQuiet") }
+    ], [t]);
 
     useEffect(() => {
         const interval = setInterval(() => {

@@ -3,6 +3,7 @@
 import { useCartStore } from "../../store/cart";
 import { cn } from "@/lib/utils";
 import MosqiBlockGiftImg from "@/public/images/product_mosqitoes.png";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
@@ -11,6 +12,7 @@ const FIRST_TIER = 55.98;
 const SECOND_TIER = 83.97; // Correct ici
 
 const FreeGiftBar = () => {
+  const t = useTranslations("fe.cart.freeGiftBar");
   const { cart } = useCartStore();
   const totalAmount = parseFloat(cart.cost.totalAmount.amount || "0");
 
@@ -21,29 +23,25 @@ const FreeGiftBar = () => {
   const toSecond = Math.max(0, SECOND_TIER - totalAmount);
 
   // ✅ Gestion des messages correcte
-  let message;
+ let message;
   if (secondReached) {
-    message = (
-      <>
-        🎉 <strong>Congratulations!</strong> You get <strong>2 MosqiBlocks FREE!</strong>
-      </>
-    );
+    message = t.rich("congratsTwo", {
+      strong: (chunks) => <strong>{chunks}</strong>
+    });
   } else if (firstReached) {
     message = (
       <>
-        🎉 <strong>Congratulations!</strong> You get <strong>1 MosqiBlock FREE!</strong>
+        {t.rich("congratsOne", { strong: (chunks) => <strong>{chunks}</strong> })}
         <br />
-        <span>
-          Spend <strong>{toSecond.toFixed(2)}€</strong> more to get <strong>2 MosqiBlocks FREE!</strong>
-        </span>
+        {t.rich("spendMoreTwo", { amount: toSecond.toFixed(2), strong: (chunks) => <strong>{chunks}</strong> })}
       </>
     );
   } else {
     message = (
       <>
-        Spend <strong>{toFirst.toFixed(2)}€</strong> more to get <strong>1 MosqiBlock FREE</strong>
+        {t.rich("spendMoreOne", { amount: toFirst.toFixed(2), strong: (chunks) => <strong>{chunks}</strong> })}
         <br />
-        or <strong>{toSecond.toFixed(2)}€</strong> more to get <strong>2 MosqiBlocks FREE!</strong>
+        {t("or")} {t.rich("spendMoreTwo", { amount: toSecond.toFixed(2), strong: (chunks) => <strong>{chunks}</strong> })}
       </>
     );
   }
@@ -99,8 +97,8 @@ const FreeGiftBar = () => {
       {/* ✅ Graduation */}
       <div className="flex justify-between text-[10px] text-gray-500 mt-1 px-1">
         <span>0€</span>
-        <span>{FIRST_TIER.toFixed(2)}€ (1 Free)</span>
-        <span>{SECOND_TIER.toFixed(2)}€ (2 Free)</span>
+        <span>{t("graduationOne", { amount: FIRST_TIER.toFixed(2) })}</span>
+        <span>{t("graduationTwo", { amount: SECOND_TIER.toFixed(2) })}</span>
       </div>
     </div>
   );

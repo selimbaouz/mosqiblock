@@ -6,6 +6,8 @@ import { RiShoppingBag3Fill } from "react-icons/ri";
 import { Menu } from "@/types/types";
 import { FC } from "react";
 import { usePathname } from "next/navigation";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import { useLocale } from "next-intl";
 
 interface NavBarWebProps {
     menu: Menu[];
@@ -15,6 +17,7 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu}) => {
     const { cart } = useCartStore();
     const { setIsOpenCart } = useOpenCartStore();
     const pathname = usePathname();
+    const locale = useLocale();
 
     return (
         <div className={cn("hidden", "z-50 relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-4", "xl:px-0")}>
@@ -27,7 +30,7 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu}) => {
                     <li key={i}>
                         {data.path.includes("contact") ? (
                             <Link 
-                                href="mailto:im.sejiux@gmail.com"
+                                href="mailto:mosqiblock@gmail.com"
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className={cn(classLink, data.path === pathname && "font-bold")}
@@ -39,6 +42,7 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu}) => {
                 ))}
             </ul>
             <div className={cn("flex gap-0.5 items-center")}>
+                <LocaleSwitcher locale={locale} />
                 <div 
                     className="relative p-2 cursor-pointer group" 
                     onClick={() => setIsOpenCart(true)}

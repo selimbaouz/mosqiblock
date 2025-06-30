@@ -1,0 +1,356 @@
+{
+    "fe": {
+         "announcement": {
+            "chemicalFree": "Sans produits chimiques",
+            "usbRechargeable": "Rechargeable USB",
+            "ultraQuiet": "Ultra-silencieux"
+        },
+        "cart": {
+            "cartTitle": "Votre panier",
+            "close": "Fermer",
+            "cartEmpty": "Votre panier est vide.",
+            "satisfactionGuarantee": "Garantie satisfait ou remboursé 60 jours",
+            "total": "Total",
+            "protectButton": "Protégez ma famille maintenant",
+            "redirectError": "L'URL de redirection est indéfinie.",
+            "redirectErrorCatch": "Erreur lors de la redirection vers le paiement :",
+            "freeGiftBar": {
+               "congratsTwo": "🎉 <strong>Félicitations !</strong> Vous recevez <strong>2 MosqiBlocks GRATUITS !</strong>",
+               "congratsOne": "🎉 <strong>Félicitations !</strong> Vous recevez <strong>1 MosqiBlock GRATUIT !</strong>",
+               "spendMoreTwo": "Ajoutez <strong>{amount}€</strong> pour obtenir <strong>2 MosqiBlocks GRATUITS !</strong>",
+               "spendMoreOne": "Ajoutez <strong>{amount}€</strong> pour obtenir <strong>1 MosqiBlock GRATUIT</strong>",
+               "or": "ou",
+               "graduationOne": "{amount}€ (1 offert)",
+               "graduationTwo": "{amount}€ (2 offerts)"
+           },
+            "cartTimer": {
+                "reserved": "🔥 Votre panier est réservé pendant {time} minutes !"
+            }
+        },
+        "header": {
+            "rating": "4,6 | Plus de 8000 clients satisfaits",
+            "title": "Adieu les moustiques,",
+            "secondTitle": "Profitez enfin de vos soirées",
+            "subtitle": "La solution sûre, efficace et sans produits chimiques pour protéger vos enfants et vos proches des moustiques.",
+            "button": "Essayer MosqiBlock",
+            "benefits": [
+            "Paix instantanée",
+            "Sécurité familiale",
+            "Confort absolu",
+            "Liberté totale"
+            ]
+        },
+         "benefits": [
+            "Silencieux",
+            "Facile à transporter",
+            "Écologique",
+            "Sécurité sans produits chimiques",
+            "Protection familiale",
+            "Nuits sans piqûres",
+            "Soulagement instantané",
+            "Intérieur & extérieur"
+        ],
+        "productCTA": {
+            "title": "Marre de sacrifier vos soirées à cause des moustiques ?",
+            "content": "Imaginez-vous dormir profondément, sans bourdonnements, sans démangeaisons, sans stress.\n\nPlacez simplement notre lampe anti-moustiques près de vous, détendez-vous... et laissez la tranquillité vous envelopper.\n\nSa technologie LED avancée attire et élimine les moustiques sans produits chimiques, sans odeur, sans bruit.\nProtégez vos proches et retrouvez la sérénité chaque nuit.",
+            "titleButton": "Voir l'offre"
+        },
+        "tryProduct": {
+            "alt": "image du produit",
+            "subtitle": "Essai de 60 jours",
+            "title": "Découvrez MosqiBlock",
+            "content": "Protégez votre maison des moustiques en quelques minutes seulement et profitez de nuits paisibles, sans piqûres, comme jamais auparavant !\n\nEssayez MosqiBlock pendant 60 jours. Si vous n'êtes pas satisfait, vous serez remboursé à 100 %, sans poser de questions.",
+            "button": "Je veux essayer"
+        },
+        "bestPlaces": {
+            "title": "Où l'utiliser",
+            "places": [
+            "À la maison",
+            "Camping/Forêt",
+            "Balcon/Terrasse",
+            "Pique-nique/Parc",
+            "Bureau",
+            "Voyage"
+            ]
+        },
+        "reviews": {
+            "sectionTitle": "Approuvé par les familles",
+            "sectionSecondTitle": "Adopté par tous",
+            "items": [
+            {
+                "author": "Sarah J.",
+                "score": 5,
+                "title": "Produit exceptionnel",
+                "content": "Plus de moustiques ! Cette lampe m’a vraiment aidée lors de mon camping l’été dernier. Elle a éliminé tous les insectes et j’ai pu profiter de l’extérieur sans aucune piqûre."
+            },
+            {
+                "author": "Michael R.",
+                "score": 4.7,
+                "title": "Meilleur achat",
+                "content": "J’ai été agréablement surpris par l’efficacité de cette lampe anti-moustiques. Je ne m’attendais pas à ce qu’elle soit aussi puissante. La batterie dure longtemps, je la recommande vraiment, bien meilleure que d’autres solutions."
+            },
+            {
+                "author": "Joshua M.",
+                "score": 5,
+                "title": "Vaut son prix",
+                "content": "Reçue très rapidement, cette lampe MosqiBlock a parfaitement répondu à mes attentes. Je la recommande à tous cet été, elle est très efficace contre les moustiques."
+            }
+            ]
+        },
+        "productFeatures": [
+            {
+            "title": "Sérénité totale",
+            "content": "Aucun produit chimique, juste une protection naturelle et sûre pour toute la famille."
+            },
+            {
+            "title": "Protection instantanée",
+            "content": "La technologie UV attire et élimine les moustiques en quelques secondes, pour un soulagement immédiat."
+            },
+            {
+            "title": "Adapté à la famille",
+            "content": "Sans danger pour enfants et animaux, sans toxines ni chaleur, des nuits paisibles pour tous."
+            },
+            {
+            "title": "Éco-conçu",
+            "content": "Réutilisable et durable : protégez-vous tout en respectant la planète."
+            }
+        ],
+        "comparison": {
+            "sectionTitle": "MosqiBlock VS Autres",
+            "mainTitle": "Pourquoi choisir MosqiBlock ?",
+            "rows": [
+            { "title": "Qualité" },
+            { "title": "Sécurité" },
+            { "title": "Silence" },
+            { "title": "Praticité" },
+            { "title": "Efficacité" },
+            {
+                "title": "Technologie",
+                "mosqiblock": "UV avancé & système de capture, sans gadgets",
+                "others": "Méthodes dépassées, peu efficaces"
+            }
+            ]
+        },
+          "faq": {
+            "sectionTitle": "Vos questions",
+            "sectionSubtitle": "Nos réponses",
+            "items": [
+            {
+                "title": "MosqiBlock arrête-t-il vraiment les piqûres de moustiques ?",
+                "content": "Oui, MosqiBlock utilise une lumière UV spécialement calibrée pour attirer et piéger efficacement les moustiques sans produits chimiques ni odeurs. La plupart des utilisateurs constatent une nette diminution des piqûres dès les premières nuits, en intérieur comme en extérieur."
+            },
+            {
+                "title": "Est-ce sans danger pour les enfants, animaux et plantes ?",
+                "content": "Absolument. MosqiBlock est sans produits chimiques et non toxique. La lumière UV est inoffensive pour les enfants, les animaux et les plantes, ce qui en fait un choix idéal pour toute la famille."
+            },
+            {
+                "title": "Quelle surface couvre un appareil ?",
+                "content": "Un MosqiBlock couvre environ 20 à 30 m², idéal pour une chambre, un salon ou une terrasse. Pour de plus grands espaces, utilisez plusieurs appareils pour une protection optimale."
+            },
+            {
+                "title": "Peut-on l’utiliser en intérieur et en extérieur ?",
+                "content": "Oui, MosqiBlock est conçu pour l’intérieur comme l’extérieur, parfait pour la chambre, la terrasse, le camping, etc."
+            },
+            {
+                "title": "Quelle est l’autonomie de la batterie ?",
+                "content": "La batterie rechargeable USB dure jusqu’à 10 à 12 heures, soit toute une nuit ou une soirée dehors. Elle se recharge facilement comme un smartphone."
+            },
+            {
+                "title": "Y a-t-il un entretien à prévoir ?",
+                "content": "L’entretien est simple : videz le bac tous les quelques jours et nettoyez l’appareil avec une brosse si besoin. Aucun consommable ou recharge nécessaire."
+            },
+            {
+                "title": "Que contient la boîte ?",
+                "content": "Le pack comprend la lampe MosqiBlock, un câble USB de recharge et un guide de démarrage rapide, le tout bien emballé pour une livraison sécurisée."
+            },
+            {
+                "title": "Quelle est votre politique de retour ?",
+                "content": "Nous offrons une garantie satisfait ou remboursé de 30 à 60 jours. Si vous n’êtes pas satisfait, contactez notre support pour un remboursement intégral. Le produit doit être retourné dans son état et son emballage d’origine."
+            },
+            {
+                "title": "Comment contacter le support en cas de question ?",
+                "content": "Notre équipe support est disponible par email ou via le formulaire de contact sur notre site pour toute question ou demande."
+            }
+            ]
+        },
+        "footer": {
+            "aboutTitle": "À propos",
+            "aboutText": "Nous avons créé MosqiBlock pour offrir aux familles et aux amateurs d'extérieur une solution sûre, puissante et simple pour profiter de la vie sans moustiques : sans produits chimiques, sans contraintes, juste de l’efficacité.",
+            "legalTitle": "Pages légales",
+            "contactTitle": "Contact",
+            "contactAvailability": "Disponible 24h/24, 7j/7"
+        },
+        "productMosqiBlock": {
+            "mainTitle": "MosqiBlock - Protégez votre famille",
+            "subtitle": "Paix instantanée | Confort total | Liberté assurée",
+            "delivery": "Commandez maintenant, livraison {start}-{end}",
+            "stockAlert": "Dépêchez-vous ! Stock limité.",
+            "rating": "4,6 | ",
+            "satisfied": "8000+ clients satisfaits",
+              "heroText": "<strong>Passez des nuits paisibles</strong>, sans bourdonnements ni piqûres. <strong>Protégez vos proches</strong> avec une technologie sûre et silencieuse. Facile à utiliser partout, <strong>confort et liberté au quotidien.</strong>",
+            "colors": "Couleurs",
+            "packs": "Packs",
+            "packsList": [
+            { "title": "Acheter 1", "subTitle": "" },
+            { "title": "2 achetés = 1 offert", "subTitle": "Économisez 27,99 € 😱" },
+            { "title": "3 achetés = 2 offerts", "subTitle": "Un pour chaque pièce 😍" }
+            ],
+            "colorsList": ["Blanc", "Vert"],
+            "mostPopular": "Le plus populaire !",
+            "securePayment": "Paiement sécurisé",
+            "freeDelivery": "Livraison offerte",
+            "riskFree": "60 jours satisfait ou remboursé",
+            "trustedBy": "Déjà plus de 651 familles protégées",
+            "detailsProduct": [
+                {
+                "title": "Informations de livraison",
+                "content": "• Livraison offerte sur toutes les commandes\n• Commandes traitées sous 24 à 48h\n• Livraison en 2 à 5 jours ouvrés (France/UE), 5 à 10 jours (international)\n• Numéro de suivi envoyé par email dès l’expédition\n• Emballage sécurisé pour une réception sans souci"
+                },
+                {
+                "title": "Retours et remboursements",
+                "content": "• Garantie satisfait ou remboursé 60 jours—essayez MosqiBlock sans risque\n• Pas satisfait ? Contactez-nous sous 60 jours pour un remboursement intégral, sans justification\n• Produit à retourner dans son état et emballage d’origine\n• Retour simple et rapide—notre équipe support vous accompagne"
+                }
+            ]
+        },
+        "bestReviewsData": [
+            {
+            "name": "Sarah J.",
+            "content": "Plus de moustiques ! Cet appareil m’a vraiment aidée lors de mon camping l’été dernier. Il a éliminé tous les insectes et j’ai pu profiter de l’extérieur sans aucune piqûre."
+            },
+            {
+            "name": "Joshua M.",
+            "content": "Reçu très rapidement, ce MosqiBlock a parfaitement répondu à mes attentes. Je recommande cette lampe à tout le monde cet été, elle est très efficace contre les moustiques."
+            },
+            {
+            "name": "Connie E.",
+            "content": "Ce zapper écrase la concurrence, sans aucun doute. Ma famille ne peut plus s’en passer."
+            }
+        ],
+        "verified": "Vérifié",
+        "checkProduct": [
+            { "title": "Sans produits chimiques" },
+            { "title": "Instantané & Silencieux" },
+            { "title": "Sûr pour enfants et animaux" },
+            { "title": "Nettoyage facile" }
+        ],
+        "mode": {
+            "selectModesData": [
+            { "title": "Avantages." },
+            { "title": "Comment ça marche." }
+            ],
+            "benefitsProductData": [
+            { "title": "Votre indispensable pour des nuits magiques en plein air", "content": "Transformez chaque sortie camping en aventure sans piqûres." },
+            { "title": "Lumière UV avancée—les moustiques ne résistent pas", "content": "Profitez de vos soirées sans bourdonnements ni piqûres, naturellement." },
+            { "title": "Recharge USB—liberté sans piles", "content": "Restez protégé partout, à tout moment—branchez et partez." },
+            { "title": "Absolument sûr—aucune toxine, aucun souci", "content": "Protégez votre famille en toute tranquillité d'esprit." },
+            { "title": "Ultra-compact, toujours à vos côtés", "content": "Glissez-le dans votre sac et emportez la protection partout." },
+            { "title": "Accrochez-le, posez-le, adorez-le", "content": "Crochet polyvalent pour une utilisation facile—à la maison ou en déplacement." }
+            ],
+            "utilisation": "Tout ce qu’il vous faut pour une protection immédiate est inclus : MosqiBlock, un câble USB et un guide de démarrage rapide. L’appareil utilise une lumière UV avancée pour attirer et piéger les moustiques en silence et en toute sécurité—sans produits chimiques, sans odeur. Branchez, allumez, profitez de la tranquillité jour et nuit."
+        },
+        "mosquitoesKiller": {
+            "title": "Pourquoi agir maintenant",
+            "secondTitle": "contre les moustiques",
+            "section1": {
+            "subtitle": "La réalité glaçante",
+            "content": "Chaque année, <strong>les moustiques tuent silencieusement plus de personnes</strong> que n'importe quel autre animal. Ce ne sont pas de simples nuisibles : ils représentent une <strong>menace mortelle et mondiale</strong>. Pendant que vous lisez ceci, <strong>quelqu’un, quelque part, est infecté</strong> par une maladie transmise par les moustiques. Ce n’est pas qu’un problème tropical : <strong>le risque est partout</strong>. <strong>Personne n’est vraiment à l’abri</strong>.",
+            "cards": [
+                {
+                "title": "1 million de morts par an",
+                "content": "Les moustiques tuent plus d’un million de personnes chaque année—plus que n’importe quel autre animal. Les maladies mortelles se propagent vite."
+                },
+                {
+                "title": "600 000 morts du paludisme",
+                "content": "Le paludisme a causé 600 000 décès l’an dernier, surtout des enfants et des femmes enceintes. Chaque minute, un enfant meurt."
+                },
+                {
+                "title": "Épidémie de dengue : 13M de cas",
+                "content": "La dengue explose dans le monde, avec 13 millions de cas en 2024. De nouvelles régions sont touchées chaque année."
+                },
+                {
+                "title": "Nouveaux virus, nouveaux risques",
+                "content": "Les moustiques s’adaptent vite—climat et voyages favorisent l’apparition de nouveaux virus partout."
+                }
+            ]
+            },
+            "section2": {
+            "subtitle": "N’attendez pas la tragédie.",
+            "content": "Les moustiques sont une <strong>pandémie silencieuse</strong> au quotidien—qui ne fait pas la une, mais <strong>tue chaque jour</strong>. <strong>Aucun foyer, aucun enfant, aucune famille n’est à l’abri.</strong> Protégez vos proches avec <strong>MosqiBlock</strong>—votre bouclier contre l’animal le plus mortel du monde. Car <strong>la prévention est la seule vraie solution</strong>.",
+            "cta": "Protéger ma famille"
+            }
+        },
+        "reviewSummary": {
+            "customerReviews": "Avis clients",
+            "basedOnReviews": "Basé sur {count} avis",
+            "verifiedPurchase": "Achat vérifié",
+            "ratingBreakdown": "Répartition des notes",
+            "reviews": [
+                {
+                    "name": "Sarah J.",
+                    "title": "Produit exceptionnel",
+                    "content": "Plus de moustiques ! Cet appareil m’a vraiment aidée lors de mon camping l’été dernier. Il a éliminé tous les insectes et j’ai pu profiter de l’extérieur sans aucune piqûre."
+                },
+                {
+                    "name": "Michael R.",
+                    "title": "Meilleur achat",
+                    "content": "J’ai été agréablement surpris par l’efficacité de cette lampe anti-moustiques. Je ne m’attendais pas à ce qu’elle soit aussi puissante. La batterie dure longtemps, je la recommande vraiment, bien meilleure que d’autres solutions."
+                },
+                {
+                    "name": "Joshua M.",
+                    "title": "Vaut son prix",
+                    "content": "Reçu très rapidement, ce MosqiBlock a parfaitement répondu à mes attentes. Je recommande cette lampe à tout le monde cet été, elle est très efficace contre les moustiques."
+                },
+                {
+                    "name": "Emily P.",
+                    "title": "Protection 10/10",
+                    "content": "Avant d’utiliser cette lampe, j’ai essayé de nombreux répulsifs. Bougies, sprays… rien n’était assez efficace. Mais celle-ci, c’est une vraie révélation ! Super efficace, aucune odeur désagréable, et elle dure longtemps. En plus, c’est bien plus écologique : il suffit de recharger la batterie et c’est reparti."
+                },
+                {
+                    "name": "Olivia J.",
+                    "title": "Indispensable",
+                    "content": "Où que j’aille, en camping ou à la pêche, j’emporte toujours cette lampe. Elle est minuscule, tient dans mon sac, mais elle est redoutable contre les insectes. J’ai remarqué beaucoup moins de piqûres, et quel soulagement de ne plus avoir à chasser les moustiques. En plus, c’est si simple à utiliser ! Je l’adore et je ne pars plus sans."
+                },
+                {
+                    "name": "Ethan L.",
+                    "title": "Contrôle puissant",
+                    "content": "Ici les moustiques sont un vrai fléau… Je suis persuadé qu’ils sont devenus résistants aux sprays classiques… Mais avec cette lampe, magie : plus un seul moustique ! Il ne me reste qu’à vider le bac et recharger la batterie pour continuer à les éradiquer."
+                },
+                {
+                    "name": "Ava M.",
+                    "title": "Ultra simple d’utilisation",
+                    "content": "J’utilise cette lampe depuis un moment et je l’ai même offerte à mes parents. Ils se plaignaient toujours des moustiques qui gâchaient leurs nuits d’été. Mon père a été bluffé par la simplicité d’installation et son silence. Un vrai soulagement pour eux deux."
+                },
+                {
+                    "name": "Sophia G.",
+                    "title": "La meilleure contre les moustiques",
+                    "content": "J’adore que cette lampe soit sans toxines ni produits chimiques, c’est parfait pour ma famille. C’est bien meilleur pour l’environnement, et je suis rassurée de ne rien diffuser de nocif. En plus, elle est réutilisable, contrairement aux bougies jetables."
+                },
+                {
+                    "name": "Connie E.",
+                    "title": "Le meilleur zapper",
+                    "content": "Ce zapper écrase la concurrence, sans aucun doute. Ma famille ne peut plus s’en passer."
+                }
+            ]
+        },
+        "familyBenefits": {
+            "title": "Profitez de chaque instant, ",
+            "secondTitle": "sans moustiques",
+            "description": "Dites adieu aux <strong>piqûres</strong>, <strong>bourdonnements</strong> et <strong>nuits agitées</strong>. MosqiBlock vous permet de savourer <strong>vos soirées d'été</strong>, <strong>un sommeil paisible</strong> et <strong>les activités en plein air</strong> en famille, sans craindre les <strong>moustiques</strong> ni les <strong>produits chimiques nocifs</strong>. Allumez-le et créez un espace <strong>sécurisé</strong> et <strong>confortable</strong> pour tous ceux que vous aimez.",
+            "cards": [
+            {
+                "title": "Dormez l'esprit tranquille",
+                "content": "Offrez à vos enfants des nuits paisibles et sans interruption—pas de démangeaisons, pas de larmes, juste de beaux rêves pour tous."
+            },
+            {
+                "title": "Sûr pour enfants & animaux",
+                "content": "Sans produits chimiques, sans toxines, sans risque. MosqiBlock protège naturellement vos proches chaque nuit."
+            },
+            {
+                "title": "Confort silencieux",
+                "content": "Pas de bourdonnements, pas de crépitements—juste le calme pour toute la famille, pour vraiment se détendre ensemble."
+            }
+            ]
+        }
+    }
+
+}

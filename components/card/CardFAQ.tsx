@@ -41,7 +41,7 @@ const CardFAQ: FC<CardFAQProps> = ({
                 transition={{ duration: 0.3 }}
               >
                 <div className={cn("space-y-6 py-4 overflow-hidden")}>
-                  <div className={cn("text-[13px] lg:text-lg")}>
+                  <div className={cn("text-[13px] lg:text-base")}>
                     <motion.p
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}

@@ -1,5 +1,4 @@
 "use client";
-import { detailsProduct } from "@/data";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Product, VariantsProduct } from "@/types/types";
@@ -12,17 +11,23 @@ import { FaTruck } from "react-icons/fa6";
 import { TbTruckReturn } from "react-icons/tb";
 import Link from "next/link";
 import GetRatings from "@/lib/fn";
+import { useTranslations } from "next-intl";
 
 interface ProductImageProps {
     product: Product;
+    formattedDeliveryStart: string;
+    formattedDeliveryEnd: string;
 }
 
-const ProductImage: FC<ProductImageProps> = ({product}) => {
+const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, formattedDeliveryEnd}) => {
+    const t = useTranslations("fe.productMosqiBlock");
     const [selectedPack, setSelectedPack] = useState(0);
     const [selectedColor, setSelectedColor] = useState(0);
     const [selectedColorName, setSelectedColorName] = useState("White");
     const [selectedPackName, setSelectedPackName] = useState("Buy 1");
     const [selectedVariant, setSelectedVariant] = useState<VariantsProduct | null>(null);
+    const colors = t.raw("colorsList") as string[];
+    const detailsProduct = t.raw("detailsProduct") as { title: string; content: string }[];
 
     /* const [startDelivery, endDelivery] = calculateDeliveryDates(5, 10); */
 
@@ -46,18 +51,15 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
     const PACKS = [
         {
             image: "/images/Pack1.png",
-            title: "Buy 1",
-            subTitle: ""
+            ...t.raw("packsList")[0]
         },
         {
             image: "/images/Pack2.png",
-            title: "Buy 2 Get 1 Free",
-            subTitle: "Your save €27,99 😱",
+            ...t.raw("packsList")[1]
         },
         {
             image: "/images/Pack3.png",
-            title: "Buy 3 Get 2 Free",
-            subTitle: "One for every room 😍",
+            ...t.raw("packsList")[2]
         },
     ];
     
@@ -69,9 +71,9 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             </div> */}
             <div className={cn('hidden', 'lg:block space-y-3 pb-4')}>
                 <h3 className={cn("text-left text-[30px] leading-9 font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
-                    MosqiBlock - Keep Your Family Safe
+                     {t("mainTitle")}
                 </h3>
-                <p className={cn("text-xs sm:text-sm text-foreground")}>Instant Peace | Pure comfort | Total Freedom</p>
+                <p className={cn("text-xs sm:text-sm text-foreground")}>{t("subtitle")}</p>
                 <div className={cn("space-y-2")}>
                     {/* <div className={cn("bg-secondary w-full p-4 flex items-center gap-6 rounded-lg font-bold text-xs")}>
                             <p className='text-nowrap'>Only <span className='text-primary'>60</span> items</p>
@@ -80,25 +82,33 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                             </div>
                             <p className='text-nowrap'>Left in Stock</p>
                     </div> */}
-                    <div className={cn("bg-primary uppercase text-white w-full p-4 flex items-center gap-2 rounded-lg font-bold text-xs")}>
+                    <div className={cn("bg-primary uppercase lg:text-sm text-white w-full p-4 flex items-center gap-2 rounded-lg font-bold text-xs")}>
                             <span role="img" aria-label="truck">🚚</span>
-                            Order now, delivery July 1-3
+                            {t("delivery", { start: formattedDeliveryStart, end: formattedDeliveryEnd })}
+                    </div>
+                    <div className="bg-secondary w-full p-3  lg:text-sm flex items-center gap-2 rounded-lg font-bold text-xs uppercase text-foreground border border-primary">
+                            <span role="img" aria-label="alarm">⏰</span>
+                            {t("stockAlert")}
                     </div>
                 </div>
             </div>
              <div className={cn("flex items-center gap-2")}> 
                     <GetRatings value={4.7} className={cn("text-base sm:text-md text-[#F3974B]", "md:text-lg", "xl:text-sm")} />
-                    <p className={cn("text-xs text-foreground")}>4.6 | </p>
+                    <p className={cn("text-xs text-foreground")}>{t("rating")}</p>
                     <Link href="#avis" className={cn("text-xs sm:text-sm text-foreground")}>
-                        8000+ Satisfied customers
+                        {t("satisfied")}
                     </Link> 
                 </div>
-            <p className={cn("py-2 text-sm leading-6", "xl:text-lg")}><strong>Enjoy peaceful nights</strong>, free from buzzing and bites. <strong>Protect your loved ones</strong> with safe, silent technology. Easy to use anywhere,  <strong>comfort and freedom, every day.</strong></p>
+            <p className={cn("py-2 text-sm leading-6", "xl:text-lg")}>
+                 {t.rich("heroText", {
+                    strong: (chunks) => <strong>{chunks}</strong>
+                })}
+            </p>
             <div className={cn("space-y-6 py-4")}>    
                 <div className="space-y-4">
-                <h3 className={cn("text-sm font-bold uppercase", "lg:text-base")}>Colors</h3>
+                <h3 className={cn("text-sm font-bold uppercase", "lg:text-base")}> {t("colors")}</h3>
                     <div className="flex gap-2 mb-4">
-                        {["White", "Green"].map((color, i) => (
+                        {colors.map((color, i) => (
                             <div 
                             key={i} 
                             onClick={() => {
@@ -118,7 +128,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                         </div>
                         ))}
                     </div>
-                    <h3 className={cn("text-sm font-bold uppercase", "lg:text-base")}>Pack</h3>
+                    <h3 className={cn("text-sm font-bold uppercase", "lg:text-base")}>{t("packs")}</h3>
                     <div className={cn("space-y-6")}>
                        <PackProgress selectedPack={selectedPack} />
                         <div id="bundles" className={cn("grid w-full gap-2 grid-cols-3 items-stretch relative")}>
@@ -137,7 +147,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                                 {/* Badge "Most popular !" uniquement sur le 2ème pack */}
                                 {index === 1 && (
                                 <div className={cn("absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[8px] px-2 py-1 rounded-lg w-auto text-nowrap uppercase z-10", "lg:text-[10px]")}>
-                                    Most popular !
+                                    {t("mostPopular")}
                                 </div>
                                 )}
                                 <div className="space-y-1 px-2">
@@ -159,19 +169,19 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                     <AddToCart state={selectedVariant} product={product} size="fullWidth" />
                     <div className={cn("flex items-center gap-2 justify-center", "lg:gap-4")}>
                         <Image src="/images/secure.png" className="w-auto h-4" alt="Icon secure" width={20} height={20} />
-                        <p className={cn("text-[10px] font-bold", "lg:text-xs", "xl:text-sm")}>Secure payment</p>
+                        <p className={cn("text-[10px] font-bold", "lg:text-xs", "xl:text-sm")}>{t("securePayment")}</p>
                         <Image src="/images/payments.png" alt="Payments" width={200} height={44} />
                     </div>
                 </div>
                 <div className={cn("w-full bg-white rounded-2xl py-2 px-6 space-y-2")}>
                         <div className={cn("flex items-center justify-center gap-2 border-secondary")}>
                             <FaTruck className="" />
-                            <p className={cn("text-xs font-bold", "xl:text-sm")}>Free delivery</p>
+                            <p className={cn("text-xs font-bold", "xl:text-sm")}>{t("freeDelivery")}</p>
                         </div>
                         <div className="w-full h-[0.1px] bg-secondary"/>
                         <div className={cn("flex items-center justify-center gap-2")}>
                             <TbTruckReturn className="" />
-                            <p className={cn("text-xs font-bold", "xl:text-sm")}>60 Day Risk Free Trial</p>
+                            <p className={cn("text-xs font-bold", "xl:text-sm")}>{t("riskFree")}</p>
                         </div>
                 </div>
                 <Accordion type="single" collapsible className="w-full bg-white rounded-2xl border border-secondary">

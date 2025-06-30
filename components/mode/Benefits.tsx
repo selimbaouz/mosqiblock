@@ -8,13 +8,16 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { benefitsProductData } from "@/data";
+import { useTranslations } from "next-intl";
 
 const Benefits = () => {
+  const t = useTranslations("fe.mode");
+ const benefitsProductData = t.raw("benefitsProductData") as { title: string; content: string }[];
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const leftBenefits = benefitsProductData.slice(0, 3);
   const rightBenefits = benefitsProductData.slice(3, 6);
+
 
   React.useEffect(() => {
     if (!api) {

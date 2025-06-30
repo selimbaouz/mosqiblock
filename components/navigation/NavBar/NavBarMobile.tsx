@@ -6,11 +6,14 @@ import Link from "next/link";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 import { useOpenSidebarStore } from "@/store/sidebar";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { useLocale } from "next-intl";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 const NavBarMobile = () => {
     const { cart } = useCartStore();
     const { setIsOpenCart } = useOpenCartStore();
     const { setIsOpenSidebar } = useOpenSidebarStore();
+    const locale = useLocale();
     
     return (
         <div className={cn("z-50 px-3 py-2 flex justify-between items-center max-w-screen-2xl mx-auto", "md:p-4", "lg:hidden")}>
@@ -24,6 +27,7 @@ const NavBarMobile = () => {
                 MosqiBlock
             </Link>
             <div className={cn("flex gap-0.5 items-center")}>
+                 <LocaleSwitcher locale={locale} />
                 <div 
                     className="relative p-2 cursor-pointer group" 
                     onClick={() => setIsOpenCart(true)}

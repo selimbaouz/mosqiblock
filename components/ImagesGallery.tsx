@@ -3,11 +3,15 @@
 import { ImageProduct } from "@/types/types";
 import { cn } from "@/lib/utils";
 import React, { FC, useEffect, useState } from 'react';
-import { checkProduct } from "@/data";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import ImageLoader from "./ImageLoader";
+import { useTranslations } from "next-intl";
+import Leaf from "@/public/images/leaf.png";
+import Thunder from "@/public/images/thunder.png";
+import Baby from "@/public/images/baby.png";
+import Shield from "@/public/images/shield.png";
 
 interface ImagesGalleryProps {
     images: ImageProduct[],
@@ -17,6 +21,10 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const t = useTranslations("fe");
+  const checkProductTitles = t.raw("checkProduct") as { title: string }[];
+  const checkProductImages = [Leaf, Thunder, Baby, Shield];
 
   // Update button states on carousel events
   useEffect(() => {
@@ -110,10 +118,10 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
         </div>
       </div>
             <ul className={cn("flex justify-between items-stretch gap-2", "xl:justify-around")}>
-                {checkProduct.map((data, index) => (
+                {checkProductTitles.map((data, index) => (
                     <li key={index} className={cn("flex flex-col w-full min-h-full bg-secondary rounded-xl gap-2 px-2 py-4 items-center text-center", "lg:px-4 lg:py-6")}>
                         <div className={cn("text-foreground", "lg:p-3")}>
-                            <Image src={data.img} alt="" className={cn("w-full h-[40px]")} width={100} height={100} />
+                            <Image src={checkProductImages[index]} alt="" className={cn("w-full h-[40px]")} width={100} height={100} />
                         </div>
                         <p className={cn("text-[10px] font-medium", "lg:text-xs")}>{data.title}</p>
                     </li>

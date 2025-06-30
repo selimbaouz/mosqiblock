@@ -11,13 +11,18 @@ import {
 import { cn } from "@/lib/utils"
 import GetRatings from "@/lib/fn"
 import { FaCircleCheck } from "react-icons/fa6"
-import { bestReviewsData } from "@/data"
 import { Button } from "./ui/button"
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
+import { useTranslations } from "next-intl";
 
 export function BestReviews({productPage}: {productPage?: boolean}) {
   const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
+  const [current, setCurrent] = React.useState(0);
+  const t = useTranslations("fe");
+
+  const bestReviewsData = t.raw("bestReviewsData") as { name: string; content: string }[];
+  const verifiedLabel = t("verified");
+  const reviewsNotes = [5, 4.7, 5];
   
   React.useEffect(() => {
     if (!api) {
@@ -61,10 +66,10 @@ export function BestReviews({productPage}: {productPage?: boolean}) {
                                 <div className="p-1">
                                     <FaCircleCheck className={cn("text-primary text-sm", "xl:text-base", "3xl:text-xl")} />
                                 </div>
-                                <p className={cn("text-xs", "xl:text-sm", "3xl:text-lg")}>Verified</p>
+                                <p className={cn("text-xs", "xl:text-sm", "3xl:text-lg")}>{verifiedLabel}</p>
                             </div>
                         </div>
-                        <GetRatings value={data.rating} className={cn("text-xs text-primary", "sm:text-sm", "md:text-lg", "xl:text-base", "3xl:text-xl")} />
+                        <GetRatings value={reviewsNotes[index]} className={cn("text-xs text-primary", "sm:text-sm", "md:text-lg", "xl:text-base", "3xl:text-xl")} />
                     </div>
                 </div>
                 <p className={cn("text-xs text-left", "xl:text-base", "3xl:text-xl")}>“{data.content}”</p>
