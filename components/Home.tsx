@@ -19,9 +19,8 @@ import { useTranslations } from "next-intl";
 
 interface HomeProps {
     menu: Menu[];
-    footerMenu: Menu[];
 }
-const Home: FC<HomeProps> = ({menu, footerMenu}) => {
+const Home: FC<HomeProps> = ({menu}) => {
     const t = useTranslations("fe");
 
     return (
@@ -61,7 +60,7 @@ const Home: FC<HomeProps> = ({menu, footerMenu}) => {
             />
             <Comparaison />
             <FAQ />
-            <Footer footerMenu={footerMenu} />  
+            <Footer />  
         </div>
     );
 };

@@ -21,10 +21,9 @@ import { useTranslations } from "next-intl";
 
 interface MosqiBlockProps {
     menu: Menu[];
-    footerMenu: Menu[];
     product: Product;
 }
-const MosqiBlock: FC<MosqiBlockProps> = ({menu, footerMenu, product}) => {
+const MosqiBlock: FC<MosqiBlockProps> = ({menu, product}) => {
     const t = useTranslations("fe.productMosqiBlock");
     // 📆 Calcul des dates de livraison
     const today = new Date();
@@ -111,7 +110,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({menu, footerMenu, product}) => {
             <Comparaison />
             <ReviewSummary />
             <FAQ />
-            <Footer footerMenu={footerMenu} />
+            <Footer />
         </div>
     );
 };

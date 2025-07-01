@@ -2,15 +2,8 @@ import {getRequestConfig} from 'next-intl/server';
 import {hasLocale} from 'next-intl';
 import {routing} from './routing';
  
-export const locales = ["EN", "FR", "ES", "PT"] as const;
-export type Locale = typeof locales[number];
-
-export const localeNames: Record<Locale, string> = {
-  EN: "English",
-  FR: "Français",
-  ES: "Español",
-  PT: "Português"
-};
+export const locales = ["en", "fr", "es", "pt"] as const;
+export type Locale = (typeof locales)[number];
 
 export default getRequestConfig(async ({requestLocale}) => {
   // Typically corresponds to the `[locale]` segment

@@ -350,6 +350,209 @@
                 "content": "Pas de bourdonnements, pas de crépitements—juste le calme pour toute la famille, pour vraiment se détendre ensemble."
             }
             ]
+        },
+        "legalPages": {
+            "notice": {
+            "title": "Mentions légales",
+            "sections": [
+                {
+                "heading": "Éditeur du site",
+                "content": [
+                    "Nom du créateur du projet : Hichem Ouahib",
+                    "Créateur de la boutique (code & design) : Selim Baouz (Selimmersive)",
+                    "Adresse : 27 Emile Zola, Montreuil 93100 Paris",
+                    "Email : mosqiblock@contact.com"
+                ]
+                },
+                {
+                "heading": "Hébergement",
+                "content": [
+                    "Back-end : Shopify, Shopify Inc., 151 O’Connor Street, Ground Floor, Ottawa, ON K2P 2L8, Canada",
+                    "Front-end : Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA"
+                ]
+                },
+                {
+                "heading": "Propriété intellectuelle",
+                "content": [
+                    "Tout le contenu du site (textes, images, code, design) est la propriété exclusive de Selim Baouz (Selimmersive) et Hichem Ouahib, sauf mention contraire.",
+                    "Toute reproduction, même partielle, est interdite sans autorisation préalable."
+                ]
+                },
+                {
+                "heading": "Responsabilité",
+                "content": [
+                    "L’éditeur ne saurait être tenu responsable des dommages directs ou indirects résultant de l’accès ou de l’utilisation du site, y compris l’inaccessibilité, les pertes de données, détériorations, destructions ou virus qui pourraient affecter l’équipement informatique de l’utilisateur.",
+                    "L’utilisateur reconnaît utiliser le site sous sa responsabilité exclusive."
+                ]
+                },
+                {
+                "heading": "Modification des mentions",
+                "content": [
+                    "L’éditeur se réserve le droit de modifier à tout moment les présentes mentions légales. L’utilisateur est invité à les consulter régulièrement."
+                ]
+                }
+            ]
+            },
+            "refund": {
+            "title": "Politique de remboursement",
+            "sections": [
+                {
+                "heading": "Droit de rétractation",
+                "content": [
+                    "Vous disposez de 60 jours à compter de la réception de votre commande pour exercer votre droit de rétractation sans avoir à justifier de motifs.",
+                    "Pour exercer ce droit, contactez-nous à mosqiblock@contact.com en précisant votre numéro de commande."
+                ]
+                },
+                {
+                "heading": "Conditions de retour",
+                "content": [
+                    "Le produit doit être retourné dans son état et emballage d’origine, non utilisé et accompagné de la preuve d’achat.",
+                    "Les frais de retour sont à la charge du client sauf en cas de produit défectueux."
+                ]
+                },
+                {
+                "heading": "Procédure de remboursement",
+                "content": [
+                    "Après réception et vérification du produit, le remboursement sera effectué sous 7 à 10 jours ouvrés sur le moyen de paiement initial.",
+                    "Les articles personnalisés ou en promotion ne sont pas remboursables."
+                ]
+                }
+            ]
+            },
+            "shipping": {
+            "title": "Politique de livraison",
+            "sections": [
+                {
+                "heading": "Délais de traitement",
+                "content": [
+                    "Les commandes sont traitées sous 24 à 48h ouvrées."
+                ]
+                },
+                {
+                "heading": "Zones et délais de livraison",
+                "content": [
+                    "Livraison à domicile, en point relais, en France, Europe et international.",
+                    "France/UE : 2 à 5 jours ouvrés.",
+                    "International : 5 à 10 jours ouvrés."
+                ]
+                },
+                {
+                "heading": "Frais de livraison",
+                "content": [
+                    "La livraison est offerte pour toutes les commandes."
+                ]
+                },
+                {
+                "heading": "Suivi et incidents",
+                "content": [
+                    "Un numéro de suivi est envoyé par email dès l’expédition.",
+                    "En cas de problème, contactez-nous à mosqiblock@contact.com."
+                ]
+                }
+            ]
+            },
+            "privacy": {
+            "title": "Politique de confidentialité",
+            "sections": [
+                {
+                "heading": "Collecte des données",
+                "content": [
+                    "Nous collectons uniquement les données nécessaires au traitement de vos commandes et à l’amélioration de votre expérience (nom, adresse, email, etc.)."
+                ]
+                },
+                {
+                "heading": "Utilisation des données",
+                "content": [
+                    "Vos données ne sont jamais revendues. Elles sont utilisées pour la gestion des commandes, le service client, et l’envoi d’informations sur nos produits."
+                ]
+                },
+                {
+                "heading": "Cookies",
+                "content": [
+                    "Le site utilise des cookies pour améliorer la navigation et mesurer l’audience. Vous pouvez les refuser via les paramètres de votre navigateur."
+                ]
+                },
+                {
+                "heading": "Droits de l’utilisateur",
+                "content": [
+                    "Vous pouvez demander à consulter, modifier ou supprimer vos données à tout moment à mosqiblock@contact.com."
+                ]
+                }
+            ]
+            },
+            "terms": {
+            "title": "Conditions générales de vente",
+            "sections": [
+                {
+                "heading": "Objet",
+                "content": [
+                    "Les présentes conditions régissent la vente des produits proposés sur la boutique MosqiBlock."
+                ]
+                },
+                {
+                "heading": "Prix",
+                "content": [
+                    "Les prix sont indiqués en euros, toutes taxes comprises. La boutique se réserve le droit de modifier ses prix à tout moment."
+                ]
+                },
+                {
+                "heading": "Paiement",
+                "content": [
+                    "Le paiement s’effectue en ligne via les moyens proposés sur le site, de manière sécurisée."
+                ]
+                },
+                {
+                "heading": "Livraison",
+                "content": [
+                    "Voir la politique de livraison ci-dessus."
+                ]
+                },
+                {
+                "heading": "Droit de rétractation",
+                "content": [
+                    "Voir la politique de remboursement ci-dessus."
+                ]
+                },
+                {
+                "heading": "Garanties",
+                "content": [
+                    "Nos produits bénéficient de la garantie légale de conformité et de la garantie contre les vices cachés."
+                ]
+                },
+                {
+                "heading": "Responsabilité",
+                "content": [
+                    "La boutique ne saurait être tenue responsable des dommages indirects liés à l’utilisation de ses produits."
+                ]
+                },
+                {
+                "heading": "Litiges",
+                "content": [
+                    "En cas de litige, une solution amiable sera recherchée. À défaut, le tribunal compétent sera celui du siège social du créateur."
+                ]
+                }
+            ]
+            }
+        },
+        "legalsFooter": {
+            "aboutTitle": "À propos",
+            "aboutText": "Nous avons créé MosqiBlock pour offrir aux familles et aux amateurs d'activités de plein air une solution sûre, efficace et simple pour profiter de la vie sans moustiques — sans produits chimiques, sans tracas, juste des résultats.",
+            "legalTitle": "Pages légales",
+            "contactTitle": "Contact",
+            "contactAvailability": "Disponible 24h/24 et 7j/7",
+            "legalsLinks": [
+                { "link": "/legals/legal-notice", "label": "Mentions légales" },
+                { "link": "/legals/refund-policy", "label": "Politique de remboursement" },
+                { "link": "/legals/shipping-policy", "label": "Politique de livraison" },
+                { "link": "/legals/privacy-policy", "label": "Politique de confidentialité" },
+                { "link": "/legals/terms-and-conditions-of-use", "label": "Conditions générales de vente" }
+            ]
+        },
+        "localeNames": {
+            "en": "Anglais",
+            "fr": "Français",
+            "es": "Espagnol",
+            "pt": "Portugais"
         }
     }
 
