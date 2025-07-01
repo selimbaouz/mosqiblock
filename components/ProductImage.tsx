@@ -62,6 +62,16 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
             ...t.raw("packsList")[2]
         },
     ];
+
+    const handleSelectPack = (index: number) => {
+        setSelectedPack(index);
+        const packTitles = [
+            "Buy 1",
+            "Buy 2 Get 1 Free",
+            "Buy 3 Get 2 Free"
+        ];
+        setSelectedPackName(packTitles[index]);
+    };
     
     return (
         <div className={cn("space-y-2")}>
@@ -137,7 +147,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
                                 key={index} 
                                 onClick={() => {
                                 setSelectedPack(index);
-                                setSelectedPackName(data.title);
+                                handleSelectPack(index);
                                 }} 
                                 className={cn(
                                 "flex items-center py-4 justify-center text-center rounded-2xl w-full border-2 cursor-pointer relative", // Ajoute relative ici

@@ -375,7 +375,7 @@
                 {
                 "heading": "Intellectual Property",
                 "content": [
-                    "All content on the site (texts, images, code, design) is the exclusive property of Selim Baouz (Selimmersive) and Hichem Ouahib, unless otherwise stated.",
+                    "All content on the site (texts, images, code, design) is the exclusive property of Hichem Ouahib.",
                     "Any reproduction, even partial, is prohibited without prior authorization."
                 ]
                 },
@@ -549,11 +549,12 @@
             { "link": "/legals/terms-and-conditions-of-use", "label": "Terms & Conditions" }
           ]
         },
-         "localeNames": {
+        "localeNames": {
             "en": "English",
             "fr": "French",
             "es": "Spanish",
             "pt": "Portuguese"
-        }
+        },
+        "addToCart": "Add To Cart"
     }
 }

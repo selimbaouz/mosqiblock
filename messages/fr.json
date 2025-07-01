@@ -374,7 +374,7 @@
                 {
                 "heading": "Propriété intellectuelle",
                 "content": [
-                    "Tout le contenu du site (textes, images, code, design) est la propriété exclusive de Selim Baouz (Selimmersive) et Hichem Ouahib, sauf mention contraire.",
+                    "Tout le contenu du site (textes, images, code, design) est la propriété exclusive de Hichem Ouahib.",
                     "Toute reproduction, même partielle, est interdite sans autorisation préalable."
                 ]
                 },
@@ -554,6 +554,6 @@
             "es": "Espagnol",
             "pt": "Portugais"
         }
-    }
-
+    },
+     "addToCart": "Ajouter au panier"
 }

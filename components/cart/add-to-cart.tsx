@@ -6,6 +6,7 @@ import { addItem } from './actions';
 import { useCartStore, useOpenCartStore, useVisibleFloatingCartStore } from '@/store/cart';
 import { cn } from '@/lib/utils';
 import { useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface SubmitButtonProps {
   size?: "fullWidth" | "initial";
@@ -14,6 +15,7 @@ interface SubmitButtonProps {
 function SubmitButton({size = "initial", price}: SubmitButtonProps) {
   const buttonRef = useRef(null);
   const { setIsVisible } = useVisibleFloatingCartStore();
+  const t = useTranslations();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +42,7 @@ function SubmitButton({size = "initial", price}: SubmitButtonProps) {
 
   return (
       <button
-        aria-label="Add to cart"
+        aria-label={t('addToCart')}
         ref={buttonRef}
         className={cn(
           "py-4 px-2 lg:px-6 rounded-xl bg-primary hover:bg-secondary text-white font-medium text-base border-t",
@@ -48,7 +50,9 @@ function SubmitButton({size = "initial", price}: SubmitButtonProps) {
           "hover:bg-gradient-to-tr"
       )}
       >
-        <p className={cn("uppercase")}>Add To Cart - {price ? parseFloat(price ?? "").toFixed(2) : "27,99"}€</p>
+        <p className={cn("uppercase")}>
+          {t('addToCart')} - {price ? parseFloat(price).toFixed(2) : "27,99"}€
+        </p>
       </button>
   );
 }
