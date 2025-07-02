@@ -26,10 +26,10 @@ const CardFAQ: FC<CardFAQProps> = ({
       
   return (
     <div className='flex gap-4 items-start w-full'>
-      <div onClick={() => handleFaqClick(index)} className={cn("cursor-pointer w-full shadow-sm rounded-lg flex flex-col text-left justify-start items-start gap-2 px-4 py-3 bg-white border border-secondary", "lg:py-4 lg:px-10")}>
+      <div onClick={() => handleFaqClick(index)} className={cn("cursor-pointer w-full shadow-sm rounded-lg flex flex-col text-left justify-start items-start gap-2 px-4 py-3 bg-white border border-secondary", isOpen[index] && "bg-primary text-white", "lg:py-4 lg:px-10")}>
         <div className={cn("w-full flex justify-between items-center gap-6", "lg:gap-4")}>
-          <h3 className={cn("text-left text-[13px] font-medium lg:text-base")}>{title}</h3>
-          <IoIosArrowDropdownCircle className={cn("text-2xl rounded-full min-w-min border-2 border-tertiary fill-tertiary duration-300", isOpen[index] ? "rotate-180" : "rotate-0")} />
+          <h3 className={cn("text-left text-[13px] font-medium lg:text-base", isOpen[index] && "font-bold text-base lg:text-lg")}>{title}</h3>
+          <IoIosArrowDropdownCircle className={cn("text-2xl rounded-full min-w-min border-2 duration-300", isOpen[index] ? "rotate-180 border-white fill-white" : "rotate-0 border-tertiary fill-tertiary")} />
         </div>
         <AnimatePresence>
           {isOpen[index] && (
