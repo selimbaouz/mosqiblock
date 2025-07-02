@@ -47,7 +47,7 @@ export function Reviews() {
   return (
     <section className={cn("px-6 bg-tertiary w-full relative py-10 text-center text-white", "lg:py-20 lg lg:px-6", "xl:px-0")}>
       <div className='max-w-screen-xl mx-auto space-y-6 lg:space-y-4 xl:space-y-8'>
-        <h3 className="text-[23px] leading-9 xl:text-4xl font-bold xl:pb-4">
+        <h3 className="text-xl xs:text-[23px] xs:leading-9 xl:text-4xl font-bold xl:pb-4">
           {t("sectionTitle")} <br className="lg:hidden"/>{t("sectionSecondTitle")}
         </h3>
 

@@ -180,7 +180,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
                     <div id="add-to-cart-anchor">
                         <AddToCart state={selectedVariant} product={product} size="fullWidth" />
                     </div>
-                    <div className={cn("flex items-center gap-2 justify-center", "lg:gap-4")}>
+                    <div className={cn("flex items-center gap-1 xs:gap-2 justify-center", "lg:gap-4")}>
                         <Image src="/images/secure.png" className="w-auto h-4" alt="Icon secure" width={20} height={20} />
                         <p className={cn("text-[10px] font-bold", "lg:text-xs", "xl:text-sm")}>{t("securePayment")}</p>
                         <Image src="/images/payments.png" alt="Payments" width={200} height={44} />

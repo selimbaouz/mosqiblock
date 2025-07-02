@@ -39,7 +39,7 @@ const Comparaison = () => {
         <section className="bg-secondary px-6 w-full relative py-10 lg:py-20 text-center">
             <div>
                 <h6 className="xl:text-xl">{t("sectionTitle")}</h6>
-                <h3 className={cn("text-[23px] leading-9 xl:text-4xl font-bold pb-6", "lg:pb-10")}>
+                <h3 className={cn("text-[23px] xl:text-4xl font-bold pb-6", "lg:pb-10")}>
                     {t("mainTitle")}
                 </h3>
             </div>

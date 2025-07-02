@@ -45,7 +45,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
             </div>
             <div className='bg-[#EEE8FF] pt-4 lg:pt-0 lg:pb-20'>
                 <div className={cn('space-y-3 p-4', "lg:hidden")}>
-                    <h3 className={cn("text-left text-[30px] leading-9 font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
+                    <h3 className={cn("text-left text-2xl xs:text-3xl leading-9 font-bold pointer-events-none whitespace-pre-wrap text-foreground", "lg:text-3xl", "xl:text-4xl")}>
                         {t("mainTitle")}
                     </h3>
                     <p className={cn("text-xs sm:text-sm text-foreground")}>{t("subtitle")}</p>
@@ -57,7 +57,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
                                 </div>
                                 <p className='text-nowrap'>Left in Stock</p>
                         </div> */}
-                       <div className={cn("bg-primary uppercase text-white w-full p-4 flex items-center gap-2 rounded-lg font-bold text-xs")}>
+                       <div className={cn("bg-primary uppercase text-white w-full p-4 flex items-center gap-2 rounded-lg font-bold text-[10px] xs:text-xs")}>
                             <span role="img" aria-label="truck">🚚</span>
                              {t("delivery", { start: formattedDeliveryStart, end: formattedDeliveryEnd })}
                         </div>
@@ -83,7 +83,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
                                  {t("trustedBy")}
                             </span>
                         </div> */}
-                        <div className="bg-secondary w-full p-3 flex items-center gap-2 rounded-lg font-bold text-xs uppercase text-foreground border border-primary">
+                        <div className="bg-secondary w-full p-3 flex items-center gap-2 rounded-lg font-bold text-[10px] xs:text-xs uppercase text-foreground border border-primary">
                             <span role="img" aria-label="alarm">⏰</span>
                             {t("stockAlert")}
                         </div>

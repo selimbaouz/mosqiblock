@@ -41,7 +41,8 @@ function SubmitButton({size = "initial", price, floatingBar}: SubmitButtonProps)
       <button
         ref={buttonRef}
         className={cn(
-          "py-4 px-4 lg:px-6 rounded-xl bg-primary hover:bg-tertiary text-white font-medium text-base",
+          "py-4 px-4 lg:px-6 rounded-xl bg-primary hover:bg-tertiary text-white font-medium",
+          floatingBar ? "text-xs xs:text-sm" : "lg:text-base",
           size === "fullWidth" ? "min-w-full" : "w-max",
       )}
       >

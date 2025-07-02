@@ -7,7 +7,7 @@ import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa6';
 
 // Remplace ce numéro par le tien (format international sans +)
-const WHATSAPP_NUMBER = '3356999520'; // Exemple : 33612345678 pour +33 6 12 34 56 78
+const WHATSAPP_NUMBER = '33773049948'; // Exemple : 33612345678 pour +33 6 12 34 56 78
 
 const WhatsApp = () => {
   const pathname = usePathname();

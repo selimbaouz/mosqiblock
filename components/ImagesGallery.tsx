@@ -118,7 +118,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
           ))}
         </div>
       </div>
-            <ul className={cn("flex justify-between items-stretch gap-2", "xl:justify-around")}>
+            <ul className={cn("grid grid-cols-2 xs:grid-cols-4 justify-between items-stretch gap-2", "xl:justify-around")}>
                 {checkProductTitles.map((data, index) => (
                     <li key={index} className={cn("flex flex-col w-full min-h-full bg-secondary rounded-xl gap-2 px-2 py-4 items-center text-center", "lg:px-4 lg:py-6")}>
                         <div className={cn("text-foreground", "lg:p-3")}>

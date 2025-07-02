@@ -24,7 +24,7 @@ const BestPlaces = () => {
     return (
         <section className={cn("px-4 bg-secondary w-full relative py-10 text-center mx-auto", "lg:px-6", "xl:px-0")}>
             <div className='max-w-screen-xl mx-auto space-y-6 lg:space-y-4 xl:space-y-8'>
-                <h3 className="text-[23px] leading-9 xl:text-4xl font-bold text-tertiary">
+                <h3 className="text-xl xs:text-[23px] xs:leading-9 xl:text-4xl font-bold text-tertiary">
                     {t("title")}
                 </h3>
                 <div className={cn("grid grid-cols-3 gap-2 justify-center items-center", "lg:flex lg:justify-around lg:w-full")}>

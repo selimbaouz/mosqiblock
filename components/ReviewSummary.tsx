@@ -40,7 +40,7 @@ export default function ReviewSummary() {
        <div className='max-w-screen-xl mx-auto space-y-6 lg:space-y-4 xl:space-y-8 flex flex-col gap-10 items-center'>
           {/* Average & Stars */}
           <div className={cn("flex flex-col items-center text-center w-full", "xl:space-y-1")}>
-            <h2 className={cn("text-[23px] font-bold mb-1", "xl:text-4xl")}>{t("customerReviews")}</h2>
+            <h2 className={cn("text-xl xs:text-[23px] xs:leading-9 font-bold mb-1", "xl:text-4xl")}>{t("customerReviews")}</h2>
             <p className="text-xl font-bold xl:text-2xl">{averageRating}/5</p>
             <GetRatings value={averageRating} className={cn("text-lg sm:text-md text-[#F3974B]", "md:text-lg", "xl:text-xl")} />
             <p className={cn("text-sm text-gray-500 mt-1 font-medium", "xl:text-lg")}>
