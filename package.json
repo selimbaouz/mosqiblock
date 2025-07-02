@@ -1,5 +1,6 @@
 {
-  "name": "wemom",
+  "name": "mosqiblock",
+  "author": "selimmersive",
   "version": "0.1.0",
   "private": true,
   "scripts": {

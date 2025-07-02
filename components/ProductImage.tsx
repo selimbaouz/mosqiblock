@@ -207,7 +207,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
                     ))}
                 </Accordion>
             </div>
-            <div className={cn("space-y-4 pb-5")}>
+            <div className={cn("space-y-4 pb-5", "lg:hidden")}>
                 <BestReviews productPage />
             </div>  
         </div>

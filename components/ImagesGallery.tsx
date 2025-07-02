@@ -12,6 +12,7 @@ import Leaf from "@/public/images/leaf.png";
 import Thunder from "@/public/images/thunder.png";
 import Baby from "@/public/images/baby.png";
 import Shield from "@/public/images/shield.png";
+import { BestReviews } from "./BestReviews";
 
 interface ImagesGalleryProps {
     images: ImageProduct[],
@@ -127,6 +128,9 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
                     </li>
                 ))}
             </ul>
+             <div className={cn("hidden space-y-4 pb-5", "lg:block")}>
+                <BestReviews productPage />
+            </div> 
         </div>
     );
 };
