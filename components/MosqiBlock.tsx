@@ -18,6 +18,9 @@ import AnnouncementBar from '@/components/navigation/AnnouncementBar';
 import { Menu, Product } from '@/types/types';
 import { format, addDays } from 'date-fns';
 import { useTranslations } from "next-intl";
+import WhatsApp from './navigation/WhatsApp';
+import FloatingBar from './navigation/FloatingBar';
+import { useVisibleFloatingCartStore } from "@/store/cart";
 
 interface MosqiBlockProps {
     menu: Menu[];
@@ -25,6 +28,7 @@ interface MosqiBlockProps {
 }
 const MosqiBlock: FC<MosqiBlockProps> = ({menu, product}) => {
     const t = useTranslations("fe.productMosqiBlock");
+    const {isVisible} = useVisibleFloatingCartStore();
     // 📆 Calcul des dates de livraison
     const today = new Date();
     const deliveryStart = addDays(today, 7);
@@ -111,6 +115,8 @@ const MosqiBlock: FC<MosqiBlockProps> = ({menu, product}) => {
             <ReviewSummary />
             <FAQ />
             <Footer />
+            <WhatsApp />
+             {!isVisible && <FloatingBar product={product} />}
         </div>
     );
 };

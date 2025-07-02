@@ -11,52 +11,55 @@ import { useTranslations } from 'next-intl';
 interface SubmitButtonProps {
   size?: "fullWidth" | "initial";
   price?: string;
+  floatingBar?: boolean;
 }
-function SubmitButton({size = "initial", price}: SubmitButtonProps) {
+function SubmitButton({size = "initial", price, floatingBar}: SubmitButtonProps) {
   const buttonRef = useRef(null);
   const { setIsVisible } = useVisibleFloatingCartStore();
   const t = useTranslations("fe");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const target = document.getElementById("add-to-cart-anchor");
+    if (!target) return;
+
+    const observer = new window.IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
       {
         root: null,
-        threshold: 0,
+        threshold: 0.25, // 25% visible = considéré comme visible
       }
     );
 
-    if (buttonRef.current) {
-      observer.observe(buttonRef.current);
-    }
+    observer.observe(target);
 
-    return () => {
-      if (buttonRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(buttonRef.current);
-      }
-    };
+    return () => observer.disconnect();
   }, [setIsVisible]);
 
   return (
       <button
         ref={buttonRef}
         className={cn(
-          "py-4 px-2 lg:px-6 rounded-xl bg-primary hover:bg-tertiary text-white font-medium text-base border-t",
+          "py-4 px-4 lg:px-6 rounded-xl bg-primary hover:bg-tertiary text-white font-medium text-base",
           size === "fullWidth" ? "min-w-full" : "w-max",
-          "hover:bg-gradient-to-tr"
       )}
       >
         <p className={cn("uppercase")}>
-          {t('addToCart')} - {price ? parseFloat(price).toFixed(2) : "27,99"}€
+         {floatingBar 
+            ? t('addToCart') 
+            : (
+              <>
+                {t('addToCart')} {price ? parseFloat(price).toFixed(2) : "27,99"}€
+              </>
+            )
+          }
         </p>
       </button>
   );
 }
 
-export function AddToCart({ product, size = "initial", state }: { product: Product, size?: "fullWidth" | "initial", color?: "gradient" | "foreground", state?: VariantsProduct | null}) {
+export function AddToCart({ product, size = "initial", floatingBar, state }: { product: Product, size?: "fullWidth" | "initial", floatingBar?: boolean, state?: VariantsProduct | null}) {
   const variants = product.variants.edges;
   const { addCartItem } = useCartStore();
   const { setIsOpenCart } = useOpenCartStore();
@@ -90,7 +93,7 @@ export function AddToCart({ product, size = "initial", state }: { product: Produ
       }}
       onClick={() => setIsOpenCart(true)}
     >
-      <SubmitButton size={size} price={state?.node.price?.amount} />
+      <SubmitButton size={size} price={state?.node.price?.amount} floatingBar={floatingBar} />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
       </p>

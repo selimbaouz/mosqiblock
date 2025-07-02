@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { Product, VariantsProduct } from "@/types/types";
+import { Product } from "@/types/types";
 import { FC, useEffect, useState } from "react";
 import { AddToCart } from "./cart/add-to-cart";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import { TbTruckReturn } from "react-icons/tb";
 import Link from "next/link";
 import GetRatings from "@/lib/fn";
 import { useTranslations } from "next-intl";
+import { useVariantStore } from "@/store/variantsProduct";
 
 interface ProductImageProps {
     product: Product;
@@ -25,7 +26,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
     const [selectedColor, setSelectedColor] = useState(0);
     const [selectedColorName, setSelectedColorName] = useState("White");
     const [selectedPackName, setSelectedPackName] = useState("Buy 1");
-    const [selectedVariant, setSelectedVariant] = useState<VariantsProduct | null>(null);
+    const {selectedVariant, setSelectedVariant} = useVariantStore();
     const colors = t.raw("colorsList") as string[];
     const detailsProduct = t.raw("detailsProduct") as { title: string; content: string }[];
 
@@ -35,7 +36,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
         if (product.variants.edges.length > 0 && !selectedVariant) {
             setSelectedVariant(product.variants.edges[0]);
         }
-    }, [product.variants.edges, selectedVariant]);
+    }, [product.variants.edges, selectedVariant, setSelectedVariant]);
 
     useEffect(() => {
         const variantTitle = `${selectedPackName} / ${selectedColorName}`;
@@ -46,7 +47,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
         if (matchingVariant) {
             setSelectedVariant(matchingVariant);
         } 
-    }, [selectedPack, selectedColorName, product.variants.edges, selectedPackName]);
+    }, [selectedPack, selectedColorName, product.variants.edges, selectedPackName, setSelectedVariant]);
 
     const PACKS = [
         {
@@ -176,7 +177,9 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
 
                 </div>
                 <div className="space-y-4">
-                    <AddToCart state={selectedVariant} product={product} size="fullWidth" />
+                    <div id="add-to-cart-anchor">
+                        <AddToCart state={selectedVariant} product={product} size="fullWidth" />
+                    </div>
                     <div className={cn("flex items-center gap-2 justify-center", "lg:gap-4")}>
                         <Image src="/images/secure.png" className="w-auto h-4" alt="Icon secure" width={20} height={20} />
                         <p className={cn("text-[10px] font-bold", "lg:text-xs", "xl:text-sm")}>{t("securePayment")}</p>

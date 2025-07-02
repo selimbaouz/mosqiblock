@@ -49,10 +49,10 @@ const Comparaison = () => {
                     {/* Header Row */}
                     <div className="bg-transparent"></div>
                     <div className="bg-tertiary rounded-tl-3xl rounded-tr-3xl flex justify-center items-center py-4">
-                        <Image src="/images/Pack1.png" alt="MosqiBlock" className='lg:size-14 xl:size-24' width={60} height={60} />
+                        <Image src="/images/Pack1.png" alt="MosqiBlock" width={60} height={60} />
                     </div>
                     <div className="bg-transparent flex justify-center items-center py-4">
-                        <Image src="/images/Other.png" alt="Others" className='lg:size-14 xl:size-24' width={40} height={60} />
+                        <Image src="/images/Other.png" alt="Others" width={40} height={60} />
                     </div>
                     {/* Data Rows */}
                     {comparisonData.map((data, i) => (

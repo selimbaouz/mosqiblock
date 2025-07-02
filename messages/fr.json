@@ -28,7 +28,7 @@
             }
         },
         "header": {
-            "rating": "4,6 | Plus de 8000 clients satisfaits",
+            "rating": "4,6 | Plus de 80 clients satisfaits",
             "title": "Adieu les moustiques,",
             "secondTitle": "Profitez enfin de vos soirées",
             "subtitle": "La solution sûre, efficace et sans produits chimiques pour protéger vos enfants et vos proches des moustiques.",
@@ -186,7 +186,7 @@
             "delivery": "Commandez maintenant, livraison {start}-{end}",
             "stockAlert": "Dépêchez-vous ! Stock limité.",
             "rating": "4,6 | ",
-            "satisfied": "8000+ clients satisfaits",
+            "satisfied": "80+ clients satisfaits",
               "heroText": "<strong>Passez des nuits paisibles</strong>, sans bourdonnements ni piqûres. <strong>Protégez vos proches</strong> avec une technologie sûre et silencieuse. Facile à utiliser partout, <strong>confort et liberté au quotidien.</strong>",
             "colors": "Couleurs",
             "packs": "Packs",

@@ -17,12 +17,13 @@ import Image from "next/image";
 
 // Ratings breakdown
 const ratings = [
-  { stars: 5, count: 5372 },
-  { stars: 4, count: 2876 },
-  { stars: 3, count: 6 },
-  { stars: 2, count: 3 },
+  { stars: 5, count: 65 },
+  { stars: 4, count: 15 },
+  { stars: 3, count: 4 },
+  { stars: 2, count: 1 },
   { stars: 1, count: 1 },
 ];
+
 const totalReviews = ratings.reduce((acc, r) => acc + r.count, 0);
 const averageRating = Math.round(
   (ratings.reduce((acc, r) => acc + r.stars * r.count, 0) / totalReviews) * 10

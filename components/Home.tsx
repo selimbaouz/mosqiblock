@@ -16,6 +16,7 @@ import ProductFeatures from "@/components/ProductFeatures";
 import { Menu } from "@/types/types";
 import { FC } from "react";
 import { useTranslations } from "next-intl";
+import WhatsApp from "./navigation/WhatsApp";
 
 interface HomeProps {
     menu: Menu[];
@@ -61,6 +62,7 @@ const Home: FC<HomeProps> = ({menu}) => {
             <Comparaison />
             <FAQ />
             <Footer />  
+            <WhatsApp />
         </div>
     );
 };
