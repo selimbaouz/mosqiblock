@@ -191,8 +191,8 @@
         "colors": "Cores",
         "packs": "Pacotes",
         "packsList": [
-        { "title": "Compre 1", "subTitle": "" },
-        { "title": "Compre 2 Leve 1 Grátis", "subTitle": "Você economiza €27,99 😱" },
+        { "title": "Compre 1", "subTitle": "Você economiza €32,09 " },
+        { "title": "Compre 2 Leve 1 Grátis", "subTitle": "Você economiza €64,00 😱" },
         { "title": "Compre 3 Leve 2 Grátis", "subTitle": "Um para cada ambiente 😍" }
         ],
         "colorsList": ["Branco", "Verde"],
@@ -236,7 +236,7 @@
      "mode": {
         "selectModesData": [
         { "title": "Benefícios." },
-        { "title": "Como funciona." }
+        { "title": "Utilizações." }
         ],
         "benefitsProductData": [
         { "title": "Seu item indispensável para noites mágicas ao ar livre", "content": "Transforme cada acampamento em uma aventura sem picadas." },
@@ -554,6 +554,12 @@
             "es": "Espanhol",
             "pt": "Português"
         },
-        "addToCart": "Adicionar ao carrinho"
+        "addToCart": "Adicionar ao carrinho",
+         "navigation": {
+            "home": "Início",
+            "mosqiblock": "MosqiBlock",
+            "contact": "Contato",
+            "trackOrder": "Acompanhar meu pedido"
+        }
   }
 }

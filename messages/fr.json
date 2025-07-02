@@ -191,8 +191,8 @@
             "colors": "Couleurs",
             "packs": "Packs",
             "packsList": [
-            { "title": "Acheter 1", "subTitle": "" },
-            { "title": "2 achetés = 1 offert", "subTitle": "Économisez 27,99 € 😱" },
+            { "title": "Acheter 1", "subTitle": "Économisez 32,09 €" },
+            { "title": "2 achetés = 1 offert", "subTitle": "Économisez 64,00 € 😱" },
             { "title": "3 achetés = 2 offerts", "subTitle": "Un pour chaque pièce 😍" }
             ],
             "colorsList": ["Blanc", "Vert"],
@@ -236,7 +236,7 @@
         "mode": {
             "selectModesData": [
             { "title": "Avantages." },
-            { "title": "Comment ça marche." }
+            { "title": "Utilisation." }
             ],
             "benefitsProductData": [
             { "title": "Votre indispensable pour des nuits magiques en plein air", "content": "Transformez chaque sortie camping en aventure sans piqûres." },
@@ -554,6 +554,12 @@
             "es": "Espagnol",
             "pt": "Portugais"
         },
-        "addToCart": "Ajouter au panier"
+        "addToCart": "Ajouter au panier",
+        "navigation": {
+            "home": "Accueil",
+            "mosqiblock": "MosqiBlock",
+            "contact": "Contact",
+            "trackOrder": "Suivre ma commande"
+        }
     }
 }

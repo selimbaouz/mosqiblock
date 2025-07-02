@@ -15,7 +15,7 @@ import MosquitoesKiller from '@/components/MosquitoesKiller';
 import Comparaison from '@/components/Comparaison';
 import ReviewSummary from '@/components/ReviewSummary';
 import AnnouncementBar from '@/components/navigation/AnnouncementBar';
-import { Menu, Product } from '@/types/types';
+import { Product } from '@/types/types';
 import { format, addDays } from 'date-fns';
 import { useTranslations } from "next-intl";
 import WhatsApp from './navigation/WhatsApp';
@@ -23,10 +23,9 @@ import FloatingBar from './navigation/FloatingBar';
 import { useVisibleFloatingCartStore } from "@/store/cart";
 
 interface MosqiBlockProps {
-    menu: Menu[];
     product: Product;
 }
-const MosqiBlock: FC<MosqiBlockProps> = ({menu, product}) => {
+const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
     const t = useTranslations("fe.productMosqiBlock");
     const {isVisible} = useVisibleFloatingCartStore();
     // 📆 Calcul des dates de livraison
@@ -42,7 +41,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({menu, product}) => {
         <div className='relative'>
             <div className="sticky top-0 w-full z-[150]">
                 <AnnouncementBar className='bg-primary text-white' iconClassName='text-white' />
-                <NavBar menu={menu} />
+                <NavBar />
             </div>
             <div className='bg-[#EEE8FF] pt-4 lg:pt-0 lg:pb-20'>
                 <div className={cn('space-y-3 p-4', "lg:hidden")}>

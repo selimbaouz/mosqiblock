@@ -1,17 +1,20 @@
 import SideBar from "../SideBar";
 import NavBarMobile from "./NavBarMobile";
 import NavBarWeb from "./NavBarWeb";
-import { Menu } from "@/types/types";
 import { cn } from "@/lib/utils";
 import Cart from "@/components/cart/Cart";
+import { useLocale, useTranslations } from "next-intl";
 
-interface NavBarProps {
-    menu: Menu[];
-}
-export default function NavBar(
-    {
-        menu,
-    }: NavBarProps) {
+export default function NavBar() {
+    const locale = useLocale();
+    const t = useTranslations("fe.navigation");
+
+    const menu = [
+        { title: t("home"), path: "/" },
+        { title: t("mosqiblock"), path: `/${locale}/products/mosqiblock` },
+        { title: t("contact"), path: "contact" }, // à traiter en mailto
+        { title: t("trackOrder"), path: "https://www.17track.net/fr" }
+    ];
 
     return (
         <nav className={cn("bg-background")}>

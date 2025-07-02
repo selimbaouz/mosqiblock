@@ -116,7 +116,7 @@ export async function updateItemQuantity(
   }
 }
 
-export async function redirectToCheckoutUrl(variantId: string, totalQuantity: number) {
+export async function redirectToCheckoutUrl(variantId: string, totalQuantity: number, locale: string) {
   if(!totalQuantity) {
     return "No Quantity"
   }
@@ -128,9 +128,15 @@ export async function redirectToCheckoutUrl(variantId: string, totalQuantity: nu
   }
 
   const customCheckoutUrl = checkoutUrl.replace(
-    /^https:\/\/hellopurly-sejiux\.myshopify\.com/,
-    "https://www.hellopurly.fr"
+    /^https:\/\/wtit3t-1h\.myshopify\.com/,
+    "https://www.mosqiblock.com"
   );
+
+   if (locale) {
+    // Si l'URL contient déjà des paramètres, ajoute avec &
+    const separator = customCheckoutUrl.includes('?') ? '&' : '?';
+    return `${customCheckoutUrl}${separator}locale=${locale}`;
+  }
 
   return customCheckoutUrl;
 }

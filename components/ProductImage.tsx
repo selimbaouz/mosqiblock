@@ -22,10 +22,10 @@ interface ProductImageProps {
 
 const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, formattedDeliveryEnd}) => {
     const t = useTranslations("fe.productMosqiBlock");
-    const [selectedPack, setSelectedPack] = useState(0);
+    const [selectedPack, setSelectedPack] = useState(1);
     const [selectedColor, setSelectedColor] = useState(0);
     const [selectedColorName, setSelectedColorName] = useState("White");
-    const [selectedPackName, setSelectedPackName] = useState("Buy 1");
+    const [selectedPackName, setSelectedPackName] = useState("Buy 2 Get 1 Free");
     const {selectedVariant, setSelectedVariant} = useVariantStore();
     const colors = t.raw("colorsList") as string[];
     const detailsProduct = t.raw("detailsProduct") as { title: string; content: string }[];

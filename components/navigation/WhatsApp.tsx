@@ -1,5 +1,6 @@
 import { useIsHydrated } from '@/hook/useIsHydrated';
 import { cn } from '@/lib/utils';
+import { useVisibleFloatingCartStore } from '@/store/cart';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -11,6 +12,7 @@ const WHATSAPP_NUMBER = '3356999520'; // Exemple : 33612345678 pour +33 6 12 34 
 const WhatsApp = () => {
   const pathname = usePathname();
   const locale = useLocale();
+  const { isVisible } = useVisibleFloatingCartStore();
 
   const isHydrated = useIsHydrated();
       
@@ -26,7 +28,7 @@ const WhatsApp = () => {
       aria-label="Contactez-nous sur WhatsApp"
       className={cn(
         "fixed z-50 right-6 size-16 lg:size-24 rounded-full border-2 border-secondary bg-primary flex items-center justify-center shadow-lg hover:scale-105 transition-transform",
-        pathname === `/${locale}/products/mosqiblock` ? "bottom-24 lg:bottom-32" : "bottom-10"
+        pathname === `/${locale}/products/mosqiblock` && !isVisible ? "bottom-24 lg:bottom-28" : "bottom-10"
       )}
     >
       <div

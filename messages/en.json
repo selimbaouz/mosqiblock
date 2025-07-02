@@ -192,8 +192,8 @@
             "colors": "Colors",
             "packs": "Packs",
             "packsList": [
-            { "title": "Buy 1", "subTitle": "" },
-            { "title": "Buy 2 Get 1 Free", "subTitle": "You save €27.99 😱" },
+            { "title": "Buy 1", "subTitle": "Your save €32,09" },
+            { "title": "Buy 2 Get 1 Free", "subTitle": "You save €64,00  😱" },
             { "title": "Buy 3 Get 2 Free", "subTitle": "One for every room 😍" }
             ],
             "colorsList": ["White", "Green"],
@@ -237,7 +237,7 @@
          "mode": {
             "selectModesData": [
             { "title": "Benefits." },
-            { "title": "How it works." }
+            { "title": "Uses." }
             ],
             "benefitsProductData": [
             { "title": "Your must-have for magical nights outdoors", "content": "Transform every camping trip into a bite-free adventure." },
@@ -555,6 +555,12 @@
             "es": "Spanish",
             "pt": "Portuguese"
         },
-        "addToCart": "Add To Cart"
+        "addToCart": "Add To Cart",
+        "navigation": {
+            "home": "Home",
+            "mosqiblock": "MosqiBlock",
+            "contact": "Contact",
+            "trackOrder": "Track my order"
+        }
     }
 }

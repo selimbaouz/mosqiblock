@@ -14,9 +14,10 @@ import { Cross2Icon } from '@radix-ui/react-icons';
 import { MdLock } from 'react-icons/md';
 import CartTimer from './cart-timer';
 import FreeShippingBar from './FreeShippingBar';
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Cart() {
+  const locale = useLocale();
   const { timeLeft, cart, updateCartItem } = useCartStore();
   const {isOpenCart, setIsOpenCart} = useOpenCartStore();
   const quantityRef = useRef(cart?.totalQuantity);
@@ -47,7 +48,7 @@ export default function Cart() {
 
     setIsLoading(true);
     try {
-        const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity);
+        const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity, locale);
         if (url) {
           window.location.href = url;
           } else {

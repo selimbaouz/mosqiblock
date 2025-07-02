@@ -13,22 +13,17 @@ import Comparaison from "@/components/Comparaison";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import ProductFeatures from "@/components/ProductFeatures";
-import { Menu } from "@/types/types";
-import { FC } from "react";
 import { useTranslations } from "next-intl";
 import WhatsApp from "./navigation/WhatsApp";
 
-interface HomeProps {
-    menu: Menu[];
-}
-const Home: FC<HomeProps> = ({menu}) => {
+const Home = () => {
     const t = useTranslations("fe");
 
     return (
         <div>
             <div className={cn("sticky top-0 w-full z-[150]")}>
                 <AnnouncementBar className='bg-primary text-white' iconClassName='text-white' />
-                <NavBar menu={menu} />
+                <NavBar />
             </div>
             <Header />
             <StickyBar className='bg-secondary text-foreground h-12' iconClassName='text-foreground' />
