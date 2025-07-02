@@ -15,7 +15,7 @@ interface SubmitButtonProps {
 function SubmitButton({size = "initial", price}: SubmitButtonProps) {
   const buttonRef = useRef(null);
   const { setIsVisible } = useVisibleFloatingCartStore();
-  const t = useTranslations();
+  const t = useTranslations("fe");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,10 +42,9 @@ function SubmitButton({size = "initial", price}: SubmitButtonProps) {
 
   return (
       <button
-        aria-label={t('addToCart')}
         ref={buttonRef}
         className={cn(
-          "py-4 px-2 lg:px-6 rounded-xl bg-primary hover:bg-secondary text-white font-medium text-base border-t",
+          "py-4 px-2 lg:px-6 rounded-xl bg-primary hover:bg-tertiary text-white font-medium text-base border-t",
           size === "fullWidth" ? "min-w-full" : "w-max",
           "hover:bg-gradient-to-tr"
       )}

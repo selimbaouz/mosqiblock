@@ -90,7 +90,7 @@ const MosquitoesKiller = () => {
                   </p>
                   <button
                       className={cn(
-                        "py-4 px-2 lg:px-6 rounded-xl bg-primary hover:bg-secondary text-white font-medium text-base border-t w-full",
+                        "py-4 px-2 lg:px-6 rounded-xl bg-primary hover:bg-tertiary text-white font-medium text-base border-t w-full",
                         "hover:bg-gradient-to-tr",
                         "lg:w-auto"
                     )}

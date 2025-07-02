@@ -112,7 +112,7 @@ export function Reviews() {
               aria-label="Image précédente"
               className={cn(
                 "z-10",
-                !canScrollPrev ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary"
+                !canScrollPrev ? "opacity-50 cursor-not-allowed" : "hover:bg-tertiary"
               )}
               type="button"
             >
@@ -137,7 +137,7 @@ export function Reviews() {
                 aria-label="Image suivante"
                 className={cn(
                   "z-10",
-                  !canScrollNext ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary"
+                  !canScrollNext ? "opacity-50 cursor-not-allowed" : "hover:bg-tertiary"
                 )}
                 type="button"
               >

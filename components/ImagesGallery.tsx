@@ -82,7 +82,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
           aria-label="Image précédente"
           className={cn(
             "absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary bg-background shadow transition",
-            !canScrollPrev ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary"
+            !canScrollPrev ? "opacity-50 cursor-not-allowed" : "hover:bg-tertiary"
           )}
           type="button"
         >
@@ -94,7 +94,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
           aria-label="Image suivante"
           className={cn(
             "absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary bg-background shadow transition",
-            !canScrollNext ? "opacity-50 cursor-not-allowed" : "hover:bg-secondary"
+            !canScrollNext ? "opacity-50 cursor-not-allowed" : "hover:bg-tertiary"
           )}
           type="button"
         >

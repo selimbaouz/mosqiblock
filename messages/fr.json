@@ -358,7 +358,7 @@
                 {
                 "heading": "Éditeur du site",
                 "content": [
-                    "Nom du créateur du projet : Hichem Ouahib",
+                    "Responsable du site : Hichem Ouahib",
                     "Créateur de la boutique (code & design) : Selim Baouz (Selimmersive)",
                     "Adresse : 27 Emile Zola, Montreuil 93100 Paris",
                     "Email : mosqiblock@contact.com"
@@ -553,7 +553,7 @@
             "fr": "Français",
             "es": "Espagnol",
             "pt": "Portugais"
-        }
-    },
-     "addToCart": "Ajouter au panier"
+        },
+        "addToCart": "Ajouter au panier"
+    }
 }
