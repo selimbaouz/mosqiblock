@@ -15,6 +15,7 @@ import Footer from "@/components/Footer";
 import ProductFeatures from "@/components/ProductFeatures";
 import { useTranslations } from "next-intl";
 import WhatsApp from "./navigation/WhatsApp";
+import Guarantee from "./Guarantee";
 
 const Home = () => {
     const t = useTranslations("fe");
@@ -56,6 +57,7 @@ const Home = () => {
             />
             <Comparaison />
             <FAQ />
+            <Guarantee />
             <Footer />  
             <WhatsApp />
         </div>

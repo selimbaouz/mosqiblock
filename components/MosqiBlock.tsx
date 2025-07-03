@@ -21,6 +21,7 @@ import { useTranslations } from "next-intl";
 import WhatsApp from './navigation/WhatsApp';
 import FloatingBar from './navigation/FloatingBar';
 import { useVisibleFloatingCartStore } from "@/store/cart";
+import Guarantee from './Guarantee';
 
 interface MosqiBlockProps {
     product: Product;
@@ -113,6 +114,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
             <Comparaison />
             <ReviewSummary />
             <FAQ />
+            <Guarantee />
             <Footer />
             <WhatsApp />
              {!isVisible && <FloatingBar product={product} />}

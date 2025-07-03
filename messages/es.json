@@ -28,7 +28,7 @@
         }
     },
     "header": {
-        "rating": "4.6 | Más de 80 clientes satisfechos",
+        "rating": "4.7 | Más de 80 clientes satisfechos",
         "title": "Adiós a los mosquitos,",
         "secondTitle": "Disfruta tus noches en paz",
         "subtitle": "La solución segura, eficaz y sin productos químicos para proteger a tus hijos y seres queridos de los mosquitos.",
@@ -185,7 +185,7 @@
           "subtitle": "Paz instantánea | Comodidad total | Libertad absoluta",
           "delivery": "Haz tu pedido ahora, entrega {start}-{end}",
           "stockAlert": "¡Date prisa! Stock limitado.",
-          "rating": "4,6 | ",
+          "rating": "4,7 | ",
           "satisfied": "80+ clientes satisfechos",
             "heroText": "<strong>Disfruta noches tranquilas</strong>, sin zumbidos ni picaduras. <strong>Protege a tus seres queridos</strong> con tecnología segura y silenciosa. Fácil de usar en cualquier lugar, <strong>comodidad y libertad cada día.</strong>",
           "colors": "Colores",
@@ -548,18 +548,23 @@
             { "link": "/legals/terms-and-conditions-of-use", "label": "Términos y condiciones" }
           ]
         },
-          "localeNames": {
-            "en": "Inglés",
-            "fr": "Francés",
-            "es": "Español",
-            "pt": "Portugués"
-          },
-          "addToCart": "Añadir al carrito",
-           "navigation": {
-              "home": "Inicio",
-              "mosqiblock": "MosqiBlock",
-              "contact": "Contacto",
-              "trackOrder": "Rastrear mi pedido"
-            }
+        "localeNames": {
+          "en": "Inglés",
+          "fr": "Francés",
+          "es": "Español",
+          "pt": "Portugués"
+        },
+        "addToCart": "Añadir al carrito",
+        "navigation": {
+            "home": "Inicio",
+            "mosqiblock": "MosqiBlock",
+            "contact": "Contacto",
+            "trackOrder": "Rastrear mi pedido"
+        },
+        "guarantee": {
+          "riskFree": "Prueba sin riesgo de 60 días",
+          "shipping": "Envío gratis y rápido",
+          "support": "Atención al cliente 24/7"
+        }
     }
 }

@@ -28,7 +28,7 @@
             }
         },
         "header": {
-            "rating": "4.6 | 80+ Satisfied customers",
+            "rating": "4.7 | 80+ Satisfied customers",
             "title": "Say Goodbye to Mosquitoes,",
             "secondTitle": "Enjoy Your Evenings in Peace",
             "subtitle": "The safe, effective, chemical-free solution to protect your children and loved ones from mosquitoes.",
@@ -186,7 +186,7 @@
             "subtitle": "Instant Peace | Pure comfort | Total Freedom",
             "delivery": "Order now, delivery {start}-{end}",
             "stockAlert": "Hurry! Stock is limited.",
-            "rating": "4.6 | ",
+            "rating": "4.7 | ",
             "satisfied": "80+ Satisfied customers",
             "heroText": "<strong>Enjoy peaceful nights</strong>, free from buzzing and bites. <strong>Protect your loved ones</strong> with safe, silent technology. Easy to use anywhere, <strong>comfort and freedom, every day.</strong>",
             "colors": "Colors",
@@ -561,6 +561,11 @@
             "mosqiblock": "MosqiBlock",
             "contact": "Contact",
             "trackOrder": "Track my order"
+        },
+        "guarantee": {
+            "riskFree": "60-Day Risk Free Trial",
+            "shipping": "Free & Fast Shipping",
+            "support": "24/7 Customer Support"
         }
     }
 }

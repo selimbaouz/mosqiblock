@@ -560,6 +560,11 @@
             "mosqiblock": "MosqiBlock",
             "contact": "Contato",
             "trackOrder": "Acompanhar meu pedido"
+        },
+        "guarantee": {
+            "riskFree": "Teste sem risco por 60 dias",
+            "shipping": "Frete grátis e rápido",
+            "support": "Atendimento ao cliente 24h/7d"
         }
   }
 }

@@ -22,7 +22,7 @@ const Footer = ({
 
     return (
        <div className={cn(className,"font-light text-sm lg:text-base")}>
-            <footer className={cn('p-4 text-left py-10 text-white space-y-20 bg-primary z-10 h-full', "lg:py-14 lg:px-0")}>
+            <footer className={cn('p-4 text-left py-10 text-white space-y-20 bg-foreground z-10 h-full', "lg:py-14 lg:px-0")}>
                 <div className={cn("max-w-screen-xl mx-auto space-y-14")}>
                     <div className={cn("flex flex-col space-y-10", "lg:flex-row lg:items-start lg:justify-between lg:space-y-0")}>
                         <div className={cn("space-y-4")}>
