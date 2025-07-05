@@ -15,6 +15,7 @@ import { MdLock } from 'react-icons/md';
 import CartTimer from './cart-timer';
 import FreeShippingBar from './FreeShippingBar';
 import { useLocale, useTranslations } from "next-intl";
+import ReactPixel from "react-facebook-pixel";
 
 export default function Cart() {
   const locale = useLocale();
@@ -50,6 +51,12 @@ export default function Cart() {
     try {
         const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity, locale);
         if (url) {
+          ReactPixel.track('InitiateCheckout', {
+            content_ids: cart.lines.map(line => line.merchandise.id),
+            num_items: cart.totalQuantity,
+            value: cart.cost.totalAmount.amount,
+            currency: cart.cost.totalAmount.currencyCode
+          });
           window.location.href = url;
           } else {
             console.error("L'URL de redirection est indéfinie.");

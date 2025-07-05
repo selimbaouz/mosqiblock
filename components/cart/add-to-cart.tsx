@@ -7,6 +7,7 @@ import { useCartStore, useOpenCartStore, useVisibleFloatingCartStore } from '@/s
 import { cn } from '@/lib/utils';
 import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import ReactPixel from "react-facebook-pixel";
 
 interface SubmitButtonProps {
   size?: "fullWidth" | "initial";
@@ -91,6 +92,13 @@ export function AddToCart({ product, size = "initial", floatingBar, state }: { p
         addCartItem(finalVariant, product);
         await actionWithVariant();
         setIsOpenFloatingBar(false);
+        ReactPixel.track('AddToCart', {
+          content_ids: [finalVariant.node.id],
+          content_name: finalVariant.node.title,
+          content_type: 'product',
+          value: finalVariant?.node?.price?.amount,
+          currency: 'EUR'
+        });
       }}
       onClick={() => setIsOpenCart(true)}
     >

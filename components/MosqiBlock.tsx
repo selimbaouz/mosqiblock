@@ -1,5 +1,5 @@
 "use client";
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import ProductImage from '@/components/ProductImage';
 import { cn } from '@/lib/utils';
 import ImagesGallery from '@/components/ImagesGallery';
@@ -22,6 +22,7 @@ import WhatsApp from './navigation/WhatsApp';
 import FloatingBar from './navigation/FloatingBar';
 import { useVisibleFloatingCartStore } from "@/store/cart";
 import Guarantee from './Guarantee';
+import ReactPixel from "react-facebook-pixel";
 
 interface MosqiBlockProps {
     product: Product;
@@ -37,6 +38,16 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
     // 🗓️ Formatage des dates (mois abrégé + jour)
     const formattedDeliveryStart = format(deliveryStart, 'MMM d');
     const formattedDeliveryEnd = format(deliveryEnd, 'd');
+
+    useEffect(() => {
+        ReactPixel.track('ViewContent', {
+            content_ids: [product.id],
+            content_name: product.title,
+            content_type: 'product',
+            value: product.priceRange.minVariantPrice.amount,
+            currency: 'EUR'
+        });
+    }, [product]);
 
     return (
         <div className='relative'>

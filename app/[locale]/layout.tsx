@@ -4,6 +4,10 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import LayoutClient from "@/components/LayoutClient";
 import { NextIntlClientProvider } from "next-intl";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+import Image from "next/image";
+const PixelTracker = dynamic(() => import("@/components/PixelTracker"), { ssr: false });
 
 const montserrat = Montserrat({
   weight: [
@@ -94,9 +98,41 @@ export default async function LocaleLayout({
       <body
         className={`${montserrat.variable} font-montserrat relative bg-background text-foreground`}
       >
+        <Head>
+          {/* Meta Pixel Code */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?                         
+                n.callMethod.apply(n,arguments):n.queue.push   
+                (arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!
+                0;n.version='2.0';n.queue=[];t=b.createElement(e);
+                t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,
+                'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '1521652655465018');
+                fbq('track', 'PageView');
+              `,
+            }}
+          />
+          <noscript>
+            <Image
+              alt="pixel fb"
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src="https://www.facebook.com/tr?id=1521652655465018&ev=
+              PageView&noscript=1"/>
+          </noscript>
+          {/* End Meta Pixel Code */}
+
+        </Head>
         <NextIntlClientProvider>
           <Providers>
             <LayoutClient>
+              <PixelTracker />
               {children}
             </LayoutClient>
           </Providers>
