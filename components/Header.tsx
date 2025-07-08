@@ -22,7 +22,7 @@ const Header = () => {
             <ImageLoader
                 src={HeaderImg ?? ""}
                 alt='Main Images'
-                className={cn('h-full w-full object-cover', "lg:h-[90vh]")}
+                className={cn('h-full w-full object-cover', "xl:h-[90vh]")}
                 width={397}
                 height={595}
             />
@@ -40,7 +40,7 @@ const Header = () => {
                     'font-bold text-gray-100 drop-shadow-lg',
                     "text-2xl leading-tight md:text-4xl md:leading-[1.2] lg:text-5xl xl:text-6xl xl:leading-tight 3xl:text-8xl 3xl:leading-snug"
                 )}>
-                    {t("title")} <br className={cn("hidden", "lg:block")}/>{t("secondTitle")}
+                    {t("title")} <br />{t("secondTitle")}
                 </h1>
                 <p className={cn(
                     "px-10 text-sm text-white font-light",

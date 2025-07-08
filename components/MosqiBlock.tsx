@@ -104,7 +104,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
             
                 <section className={cn(
                     "w-full text-left space-y-6 max-w-screen-xl mx-auto px-4", 
-                    "lg:pt-14 lg:px-0 lg:grid lg:grid-cols-2 lg:space-y-0 lg:justify-start lg:gap-10"
+                    "lg:pt-14 xl:px-0 lg:grid lg:grid-cols-2 lg:space-y-0 lg:justify-start lg:gap-10"
                 )}>
                     <div className='lg:sticky lg:top-44 self-start'>
                         <ImagesGallery

@@ -69,7 +69,7 @@ export default function ReviewSummary() {
 
           {/* Avis clients */}
           <div className="flex-1 w-full">
-            <div className={cn("flex flex-col gap-4", "xl:grid xl:grid-cols-3 xl:items-start")}>
+            <div className={cn("flex flex-col gap-4", "lg:grid lg:grid-cols-2", "xl:grid-cols-3 xl:items-start")}>
               {reviews.map((r, i) => (
                 <div
                   key={i}

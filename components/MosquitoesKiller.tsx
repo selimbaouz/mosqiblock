@@ -46,7 +46,7 @@ const MosquitoesKiller = () => {
               <h3 className="text-xl xs:text-[23px] xs:leading-9 xl:text-4xl font-bold pb-4">
                   {t("title")} <br className='lg:hidden' />{t("secondTitle")} 
               </h3>
-              <div className={cn("space-y-6 xl:grid xl:grid-cols-2 xl:items-center xl:text-left xl:justify-between xl:space-y-0 xl:gap-6")}>
+              <div className={cn("space-y-6 lg:grid lg:grid-cols-2 lg:items-center lg:text-left lg:justify-between lg:space-y-0 lg:gap-6")}>
                 <Image 
                   src={Mosquitoes.src} 
                   alt="Image of card" 
@@ -61,7 +61,7 @@ const MosquitoesKiller = () => {
                   <p className={cn("text-sm leading-6", "xl:text-base")}>
                       {t.rich("section1.content", { strong: (chunks) => <strong>{chunks}</strong> })}
                   </p>
-                  <div className={cn("space-y-4 py-6", "xl:grid xl:grid-cols-2 xl:gap-2 xl:items-start xl:space-y-0 lx:py-0")}>
+                  <div className={cn("space-y-4 py-6", "lg:hidden", "xl:grid xl:grid-cols-2 xl:gap-2 xl:items-start xl:space-y-0 lx:py-0")}>
                       {cards.map((data, i) => {
                         const Icon = icons[i];
                         return (
@@ -79,7 +79,23 @@ const MosquitoesKiller = () => {
                   </div>
                 </div>
               </div>
-              <div className={cn("space-y-6 xl:grid xl:grid-cols-2 xl:items-center xl:text-left xl:justify-between xl:space-y-0 xl:gap-6")}>
+              <div className={cn("hidden", "lg:grid lg:grid-cols-2 lg:gap-3 lg:items-start lg:py-6", "xl:hidden")}>
+                    {cards.map((data, i) => {
+                      const Icon = icons[i];
+                      return (
+                        <div key={i} className={cn("bg-background border h-full border-secondary text-left rounded-3xl space-y-2 p-6 shadow-sm")}>
+                          <div className={cn("p-2 bg-secondary rounded-xl flex justify-center items-center w-max")}>
+                            <Icon className="text-foreground" size={28} />
+                          </div>
+                          <div className={cn("space-y-1 pt-2")}>
+                            <h3 className={cn("text-lg lg:text-xl font-semibold")}>{data.title}</h3>
+                            <p className={cn("text-[13px] leading-6", "xl:text-base")}>{data.content}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              <div className={cn("space-y-6 lg:grid lg:grid-cols-2 lg:items-center lg:text-left lg:justify-between lg:space-y-0 lg:gap-6")}>
                 <Image src={ProductCTA.src} alt="Image of card" className={cn("order-1 lg:order-2 rounded-3xl object-cover", "xl:max-w-2xl")} width={ProductCTA.width} height={ProductCTA.height} />
                 <div className={cn("space-y-4 order-2 lg:order-1 xl:text-left xl:pr-6")}>
                   <h3 className="text-xl xl:text-3xl font-bold text-primary">

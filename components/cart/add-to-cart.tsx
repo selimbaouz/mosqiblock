@@ -92,6 +92,7 @@ export function AddToCart({ product, size = "initial", floatingBar, state }: { p
         addCartItem(finalVariant, product);
         await actionWithVariant();
         setIsOpenFloatingBar(false);
+        setIsOpenCart(true)
         ReactPixel.track('AddToCart', {
           content_ids: [finalVariant.node.id],
           content_name: finalVariant.node.title,
@@ -100,7 +101,6 @@ export function AddToCart({ product, size = "initial", floatingBar, state }: { p
           currency: 'EUR'
         });
       }}
-      onClick={() => setIsOpenCart(true)}
     >
       <SubmitButton size={size} price={state?.node.price?.amount} floatingBar={floatingBar} />
       <p aria-live="polite" className="sr-only" role="status">
