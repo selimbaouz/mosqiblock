@@ -15,8 +15,8 @@ const config: Config = {
   		},
   		colors: {
   			background: '#F7F3FF',
-  			foreground: '#333',
-			subtitle: '#333',
+  			foreground: '#23272A',
+			subtitle: '#23272A',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
