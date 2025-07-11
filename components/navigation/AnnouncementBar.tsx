@@ -15,8 +15,12 @@ const AnnouncementBar: FC<AnnouncementBarProps> = ({className, iconClassName}) =
     const data = useMemo(() => [
         { icon: "🦟", title: t("chemicalFree") },
         { icon: "🔋", title: t("usbRechargeable") },
-        { icon: "💤", title: t("ultraQuiet") }
+        { icon: "💤", title: t("ultraQuiet") },
+        { icon: "💸", title: t("discount") },
+        { icon: "📦", title: t("shippingFree") },
+        { icon: "🛡️", title: t("guarantee") },
     ], [t]);
+
 
     useEffect(() => {
         const interval = setInterval(() => {

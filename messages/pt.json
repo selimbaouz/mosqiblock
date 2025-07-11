@@ -3,7 +3,10 @@
     "announcement": {
         "chemicalFree": "Sem produtos químicos",
         "usbRechargeable": "Recarregável por USB",
-        "ultraQuiet": "Ultra silencioso"
+        "ultraQuiet": "Ultra silencioso",
+        "discount": "33% DE DESCONTO",
+        "shippingFree": "Frete grátis",
+        "guarantee": "Garantia de 60 dias"
     },
     "cart": {
         "cartTitle": "Seu carrinho de compras",
