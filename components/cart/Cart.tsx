@@ -4,7 +4,7 @@ import { ShoppingCartIcon } from 'lucide-react';
 import Price from '../Price';
 import { DeleteItemButton } from '@/components/cart/delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
-import { createCartAndSetCookie, redirectToCheckoutUrl } from './actions';
+import { createCartAndSetCookie, redirectToCheckoutUrl, removeCartAndSetCookie } from './actions';
 import { PulseLoader } from 'react-spinners';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -46,12 +46,12 @@ export default function Cart() {
 
   const handleRedirectToCheckout = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     setIsLoading(true);
+
     try {
        /*  const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity, locale); */
        const url = await redirectToCheckoutUrl(locale);
-        if (url) {
+        if (url && !url.startsWith('Cart expired')) {
           ReactPixel.track('InitiateCheckout', {
             content_ids: cart.lines.map(line => line.merchandise.id),
             num_items: cart.totalQuantity,
@@ -59,8 +59,10 @@ export default function Cart() {
             currency: cart.cost.totalAmount.currencyCode
           });
           window.location.href = url;
+          await removeCartAndSetCookie();
           } else {
-            console.error("L'URL de redirection est indéfinie.");
+            alert(t("cartExpiredOrEmpty"));
+            document.cookie = "cartId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             setIsLoading(false);
           }
       } catch (error) {

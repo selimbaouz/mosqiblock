@@ -28,7 +28,8 @@
            },
             "cartTimer": {
                 "reserved": "🔥 Votre panier est réservé pendant {time} minutes !"
-            }
+            },
+            "cartExpiredOrEmpty": "Votre panier a expiré ou est vide. Merci de réajouter vos produits."
         },
         "header": {
             "rating": "4,7 | Plus de 80 clients satisfaits",

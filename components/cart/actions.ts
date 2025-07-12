@@ -15,7 +15,10 @@ import { cookies } from 'next/headers';
       try {
         const cart = await createCart();
         cartId = cart.id!;
-        cookies().set('cartId', cartId);  // Stocke le nouvel ID de panier dans les cookies
+        cookies().set('cartId', cart.id!, {
+          path: '/',
+          maxAge: 60 * 60 * 24 * 7 // 7 jours en secondes
+        });  // Stocke le nouvel ID de panier dans les cookies
       } catch (error) {
         console.error("Erreur lors de la création du panier :", error);
         return 'Erreur lors de la création du panier';
@@ -145,6 +148,13 @@ export async function updateItemQuantity(
   const cartId = cookies().get('cartId')?.value;
   if (!cartId) return 'Missing cart ID';
 
+  const cart = await getCart(cartId);
+  if (!cart || !cart.lines || cart.lines.length === 0) {
+    // Cart expiré, consommé ou vide
+    cookies().delete('cartId');
+    return 'Cart expired or empty. Please add products again.';
+  }
+
   const checkoutUrl = await getCheckoutURL(cartId);
   if (!checkoutUrl) return 'Error Url';
 
@@ -163,6 +173,10 @@ export async function updateItemQuantity(
 export async function createCartAndSetCookie() {
   const cart = await createCart();
   cookies().set('cartId', cart.id!);
+}
+
+export async function removeCartAndSetCookie() {
+  cookies().delete('cartId');
 }
 
 

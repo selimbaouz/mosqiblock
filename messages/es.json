@@ -28,7 +28,8 @@
             "or": "o",
             "graduationOne": "{amount}€ (1 gratis)",
             "graduationTwo": "{amount}€ (2 gratis)"
-        }
+        },
+        "cartExpiredOrEmpty": "Tu carrito ha caducado o está vacío. Por favor, añade tus productos de nuevo."
     },
     "header": {
         "rating": "4.7 | Más de 80 clientes satisfechos",
