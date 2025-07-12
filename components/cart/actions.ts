@@ -116,7 +116,7 @@ export async function updateItemQuantity(
   }
 }
 
-export async function redirectToCheckoutUrl(variantId: string, totalQuantity: number, locale: string) {
+/* export async function redirectToCheckoutUrl(variantId: string, totalQuantity: number, locale: string) {
   if(!totalQuantity) {
     return "No Quantity"
   }
@@ -138,6 +138,25 @@ export async function redirectToCheckoutUrl(variantId: string, totalQuantity: nu
     return `${customCheckoutUrl}${separator}locale=${locale}`;
   }
 
+  return customCheckoutUrl;
+} */
+
+  export async function redirectToCheckoutUrl(locale: string) {
+  const cartId = cookies().get('cartId')?.value;
+  if (!cartId) return 'Missing cart ID';
+
+  const checkoutUrl = await getCheckoutURL(cartId);
+  if (!checkoutUrl) return 'Error Url';
+
+  const customCheckoutUrl = checkoutUrl.replace(
+    /^https:\/\/wtit3t-1h\.myshopify\.com/,
+    "https://www.mosqiblock.com"
+  );
+
+  if (locale) {
+    const separator = customCheckoutUrl.includes('?') ? '&' : '?';
+    return `${customCheckoutUrl}${separator}locale=${locale}`;
+  }
   return customCheckoutUrl;
 }
 

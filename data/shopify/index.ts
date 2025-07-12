@@ -11,7 +11,6 @@ import {
   ShopifyAddToCartOperation, 
   ShopifyCart, 
   ShopifyCartOperation, 
-  ShopifyCheckoutCreateUrl, 
   ShopifyCreateCartOperation, 
   ShopifyMenuOperation, 
   ShopifyPageOperation, 
@@ -21,21 +20,18 @@ import {
   ShopifyUpdateCartOperation
 } from "../../types/types";
 import { addToCartMutation, createCartMutation, editCartItemsMutation, removeFromCartMutation } from "./mutations/cart";
-import { getCartQuery } from "./queries/cart";
+import { getCartQuery, getCheckoutUrl } from "./queries/cart";
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { revalidateTag } from "next/cache";
 import { getMenuQuery } from "./queries/menu";
 import { getPageQuery, getPagesQuery } from "./queries/page";
-import { checkoutCreate } from "./queries/checkout";
 
 const domain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN
   ? ensureStartsWith(process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN, 'https://')
   : '';
 const endpoint = `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}`;
 const accessToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
-
-type ExtractVariables<T> = T extends { variables: object } ? T['variables'] : never;
 
 export async function shopifyFetch<T>({
     cache = 'no-cache', //force-cache
@@ -48,7 +44,7 @@ export async function shopifyFetch<T>({
     headers?: HeadersInit;
     query: string;
     tags?: string[];
-    variables?: ExtractVariables<T>;
+    variables?: object;
   }): Promise<{ status: number; body: T } | never> {
     try {
       const result = await fetch(endpoint, {
@@ -153,18 +149,16 @@ export async function shopifyFetch<T>({
     return reshapeCart(res.body.data.cartLinesAdd.cart);
   }
 
-/*   export async function getCheckoutURL(cartId: string) {
-    const res = await shopifyFetch<ShopifyChekoutUrl>({
-      query: getCheckoutUrl,
-      variables: {
-        cartId,
-      },
-      cache: 'no-store'
-    })
-    return res.body.data.cart.checkoutUrl;
-  } */
+export async function getCheckoutURL(cartId: string): Promise<string> {
+  const res = await shopifyFetch<{ data: { cart: { checkoutUrl: string } } }>({
+    query: getCheckoutUrl,
+    variables: { cartId },
+    cache: 'no-store'
+  });
+  return res.body.data.cart.checkoutUrl;
+}
 
-  export async function getCheckoutURL(variantId: string, totalQuantity: number) {
+  /* export async function getCheckoutURL(variantId: string, totalQuantity: number) {
     const res = await shopifyFetch<ShopifyCheckoutCreateUrl>({
       query: checkoutCreate,
       variables: {
@@ -174,7 +168,7 @@ export async function shopifyFetch<T>({
       cache: 'no-store'
     })
     return res.body.data.checkoutCreate.checkout.webUrl;
-  }
+  } */
   
   export async function removeFromCart(cartId: string, lineIds: string[]): Promise<Cart> {
     const res = await shopifyFetch<ShopifyRemoveFromCartOperation>({

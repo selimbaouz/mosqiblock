@@ -49,7 +49,8 @@ export default function Cart() {
 
     setIsLoading(true);
     try {
-        const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity, locale);
+       /*  const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity, locale); */
+       const url = await redirectToCheckoutUrl(locale);
         if (url) {
           ReactPixel.track('InitiateCheckout', {
             content_ids: cart.lines.map(line => line.merchandise.id),
