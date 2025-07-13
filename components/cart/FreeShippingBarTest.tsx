@@ -25,7 +25,7 @@ const FreeShippingBar: FC<FreeShippingBarProps> = ({ timeForFreeDelivery }) => {
     <div className="text-sm flex flex-col justify-center text-center px-2 border-b">
       {amountLeft > 0 ? (
         <p className={cn("text-xs", "sm:text-sm")}>
-          Plus que <strong>{amountLeft.toFixed(2)}€</strong> pour profiter de la livraison gratuite !
+          Plus que <strong>{amountLeft.toFixed(2)} CAD</strong> pour profiter de la livraison gratuite !
         </p>
       ) : (
         <p className={cn("text-xs font-medium", "sm:text-sm")}>

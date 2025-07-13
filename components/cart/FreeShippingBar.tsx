@@ -96,7 +96,7 @@ const FreeGiftBar = () => {
 
       {/* ✅ Graduation */}
       <div className="flex justify-between text-[10px] text-gray-500 mt-1 px-1">
-        <span>0€</span>
+        <span>0 CAD</span>
         <span>{t("graduationOne", { amount: FIRST_TIER.toFixed(2) })}</span>
         <span>{t("graduationTwo", { amount: SECOND_TIER.toFixed(2) })}</span>
       </div>

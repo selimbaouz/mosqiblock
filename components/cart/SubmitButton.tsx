@@ -60,7 +60,7 @@ export function SubmitButtonClient({ size = "initial", price, floatingBar, varia
         }}
         >
         <p className="uppercase">
-            {floatingBar ? t('addToCart') : `${t('addToCart')} ${price ? parseFloat(price).toFixed(2) : "27,99"}€`}
+            {floatingBar ? t('addToCart') : `${t('addToCart')} ${price ? parseFloat(price).toFixed(2) : "27,90"} CAD`}
         </p>
         </button>
     );
