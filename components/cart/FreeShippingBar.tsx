@@ -8,8 +8,8 @@ import Image from "next/image";
 import React from "react";
 
 // ✅ Bons paliers
-const FIRST_TIER = 55.98;
-const SECOND_TIER = 83.97; // Correct ici
+const FIRST_TIER = 85.80;
+const SECOND_TIER = 130.79; // Correct ici
 
 const FreeGiftBar = () => {
   const t = useTranslations("fe.cart.freeGiftBar");
