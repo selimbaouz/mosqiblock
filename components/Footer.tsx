@@ -44,7 +44,7 @@ const Footer = ({
                         <div className={cn("space-y-4")}>
                             <h6 className={cn("lg:text-xl font-medium")}>{t("contactTitle")}</h6>
                             <div className="leading-relaxed space-y-2 text-sm">
-                                <Link href="mailto:mosqiblock@contact.com" className={cn("font-light text-sm lg:text-base")}>mosqiblock@contact.com</Link>
+                                <Link href="mailto:contact@mosqiblock.com" className={cn("font-light text-sm lg:text-base")}>contact@mosqiblock.com</Link>
                                 <p>{t("contactAvailability")}</p>
                             </div>
                         </div>
