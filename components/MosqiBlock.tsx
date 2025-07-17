@@ -18,7 +18,7 @@ import AnnouncementBar from '@/components/navigation/AnnouncementBar';
 import { Product } from '@/types/types';
 import { format, addDays } from 'date-fns';
 import { useTranslations } from "next-intl";
-import WhatsApp from './navigation/WhatsApp';
+/* import WhatsApp from './navigation/WhatsApp'; */
 import FloatingBar from './navigation/FloatingBar';
 import { useVisibleFloatingCartStore } from "@/store/cart";
 import Guarantee from './Guarantee';
@@ -127,7 +127,7 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
             <FAQ />
             <Guarantee />
             <Footer />
-            <WhatsApp />
+            {/* <WhatsApp /> */}
              {!isVisible && <FloatingBar product={product} />}
         </div>
     );

@@ -12,14 +12,13 @@ import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle } from "../ui/
 import { cn } from '@/lib/utils';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { MdLock } from 'react-icons/md';
-import CartTimer from './cart-timer';
 import FreeShippingBar from './FreeShippingBar';
 import { useLocale, useTranslations } from "next-intl";
 import ReactPixel from "react-facebook-pixel";
 
 export default function Cart() {
   const locale = useLocale();
-  const { timeLeft, cart, updateCartItem } = useCartStore();
+  const { cart, updateCartItem } = useCartStore();
   const {isOpenCart, setIsOpenCart} = useOpenCartStore();
   const quantityRef = useRef(cart?.totalQuantity);
   const [isLoading, setIsLoading] = useState(false);
@@ -84,11 +83,11 @@ export default function Cart() {
             </SheetClose>
           </div>
         </SheetHeader>
-        {timeLeft > 0 && (
+      {/*   {timeLeft > 0 && (
           <div className={cn("w-full py-3 bg-secondary flex justify-center")}>
             <CartTimer />
           </div>
-        )}
+        )} */}
         <div className='py-6 text-sm flex flex-col justify-center text-center px-4 border-b border-secondary'>
           <FreeShippingBar />
         </div>

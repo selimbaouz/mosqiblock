@@ -14,7 +14,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import ProductFeatures from "@/components/ProductFeatures";
 import { useTranslations } from "next-intl";
-import WhatsApp from "./navigation/WhatsApp";
+/* import WhatsApp from "./navigation/WhatsApp"; */
 import Guarantee from "./Guarantee";
 
 const Home = () => {
@@ -59,7 +59,7 @@ const Home = () => {
             <FAQ />
             <Guarantee />
             <Footer />  
-            <WhatsApp />
+            {/* <WhatsApp /> */}
         </div>
     );
 };
