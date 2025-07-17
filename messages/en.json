@@ -29,7 +29,7 @@
                 "graduationOne": "{amount}CAD (1 Free)",
                 "graduationTwo": "{amount}CAD (2 Free)"
             },
-            "cartExpiredOrEmpty": "Your cart has expired or is empty. Please add your products again."
+            "cartExpiredOrEmpty": "Your cart has expired. Please add your products again."
         },
         "header": {
             "rating": "4.7 | 80+ Satisfied customers",
