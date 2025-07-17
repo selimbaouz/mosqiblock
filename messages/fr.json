@@ -208,7 +208,7 @@
             "detailsProduct": [
                 {
                 "title": "Informations de livraison",
-                "content": "• Livraison offerte sur toutes les commandes\n• Commandes traitées sous 24 à 48h\n• Livraison en 2 à 5 jours ouvrés (France/UE), 5 à 10 jours (international)\n• Numéro de suivi envoyé par email dès l’expédition\n• Emballage sécurisé pour une réception sans souci"
+                "content": "• Livraison offerte sur toutes les commandes\n• Commandes traitées sous 24 à 48h\n• Livraison en 5 à 7 jours ouvrés (France/UE), 7 à 10 jours (international)\n• Numéro de suivi envoyé par email dès l’expédition\n• Emballage sécurisé pour une réception sans souci"
                 },
                 {
                 "title": "Retours et remboursements",
@@ -436,8 +436,8 @@
                 "heading": "Zones et délais de livraison",
                 "content": [
                     "Livraison à domicile, en point relais, en France, Europe et international.",
-                    "France/UE : 2 à 5 jours ouvrés.",
-                    "International : 5 à 10 jours ouvrés."
+                    "France/UE : 5 à 7 jours ouvrés.",
+                    "International : 7 à 10 jours ouvrés."
                 ]
                 },
                 {

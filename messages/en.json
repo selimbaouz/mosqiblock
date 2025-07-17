@@ -209,7 +209,7 @@
             "detailsProduct": [
                 {
                 "title": "Shipping information",
-                "content": "• Free shipping on all orders\n• Orders processed within 24–48 hours\n• Delivery in 2–5 business days (France/EU), 5–10 days (international)\n• Tracking number sent by email as soon as your order ships\n• Secure packaging for safe arrival"
+                "content": "• Free shipping on all orders\n• Orders processed within 24–48 hours\n• Delivery in 5–7 business days (France/EU), 7–10 days (international)\n• Tracking number sent by email as soon as your order ships\n• Secure packaging for safe arrival"
                 },
                 {
                 "title": "Returns and refunds",
@@ -437,8 +437,8 @@
                 "heading": "Shipping Areas and Times",
                 "content": [
                     "Home delivery, pickup point, in France, Europe and internationally.",
-                    "France/EU: 2 to 5 business days.",
-                    "International: 5 to 10 business days."
+                    "France/EU: 5 to 7 business days.",
+                    "International: 7 to 10 business days."
                 ]
                 },
                 {

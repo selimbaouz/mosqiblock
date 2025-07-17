@@ -208,7 +208,7 @@
         "detailsProduct": [
             {
             "title": "Informações de envio",
-            "content": "• Frete grátis em todos os pedidos\n• Pedidos processados em 24–48 horas\n• Entrega em 2–5 dias úteis (França/UE), 5–10 dias (internacional)\n• Código de rastreamento enviado por e-mail assim que seu pedido for despachado\n• Embalagem segura para chegada sem danos"
+            "content": "• Frete grátis em todos os pedidos\n• Pedidos processados em 24–48 horas\n• Entrega em 5–7 dias úteis (França/UE), 7–10 dias (internacional)\n• Código de rastreamento enviado por e-mail assim que seu pedido for despachado\n• Embalagem segura para chegada sem danos"
             },
             {
             "title": "Trocas e reembolsos",
@@ -436,8 +436,8 @@
                 "heading": "Áreas e prazos de entrega",
                 "content": [
                     "Entrega em domicílio, ponto de retirada, na França, Europa e internacional.",
-                    "França/UE: 2 a 5 dias úteis.",
-                    "Internacional: 5 a 10 dias úteis."
+                    "França/UE: 5 a 7 dias úteis.",
+                    "Internacional: 7 a 10 dias úteis."
                 ]
                 },
                 {

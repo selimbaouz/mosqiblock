@@ -208,7 +208,7 @@
           "detailsProduct": [
             {
               "title": "Información de envío",
-              "content": "• Envío gratis en todos los pedidos\n• Pedidos procesados en 24–48 horas\n• Entrega en 2–5 días laborables (Francia/UE), 5–10 días (internacional)\n• Número de seguimiento enviado por email al despachar tu pedido\n• Embalaje seguro para una entrega sin daños"
+              "content": "• Envío gratis en todos los pedidos\n• Pedidos procesados en 24–48 horas\n• Entrega en 5–7 días laborables (Francia/UE), 7–10 días (internacional)\n• Número de seguimiento enviado por email al despachar tu pedido\n• Embalaje seguro para una entrega sin daños"
             },
             {
               "title": "Devoluciones y reembolsos",
@@ -436,8 +436,8 @@
                   "heading": "Áreas y Tiempos de Envío",
                   "content": [
                     "Entrega a domicilio, punto de recogida, en Francia, Europa e internacionalmente.",
-                    "Francia/UE: de 2 a 5 días laborables.",
-                    "Internacional: de 5 a 10 días laborables."
+                    "Francia/UE: de 5 a 7 días laborables.",
+                    "Internacional: de 7 a 10 días laborables."
                   ]
                 },
                 {
