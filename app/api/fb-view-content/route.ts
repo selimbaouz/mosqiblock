@@ -15,7 +15,7 @@ interface FbViewContentPayload {
 }
 
 interface FbUserData {
-  user_agent?: string;
+  client_user_agent?: string;
   fbp?: string;
 }
 
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
   }
 
   const user_data: FbUserData = {};
-  if (userAgent) user_data.user_agent = userAgent;
+  if (userAgent) user_data.client_user_agent = userAgent;
   if (fbp) user_data.fbp = fbp;
 
   const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;

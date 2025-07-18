@@ -17,7 +17,7 @@ interface FbInitiateCheckoutPayload {
 interface FbUserData {
   em?: string[];
   fbp?: string;
-  user_agent?: string;
+  client_user_agent?: string;
 }
 
 // TypeScript ou JS standard
@@ -37,6 +37,9 @@ export async function POST(req: NextRequest) {
     if (fbp) {
     user_data.fbp = fbp;
     }
+    if (userAgent) {
+    user_data.client_user_agent = userAgent; // <------
+    }  
 
   const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
   const payload = {

@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
         event_source_url: eventSourceUrl,
         action_source: "website",
         user_data: {
-          user_agent: userAgent, // Peut servir à l’appariement Meta.
+          client_user_agent: userAgent, // Peut servir à l’appariement Meta.
         },
         custom_data: {
           content_ids,
