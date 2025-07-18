@@ -2,9 +2,7 @@
 
 import { useCartStore } from "../../store/cart";
 import { cn } from "@/lib/utils";
-import MosqiBlockGiftImg from "@/public/images/product_mosqitoes.png";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import React from "react";
 
 // ✅ Bons paliers
@@ -52,36 +50,6 @@ const FreeGiftBar = () => {
   return (
     <div className="text-sm flex flex-col justify-center text-center px-2">
       <div className={cn("text-xs sm:text-sm font-medium py-1")}>{message}</div>
-
-      {/* ✅ Affichage des cadeaux */}
-      {secondReached ? (
-        <div className="flex justify-center gap-2 my-2">
-          <Image
-            src={MosqiBlockGiftImg}
-            alt="Free MosqiBlock"
-            width={50}
-            height={60}
-            className="inline-block"
-          />
-          <Image
-            src={MosqiBlockGiftImg}
-            alt="Free MosqiBlock"
-            width={50}
-            height={60}
-            className="inline-block"
-          />
-        </div>
-      ) : firstReached ? (
-        <div className="flex justify-center gap-2 my-2">
-          <Image
-            src={MosqiBlockGiftImg}
-            alt="Free MosqiBlock"
-            width={50}
-            height={60}
-            className="inline-block"
-          />
-        </div>
-      ) : null}
 
       {/* ✅ Barre de progression */}
       <div className="w-full h-2.5 bg-gray-200 rounded-xs mt-2 relative overflow-hidden">
