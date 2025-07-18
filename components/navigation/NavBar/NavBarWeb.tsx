@@ -35,6 +35,20 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu}) => {
                                 href="mailto:contact@mosqiblock.com"
                                 target="_blank" 
                                 rel="noopener noreferrer"
+                                onClick={() => {
+                                    // Envoi l'event serveur Facebook ! (appel asynchrone)
+                                    fetch('/api/fb-contact-click', {
+                                        method: "POST",
+                                        headers: { "Content-Type": "application/json" },
+                                        body: JSON.stringify({
+                                            eventTime: Math.floor(Date.now() / 1000),
+                                            eventSourceUrl: window.location.href,
+                                            userAgent: navigator.userAgent,
+                                            pixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID,
+                                            fbp: document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1],
+                                        })
+                                    })
+                                }}
                                 className={cn(classLink, data.path === pathname && "font-bold")}
                             >Contact</Link>
                         ) : (
