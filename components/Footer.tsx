@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import Logo from "@/public/images/Logo.png";
+import Logo from "@/public/images/MosqiBlock-Logo-White.png";
 
 interface FooterProps {
      className?: string;
@@ -36,7 +36,7 @@ const Footer = ({
                             <ul className="leading-relaxed text-sm">
                                 {legalsLinksData.map((data, i) => (
                                     <li key={i}>
-                                        <Link href={`/${locale}${data.link}`} className={cn("font-light text-sm lg:text-base", data.link === pathname && "font-bold")}>{data.label}</Link>
+                                        <Link href={`/${locale}${data.link}`} className={cn("font-light text-sm lg:text-base hover:font-bold", data.link === pathname && "font-bold")}>{data.label}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -44,19 +44,19 @@ const Footer = ({
                         <div className={cn("space-y-4")}>
                             <h6 className={cn("lg:text-xl font-medium")}>{t("contactTitle")}</h6>
                             <div className="leading-relaxed space-y-2 text-sm">
-                                <Link href="mailto:contact@mosqiblock.com" className={cn("font-light text-sm lg:text-base")}>contact@mosqiblock.com</Link>
+                                <Link href="mailto:contact@mosqiblock.com" className={cn("font-light text-sm lg:text-base hover:underline")}>contact@mosqiblock.com</Link>
                                 <p>{t("contactAvailability")}</p>
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-start items-start lg:justify-center lg:items-center mx-auto w-full space-y-4">
-                        <Image src={Logo} alt="Logo of HelloPurly" className="w-auto h-32" width={250} height={36} />   
+                    <div className="flex flex-col justify-start items-start lg:justify-center lg:items-center mx-auto w-full space-y-4 pt-10">
+                        <Image src={Logo} alt="Logo of Mosqiblock" className="w-auto h-14 lg:h-32" width={Logo.width} height={Logo.height} /> 
                         <Image src="/images/payments.png" alt="Payments" width={200} height={44} />
-                        <p className="text-xs lg:text-sm">@2025 MosqiBlock by {" "}
+                        <p className="text-xs lg:text-sm pt-20">
                             <Link 
                                 href="https://selimmersive.com" target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="underline">
+                                className="text-white/80 uppercase hover:text-white hover:underline font-bold">
                                     Selimmersive
                             </Link>
                         </p>
