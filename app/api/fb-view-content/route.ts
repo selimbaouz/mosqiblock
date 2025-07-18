@@ -17,6 +17,7 @@ interface FbViewContentPayload {
 interface FbUserData {
   client_user_agent?: string;
   fbp?: string;
+  client_ip_address?: string;
 }
 
 export async function POST(req: NextRequest) {
@@ -32,6 +33,9 @@ export async function POST(req: NextRequest) {
     currency,
     fbp,
   }: FbViewContentPayload = await req.json();
+  
+  const ip: string | undefined =
+  req.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
 
   const token = process.env.FB_PIXEL_EVENT_ACCESS_TOKEN;
   const apiVersion = "v19.0";
@@ -39,9 +43,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Token or PixelID missing" }, { status: 400 });
   }
 
+
   const user_data: FbUserData = {};
   if (userAgent) user_data.client_user_agent = userAgent;
   if (fbp) user_data.fbp = fbp;
+  if (ip) user_data.client_ip_address = ip;
 
   const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
   const payload = {

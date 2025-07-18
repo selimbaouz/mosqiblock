@@ -18,6 +18,7 @@ interface FbUserData {
   em?: string[];
   fbp?: string;
   client_user_agent?: string;
+  client_ip_address?: string;
 }
 
 // TypeScript ou JS standard
@@ -25,6 +26,9 @@ export async function POST(req: NextRequest) {
   const { eventTime, eventSourceUrl, userAgent, email, pixelId, value, currency, content_ids, num_items, fbp }: FbInitiateCheckoutPayload = await req.json();
   const token = process.env.FB_PIXEL_EVENT_ACCESS_TOKEN;
   const apiVersion = "v19.0";
+
+ const ip: string | undefined =
+  req.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
 
   if (!token || !pixelId) {
     return NextResponse.json({ error: "Token or PixelID missing" }, { status: 400 });
@@ -40,6 +44,7 @@ export async function POST(req: NextRequest) {
     if (userAgent) {
     user_data.client_user_agent = userAgent; // <------
     }  
+    if (ip) user_data.client_ip_address = ip;
 
   const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
   const payload = {
@@ -49,7 +54,7 @@ export async function POST(req: NextRequest) {
         event_time: eventTime,
         event_source_url: eventSourceUrl,
         action_source: "website",
-        user_data: user_data,
+        user_data,
         custom_data: {
           value,
           currency,

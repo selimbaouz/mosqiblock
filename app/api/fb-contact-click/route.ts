@@ -12,6 +12,7 @@ interface FbContactClickPayload {
 interface FbUserData {
   client_user_agent?: string;
   fbp?: string;
+  client_ip_address?: string;
 }
 
 export async function POST(req: NextRequest) {
@@ -23,6 +24,9 @@ export async function POST(req: NextRequest) {
     fbp,
   }: FbContactClickPayload = await req.json();
 
+   const ip: string | undefined =
+  req.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+
   const token = process.env.FB_PIXEL_EVENT_ACCESS_TOKEN;
   const apiVersion = "v19.0";
   if (!token || !pixelId) {
@@ -32,6 +36,7 @@ export async function POST(req: NextRequest) {
   const user_data: FbUserData = {};
   if (userAgent) user_data.client_user_agent = userAgent;
   if (fbp) user_data.fbp = fbp;
+  if (ip) user_data.client_ip_address = ip;
 
   // Tu peux nommer l'événement comme "Contact", ou "ContactClick", ou "Lead"
   // Ici on garde "Contact" pour la clarté Meta
