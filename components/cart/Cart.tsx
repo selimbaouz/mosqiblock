@@ -14,7 +14,6 @@ import { Cross2Icon } from '@radix-ui/react-icons';
 import { MdLock } from 'react-icons/md';
 import FreeShippingBar from './FreeShippingBar';
 import { useLocale, useTranslations } from "next-intl";
-import ReactPixel from "react-facebook-pixel";
 
 export default function Cart() {
   const locale = useLocale();
@@ -51,12 +50,22 @@ export default function Cart() {
        /*  const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity, locale); */
        const url = await redirectToCheckoutUrl(locale);
         if (url && !url.startsWith('Cart expired')) {
-          ReactPixel.track('InitiateCheckout', {
-            content_ids: cart.lines.map(line => line.merchandise.id),
-            num_items: cart.totalQuantity,
-            value: cart.cost.totalAmount.amount,
-            currency: cart.cost.totalAmount.currencyCode
+          await fetch("/api/fb-initiate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              eventTime: Math.floor(Date.now() / 1000),
+              eventSourceUrl: window.location.href,
+              userAgent: navigator.userAgent,
+              pixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID, // ou une variable d'env
+              value: cart.cost.totalAmount.amount,
+              currency: cart.cost.totalAmount.currencyCode,
+              content_ids: cart.lines.map(line => line.merchandise.id),
+              num_items: cart.totalQuantity,
+              fbp: document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1]
+            }),
           });
+
           window.location.href = url;
           await removeCartAndSetCookie();
           } else {

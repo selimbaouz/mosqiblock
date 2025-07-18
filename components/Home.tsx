@@ -16,9 +16,29 @@ import ProductFeatures from "@/components/ProductFeatures";
 import { useTranslations } from "next-intl";
 /* import WhatsApp from "./navigation/WhatsApp"; */
 import Guarantee from "./Guarantee";
+import { useEffect } from "react";
 
 const Home = () => {
     const t = useTranslations("fe");
+
+  useEffect(() => {
+        fetch('/api/fb-view-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                eventTime: Math.floor(Date.now() / 1000),
+                eventSourceUrl: window.location.href,
+                userAgent: navigator.userAgent,
+                pixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID,
+                content_ids: ['homepage'],      // identifiant générique ou slug
+                content_name: 'Homepage',       // titre du contenu
+                content_type: 'home',           // type bien explicite
+                // value, currency: tu peux les omettre pour la page d'accueil
+                fbp: document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1],
+            })
+        });
+    }, []);
+
 
     return (
         <div>

@@ -22,7 +22,6 @@ import { useTranslations } from "next-intl";
 import FloatingBar from './navigation/FloatingBar';
 import { useVisibleFloatingCartStore } from "@/store/cart";
 import Guarantee from './Guarantee';
-import ReactPixel from "react-facebook-pixel";
 
 interface MosqiBlockProps {
     product: Product;
@@ -40,12 +39,21 @@ const MosqiBlock: FC<MosqiBlockProps> = ({product}) => {
     const formattedDeliveryEnd = format(deliveryEnd, 'd');
 
     useEffect(() => {
-        ReactPixel.track('ViewContent', {
+       fetch('/api/fb-view-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+            eventTime: Math.floor(Date.now() / 1000),
+            eventSourceUrl: window.location.href,
+            userAgent: navigator.userAgent,
+            pixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID,
             content_ids: [product.id],
             content_name: product.title,
             content_type: 'product',
             value: product.priceRange.minVariantPrice.amount,
-            currency: 'EUR'
+            currency: 'EUR',
+            fbp: document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1],
+            })
         });
     }, [product]);
 

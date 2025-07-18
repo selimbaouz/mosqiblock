@@ -2,7 +2,6 @@
 "use client";
 
 import { useVisibleFloatingCartStore, useCartStore, useOpenCartStore } from '@/store/cart';
-import ReactPixel from "react-facebook-pixel";
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Product, VariantsProduct } from '@/types/types';
@@ -50,12 +49,20 @@ export function SubmitButtonClient({ size = "initial", price, floatingBar, varia
         onClick={async () => {
             addCartItem(variant, product);
             setIsOpenCart(true);
-            ReactPixel.track('AddToCart', {
-            content_ids: [variant.node.id],
-            content_name: variant.node.title,
-            content_type: 'product',
-            value: variant?.node?.price?.amount,
-            currency: 'EUR',
+            await fetch("/api/fb-add-to-cart", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                eventTime: Math.floor(Date.now() / 1000),
+                eventSourceUrl: window.location.href,
+                userAgent: navigator.userAgent,
+                pixelId: process.env.NEXT_PUBLIC_FB_PIXEL_ID,
+                content_ids: [variant.node.id],
+                content_name: variant.node.title,
+                content_type: "product",
+                value: variant?.node?.price?.amount,
+                currency: "EUR"
+                }),
             });
         }}
         >

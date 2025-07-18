@@ -8,8 +8,8 @@ import { FC } from "react";
 import { usePathname } from "next/navigation";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { useLocale } from "next-intl";
-import Image from "next/image";
-import Logo from "@/public/images/MosqiBlock-Logo.png"
+/* import Image from "next/image";
+import Logo from "@/public/images/MosqiBlock-Logo.png" */
 
 interface NavBarWebProps {
     menu: Menu[];
@@ -24,7 +24,8 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu}) => {
     return (
         <div className={cn("hidden", "z-50 relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-4", "xl:px-0")}>
             <Link href="/" className={cn("cursor-pointer z-50 font-bold", "lg:text-xl", "xl:text-2xl")}>
-                <Image src={Logo} alt="Logo of MosqiBlock" width={Logo.width} height={Logo.height} className={cn("lg:w-32", "xl:w-48")} />
+                {/* <Image src={Logo} alt="Logo of MosqiBlock" width={Logo.width} height={Logo.height} className={cn("lg:w-32", "xl:w-48")} /> */}
+                MosqiBlock
             </Link>
             <ul className={cn("absolute inset-0 m-auto flex justify-center items-center gap-5", "xl:gap-6")}>
                 {menu.map((data, i) => (

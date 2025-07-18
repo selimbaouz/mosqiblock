@@ -57,7 +57,7 @@ const Footer = ({
                                 href="https://selimmersive.com" target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="text-white/80 uppercase hover:text-white hover:underline font-bold">
-                                    Selimmersive
+                                    SLMRSV
                             </Link>
                         </p>
                     </div>
