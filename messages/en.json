@@ -200,7 +200,10 @@
             { "title": "Buy 2 Get 1 Free", "subTitle": "You save CAD 64,00  😱" },
             { "title": "Buy 3 Get 2 Free", "subTitle": "One for every room 😍" }
             ],
-            "colorsList": ["White", "Green"],
+            "colorsList": {
+                "White": "White",
+                "Green": "Green"
+            },
             "mostPopular": "Most popular!",
             "securePayment": "Secure payment",
             "freeDelivery": "Free delivery",

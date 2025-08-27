@@ -199,7 +199,10 @@
             { "title": "Compra 2 y llévate 1 gratis", "subTitle": "Ahorra CAD 64,00 😱" },
             { "title": "Compra 3 y llévate 2 gratis", "subTitle": "Uno para cada habitación 😍" }
           ],
-          "colorsList": ["Blanco", "Verde"],
+          "colorsList": {
+            "White": "Blanco",
+            "Green": "Verde"
+          },
           "mostPopular": "¡El más popular!",
           "securePayment": "Pago seguro",
           "freeDelivery": "Envío gratis",

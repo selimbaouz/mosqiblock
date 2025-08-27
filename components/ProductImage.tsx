@@ -27,7 +27,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
     const [selectedColorName, setSelectedColorName] = useState("White");
     const [selectedPackName, setSelectedPackName] = useState("Buy 2 Get 1 Free");
     const {selectedVariant, setSelectedVariant} = useVariantStore();
-    const colors = t.raw("colorsList") as string[];
+    const colors = ["White", "Green"] as string[];
     const detailsProduct = t.raw("detailsProduct") as { title: string; content: string }[];
 
     /* const [startDelivery, endDelivery] = calculateDeliveryDates(5, 10); */
@@ -43,7 +43,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
         const matchingVariant = product.variants.edges.find(v => 
             v.node.title === variantTitle
         );
-
+        
         if (matchingVariant) {
             setSelectedVariant(matchingVariant);
         } 
@@ -133,7 +133,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
                             >
                             <div className="space-y-1">
                                 <h6 className={cn("text-xs font-bold", "lg:text-sm")}>
-                                    {color}
+                                    {t(`colorsList.${color}`)}
                                 </h6>
                             </div>
                         </div>
