@@ -199,9 +199,15 @@
             { "title": "2 achetés = 1 offert", "subTitle": "Économisez 64,00 CAD 😱" },
             { "title": "3 achetés = 2 offerts", "subTitle": "Un pour chaque pièce 😍" }
             ],
-            "colorsList": {
+            "variants": {
+                "Buy 1": "Acheter 1",
+                "Buy 2 Get 1 Free": "Acheter 2 = 1 Offert",
+                "Buy 3 Get 2 Free": "Acheter 3 = 2 Offerts",
                 "White": "Blanc",
                 "Green": "Vert"
+            },
+            "cart": {
+                "title": "{pack} / {color}"
             },
             "mostPopular": "Le plus populaire !",
             "securePayment": "Paiement sécurisé",

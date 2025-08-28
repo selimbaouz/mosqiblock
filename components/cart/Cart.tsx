@@ -22,6 +22,7 @@ export default function Cart() {
   const quantityRef = useRef(cart?.totalQuantity);
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("fe.cart");
+  const titleOfCart = useTranslations("fe.productMosqiBlock");
 
   useEffect(() => {
     if (cart.lines.length > 0 && isOpenCart) {
@@ -41,6 +42,15 @@ export default function Cart() {
       quantityRef.current = cart?.totalQuantity;
     }
   }, [isOpenCart, cart?.totalQuantity, quantityRef, setIsOpenCart]);
+
+  const getTranslatedVariantTitle = (title: string) => {
+    if (!title) return "";
+    const [pack, color] = title.split(" / ");
+    return titleOfCart("cart.title", {
+      pack: titleOfCart(`variants.${pack.trim()}`),
+      color: titleOfCart(`variants.${color.trim()}`)
+    });
+  };
 
   const handleRedirectToCheckout = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -114,6 +124,7 @@ export default function Cart() {
                       a.merchandise.product.title.localeCompare(b.merchandise.product.title)
                   ).map((item, i) => {
                     const amount = Number(item.cost.totalAmount.amount);
+                    console.log(item.merchandise.title);
                     return (
                       <li key={i} className="w-full border-b border-secondary">
                         <div className='flex w-full justify-between gap-1 items-stretch py-6 px-4'>
@@ -121,7 +132,7 @@ export default function Cart() {
                           <div className='ml-4 w-full space-y-4'>
                             <div>
                               <p className="text-sm font-bold">{item.merchandise.product.title}</p>
-                              <p className='text-sm'>{item.merchandise.title}</p>
+                              <p className='text-sm'>{getTranslatedVariantTitle(item.merchandise.title)}</p>
                             </div>
                             <div className="flex items-center border border-secondary w-max">
                               <EditItemQuantityButton

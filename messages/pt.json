@@ -199,9 +199,15 @@
         { "title": "Compre 2 Leve 1 Grátis", "subTitle": "Você economiza CAD 64,00 😱" },
         { "title": "Compre 3 Leve 2 Grátis", "subTitle": "Um para cada ambiente 😍" }
         ],
-        "colorsList": {
+        "variants": {
+            "Buy 1": "Compre 1",
+            "Buy 2 Get 1 Free": "Compre 2 e ganhe 1 grátis",
+            "Buy 3 Get 2 Free": "Compre 3 e ganhe 2 grátis",
             "White": "Branco",
             "Green": "Verde"
+        },
+        "cart": {
+            "title": "{pack} / {color}"
         },
         "mostPopular": "Mais popular!",
         "securePayment": "Pagamento seguro",

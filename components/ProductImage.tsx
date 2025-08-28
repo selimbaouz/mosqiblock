@@ -133,7 +133,7 @@ const ProductImage: FC<ProductImageProps> = ({product, formattedDeliveryStart, f
                             >
                             <div className="space-y-1">
                                 <h6 className={cn("text-xs font-bold", "lg:text-sm")}>
-                                    {t(`colorsList.${color}`)}
+                                    {t(`variants.${color}`)}
                                 </h6>
                             </div>
                         </div>
