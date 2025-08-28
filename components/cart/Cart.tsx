@@ -131,7 +131,7 @@ export default function Cart() {
                           <Image src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={500} height={500} className="size-20 max-w-20 lg:h-32 lg:w-32 lg:max-w-32 rounded-lg object-fill" />
                           <div className='ml-4 w-full space-y-4'>
                             <div>
-                              <p className="text-sm font-bold">{item.merchandise.product.title}</p>
+                              <p className="text-sm font-bold">{titleOfCart("mainTitle")}</p>
                               <p className='text-sm'>{getTranslatedVariantTitle(item.merchandise.title)}</p>
                             </div>
                             <div className="flex items-center border border-secondary w-max">
