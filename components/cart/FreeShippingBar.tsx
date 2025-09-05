@@ -5,9 +5,8 @@ import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import React from "react";
 
-// ✅ Bons paliers
-const FIRST_TIER = 85.80;
-const SECOND_TIER = 130.79; // Correct ici
+const FIRST_TIER = 55.98;
+const SECOND_TIER = 83.97;
 
 const FreeGiftBar = () => {
   const t = useTranslations("fe.cart.freeGiftBar");
@@ -64,7 +63,7 @@ const FreeGiftBar = () => {
 
       {/* ✅ Graduation */}
       <div className="flex justify-between text-[10px] text-gray-500 mt-1 px-1">
-        <span>0 CAD</span>
+        <span>0 EUR</span>
         <span>{t("graduationOne", { amount: FIRST_TIER.toFixed(2) })}</span>
         <span>{t("graduationTwo", { amount: SECOND_TIER.toFixed(2) })}</span>
       </div>

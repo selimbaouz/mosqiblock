@@ -20,11 +20,11 @@
             "freeGiftBar": {
                "congratsTwo": "🎉 <strong>Félicitations !</strong> Vous recevez <strong>2 MosqiBlocks GRATUITS !</strong>",
                "congratsOne": "🎉 <strong>Félicitations !</strong> Vous recevez <strong>1 MosqiBlock GRATUIT !</strong>",
-               "spendMoreTwo": "Ajoutez <strong>{amount}CAD</strong> pour obtenir <strong>2 MosqiBlocks GRATUITS !</strong>",
-               "spendMoreOne": "Ajoutez <strong>{amount}CAD</strong> pour obtenir <strong>1 MosqiBlock GRATUIT</strong>",
+               "spendMoreTwo": "Ajoutez <strong>{amount}€</strong> pour obtenir <strong>2 MosqiBlocks GRATUITS !</strong>",
+               "spendMoreOne": "Ajoutez <strong>{amount}€</strong> pour obtenir <strong>1 MosqiBlock GRATUIT</strong>",
                "or": "ou",
-               "graduationOne": "{amount}CAD (1 offert)",
-               "graduationTwo": "{amount}CAD (2 offerts)"
+               "graduationOne": "{amount}€ (1 offert)",
+               "graduationTwo": "{amount}€ (2 offerts)"
            },
             "cartTimer": {
                 "reserved": "🔥 Votre panier est réservé pendant {time} minutes !"
@@ -195,8 +195,8 @@
             "colors": "Couleurs",
             "packs": "Packs",
             "packsList": [
-            { "title": "Acheter 1", "subTitle": "Économisez 32,09 CAD" },
-            { "title": "2 achetés = 1 offert", "subTitle": "Économisez 64,00 CAD 😱" },
+            { "title": "Acheter 1", "subTitle": "Économisez 32,09 €" },
+            { "title": "2 achetés = 1 offert", "subTitle": "Économisez 64,00 € 😱" },
             { "title": "3 achetés = 2 offerts", "subTitle": "Un pour chaque pièce 😍" }
             ],
             "variants": {

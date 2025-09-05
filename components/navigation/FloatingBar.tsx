@@ -38,7 +38,7 @@ const FloatingBar: FC<FloatingBarProps> = ({
                                     MosqiBlock
                                 </h6>
                                 <p className={cn("font-bold text-lg text-primary")}>
-                                    {variantPrice ? parseFloat(variantPrice).toFixed(2) : product.priceRange.minVariantPrice.amount} CAD
+                                    {variantPrice ? parseFloat(variantPrice).toFixed(2) : product.priceRange.minVariantPrice.amount} €
                                 </p>
                             </div>
                             <AddToCart state={selectedVariant} product={product} floatingBar />

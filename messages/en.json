@@ -23,11 +23,11 @@
             "freeGiftBar": {
                 "congratsTwo": "🎉 <strong>Congratulations!</strong> You get <strong>2 MosqiBlocks FREE!</strong>",
                 "congratsOne": "🎉 <strong>Congratulations!</strong> You get <strong>1 MosqiBlock FREE!</strong>",
-                "spendMoreTwo": "Spend <strong>{amount}CAD</strong> more to get <strong>2 MosqiBlocks FREE!</strong>",
-                "spendMoreOne": "Spend <strong>{amount}CAD</strong> more to get <strong>1 MosqiBlock FREE</strong>",
+                "spendMoreTwo": "Spend <strong>{amount}€</strong> more to get <strong>2 MosqiBlocks FREE!</strong>",
+                "spendMoreOne": "Spend <strong>{amount}€</strong> more to get <strong>1 MosqiBlock FREE</strong>",
                 "or": "or",
-                "graduationOne": "{amount}CAD (1 Free)",
-                "graduationTwo": "{amount}CAD (2 Free)"
+                "graduationOne": "{amount}€ (1 Free)",
+                "graduationTwo": "{amount}€ (2 Free)"
             },
             "cartExpiredOrEmpty": "Your cart has expired. Please add your products again."
         },
@@ -196,8 +196,8 @@
             "colors": "Colors",
             "packs": "Packs",
             "packsList": [
-            { "title": "Buy 1", "subTitle": "Your save CAD 32,09" },
-            { "title": "Buy 2 Get 1 Free", "subTitle": "You save CAD 64,00  😱" },
+            { "title": "Buy 1", "subTitle": "Your save € 32,09" },
+            { "title": "Buy 2 Get 1 Free", "subTitle": "You save € 64,00  😱" },
             { "title": "Buy 3 Get 2 Free", "subTitle": "One for every room 😍" }
             ],
             "variants": {
