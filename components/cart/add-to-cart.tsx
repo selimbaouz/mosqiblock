@@ -28,7 +28,6 @@ export function AddToCart({
         )
     )
   );
-
   const defaultVariantId = variants.length === 1 ? variants[0]?.node.id : undefined;
   const selectedVariantId = variant?.node.id || defaultVariantId;
   const finalVariant = variants.find((variant) => variant.node.id === selectedVariantId)!;
